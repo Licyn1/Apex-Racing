@@ -1,283 +1,750 @@
-/* =========================================================
-   RESET
-   ========================================================= */
-* {
+/* ==========================================
+   TIPOGRAFÍA E IMPORTACIONES
+========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+
+/* ==========================================
+   RESET & BASE
+========================================== */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+body {
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+}
+/* ==========================================
+   2. RESET & BASE + LÍNEAS VERTICALES INDEPENDIENTES
+========================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Archivo', Arial, sans-serif;
-  background: #000;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #0a0a0a;
   color: #fff;
-  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative; /* Permite posicionar las líneas de fondo */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* ==========================================================================
+   CORRECCIÓN: PRIMERA LÍNEA VERTICAL ESTRUCTURAL (A 71.09px DEL MARGEN IZQUIERDO)
+   ========================================================================== */
+body {
+  position: relative; /* Habilita el contexto de posicionamiento para sus pseudoelementos */
 }
 
-/* =========================================================
-   HERO SECTION — outer wrapper
-   Grid: [ main column ~83% ][ gutter ~4% ][ sidebar ~13% ]
-   The two vertical hairlines never break, they run through
-   nav / image / banner as one continuous line.
-   ========================================================= */
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background: #000;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+body::before {
+  content: "";
+  position: fixed;            /* Se fija a la pantalla y cubre toda la web en el scroll */
+  top: 0;
+  bottom: 0;
+  right: 71.09px;              /* CORREGIDO: 'left' exacto para que mida desde el margen izquierdo */
+  width: 2px;                 /* Grosor exacto solicitado de 2pt */
+  background-color: #e5e5e5;  /* Color institucional de la entrega */
+  opacity: 1;                 /* CORREGIDO: Valor de opacidad sólido real en CSS (máximo es 1) */
+  z-index: 2;                 /* Pasa por encima del fondo oscuro del sitio pero por detrás de las tarjetas */
+  pointer-events: none;       /* Evita interferencias con los clics del usuario */
 }
 
-.grid-line {
+/* SEGUNDA LÍNEA VERTICAL (A 336.56px del margen izquierdo) */
+body::after {
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.45);
+  right: 336.56px; /* Tu distancia exacta */
+  width: 2px;
+  background-color: #ffffff;
+  opacity: 0.8;
   z-index: 5;
   pointer-events: none;
 }
+/* ==========================================================================
+   NAVBAR & LÍNEA HORIZONTAL DE PUNTA A PUNTA (CONEXIÓN RIGIDA APEX)
+   ========================================================================== */
+.navbar {
+  position: absolute;
+  top: 0 !important;          /* Nace en el techo del sitio */
+  left: 0 !important;         /* Ocupa todo el ancho de la pantalla */
+  width: 100% !important;
+  
+  /* Sincroniza la altura exacta de tus botones (55.6764px + 2px del borde compartido) */
+  height: 55.6764px !important; 
+  
+  z-index: 100;
+  display: flex !important;
+  justify-content: flex-start; /* Alinea el inicio de la lista de botones */
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent;
+  
+  /* ESTA ES TU LÍNEA DE PUNTA A PUNTA: Pasa exactamente por la base de la botonera */
+  border-bottom: 2px solid #e5e5e5 !important; 
+}
 
-.grid-line--1 { left: 82.8%; }
-.grid-line--2 { left: 96.3%; }
+/* Forzamos a la lista a posicionarse milimétricamente desde la línea vertical de los 71.09px */
+.nav-list {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 0 71.09px !important; /* El margen izquierdo la clava sobre tu grilla vertical */
+  height: 100% !important;
+}
 
-/* =========================================================
-   TOP NAVIGATION
-   Right-aligned cluster of bordered nav boxes sitting inside
-   the main column, flush to the top.
-   ========================================================= */
-.nav {
+.nav-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
+  height: 100%;
+}
+
+/* El botón contenedor interactivo */
+.nav-link {
   position: relative;
-  z-index: 6;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  
+  /* MEDIDAS VECTORIALES */
+  width: 114.35px !important;            
+  height: 100% !important;            /* Se estira al 100% de la navbar para encastrar con la línea de abajo */
+  
+  text-decoration: none;
+  background: transparent !important;   
+  box-sizing: border-box;
+  
+  /* SUPERPOSICIÓN DE BORDES: Forzamos el encastre perfecto lateral */
+  margin-right: -2px !important;         
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: -2px !important;     /* Se monta sobre el borde inferior de la navbar */
+  
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+/* El SVG absoluto se estira para calzar perfecto como matriz de fondo */
+.nav-link .btn-svg-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Controlamos el color gris base de las líneas del vector */
+.nav-link .cls-path-frame {
+  fill: #e5e5e5 !important;
+  transition: fill 0.25s ease;
+}
+
+/* El triángulo de acento nace transparente (apagado) */
+.nav-link .cls-path-accent {
+  fill: transparent !important;
+  transition: fill 0.25s ease;
+}
+
+/* El texto vivo flotando centrado por encima del vector */
+.nav-link .btn-text {
+  position: relative;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14.5px;          
+  font-weight: 400;
+  color: #e5e5e5 !important;  
+  text-transform: uppercase;  
+  letter-spacing: 0.05em;
+  z-index: 2;                 
+  margin-top: -2px;           
+  transition: color 0.25s ease, font-weight 0.25s ease;
+}
+
+/* ==========================================================================
+   ESTADOS DINÁMICOS: HOVER Y ACTIVE DE LA ESCUDERÍA (AZUL)
+   ========================================================================== */
+.nav-link:hover,
+.nav-link.active {
+  z-index: 5 !important;      /* Pasa al frente para pisar las uniones adyacentes */
+}
+
+.nav-link:hover .cls-path-frame,
+.nav-link.active .cls-path-frame {
+  fill: #015bfa !important;   /* El trazo perimetral muta al azul */
+}
+
+.nav-link:hover .cls-path-accent,
+.nav-link.active .cls-path-accent {
+  fill: #015bfa !important;   /* Enciende el triángulo inferior izquierdo en azul */
+}
+
+.nav-link:hover .btn-text,
+.nav-link.active .btn-text {
+  color: #ffffff !important;  
+  font-weight: 700;           
+}
+/* ==========================================================================
+   BOTONERA DE NAVEGACIÓN CON MATRIZ VECTORIAL (SISTEMA APEX AJUSTADO)
+   ========================================================================== */
+
+.navbar {
+  position: absolute;
+  top: 0 !important;          /* Pegado directo al techo superior de la web */
+  left: 71.09px;              /* Alineado matemático sobre tu línea vertical */
+  z-index: 100;
+}
+
+/* EXTENSIÓN HORIZONTAL: Añade la línea faltante desde los 71.09px hasta el borde izquierdo (0) */
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;                     /* Se alinea perfectamente con la línea superior de los botones */
+  left: -71.09px;             /* Se estira hacia atrás la distancia exacta del desfasaje */
+  width: 73.09px;             /* Cubre los 71.09px + 2px de margen para solapar el trazo del primer botón */
+  height: 2px;                /* Mismo grosor de 2pt exacto del marco del SVG y de la web */
+  background-color: #e5e5e5;  /* Color gris institucional base */
+  z-index: 10;                /* Pasa por encima del fondo negro */
+  pointer-events: none;
+}
+
+/* Limpieza absoluta de la lista: elimina espacios fantasmas que separan los botones */
+.nav-list {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.nav-list li {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
+  float: left;
+}
+
+/* El botón contenedor interactivo */
+.nav-link {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  
+  /* MEDIDAS ESCALADAS PROPORCIONALES SOLICITADAS */
+  width: 114.35px !important;            
+  height: 55.6764px !important;          
+  
+  text-decoration: none;
+  background: transparent !important;   
+  box-sizing: border-box;
+  
+  /* SUPERPOSICIÓN DE BORDES: Forzamos el encastre perfecto de las líneas de 2px */
+  margin-right: -2px !important;         
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+/* El SVG absoluto se estira para calzar perfecto como matriz de fondo */
+.nav-link .btn-svg-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Controlamos el color gris base de las líneas del vector */
+.nav-link .cls-path-frame {
+  fill: #e5e5e5 !important;
+  transition: fill 0.25s ease;
+}
+
+/* El triángulo de acento nace transparente (apagado) */
+.nav-link .cls-path-accent {
+  fill: transparent !important;
+  transition: fill 0.25s ease;
+}
+
+/* El texto vivo flotando centrado por encima del vector */
+.nav-link .btn-text {
+  position: relative;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14.5px;          
+  font-weight: 400;
+  color: #e5e5e5 !important;  
+  text-transform: uppercase;  
+  letter-spacing: 0.05em;
+  z-index: 2;                 
+  margin-top: -2px;           
+  transition: color 0.25s ease, font-weight 0.25s ease;
+}
+
+/* ==========================================================================
+   ESTADOS DINÁMICOS: HOVER Y ACTIVE DE LA ESCUDERÍA (AZUL)
+   ========================================================================== */
+
+.nav-link:hover,
+.nav-link.active {
+  z-index: 5 !important;      /* Pasa al frente dinámicamente para pisar el borde del de al lado */
+}
+
+.nav-link:hover .cls-path-frame,
+.nav-link.active .cls-path-frame {
+  fill: #015bfa !important;   /* El trazo perimetral muta al azul de la escudería */
+}
+
+.nav-link:hover .cls-path-accent,
+.nav-link.active .cls-path-accent {
+  fill: #015bfa !important;   /* Enciende el triángulo inferior izquierdo en azul */
+}
+
+.nav-link:hover .btn-text,
+.nav-link.active .btn-text {
+  color: #ffffff !important;  
+  font-weight: 700;           
+}
+
+/* ==========================================================================
+   ESTADOS DINÁMICOS: HOVER Y ACTIVE DE LA ESCUDERÍA (AZUL)
+   ========================================================================== */
+
+/* El botón que tenga la clase .active o cuando pases el mouse se enciende */
+.nav-link:hover,
+.nav-link.active {
+  z-index: 5 !important;      /* Pasa al frente dinámicamente para pisar el borde del de al lado */
+}
+
+.nav-link:hover .cls-path-frame,
+.nav-link.active .cls-path-frame {
+  fill: #015bfa !important;   /* El trazo perimetral muta al azul de la escudería */
+}
+
+.nav-link:hover .cls-path-accent,
+.nav-link.active .cls-path-accent {
+  fill: #015bfa !important;   /* Enciende el triángulo inferior izquierdo en azul */
+}
+
+.nav-link:hover .btn-text,
+.nav-link.active .btn-text {
+  color: #ffffff !important;  /* El texto brilla en blanco */
+  font-weight: 700;           
+}
+
+/* ==========================================================================
+   ESTADOS DE ENFOQUE (HOVER) Y ACTIVO (ACTIVE) - APEX INTERFACE
+   ========================================================================== */
+
+/* Elevamos la capa de la tarjeta enfocada para que su borde tape limpiamente a las adyacentes */
+.nav-link:hover,
+.nav-link.active {
+  z-index: 5;
+}
+
+/* Mutación de color al pasar el mouse o al estar activo */
+.nav-link:hover .cls-path-frame,
+.nav-link.active .cls-path-frame {
+  fill: #015bfa;              /* El trazo perimetral muta al azul de la escudería */
+}
+
+.nav-link:hover .cls-path-accent,
+.nav-link.active .cls-path-accent {
+  fill: #015bfa;              /* Se rellena el triángulo/detalle inferior izquierdo en azul */
+}
+
+.nav-link:hover .btn-text,
+.nav-link.active .btn-text {
+  color: #ffffff;             /* El texto brilla en blanco puro */
+  font-weight: 700;           /* Gana peso visual */
+}
+/* ==========================================
+   ESTADOS DE INTERACCIÓN (HOVER Y ACTIVO)
+========================================== */
+
+/* Efecto al pasar el mouse por encima */
+.nav-link:hover {
+  color: #ffffff;
+  /* Un leve destello oscuro para mantener la estética pura de carrera */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Si en el futuro querés marcar un botón seleccionado, usá esta clase */
+.nav-link.active {
+  color: #1e90ff; /* Cambia el texto a tu azul deportivo en vez de ponerse blanco */
+}
+
+/* --- ESTADOS DE LOS BOTONES --- */
+
+/* Efecto al pasar el mouse por encima (Hover) */
+.nav-link:hover {
+  background-color: #111111;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+/* Botón activo (Página actual) */
+.nav-link.active {
+  background-color: #e5e5e5;
+  color: #000000;
+}
+
+/* Invierte las esquinas del activo para que resalten */
+.nav-link.active::before,
+.nav-link.active::after {
+  background-color: #000000;
+}
+
+/* ==========================================
+   HERO SECTION (PORTADA PRINCIPAL)
+========================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background-color: #111;
+}
+
+/* Foto de fondo */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Capa oscura superpuesta */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.40) 60%,
+    rgba(0, 0, 0, 0.1) 100-percent
+  );
+  z-index: 2;
+}
+
+/* ==========================================
+   7. TEXTOS DEL HERO (FORZADO A DOS LÍNEAS)
+========================================== */
+.hero-content {
+  position: relative;
+  z-index: 3; /* Por encima del overlay */
+  padding: 0 0 50px 71.09px; /* Alineado exactamente a tu primera línea vertical blanca */
+  
+  /* SOLUCIÓN: Ampliamos el ancho máximo a 1200px para que las frases respiren y no se corten */
+  max-width: 1200px; 
+  width: 100%;
+}
+
+.hero-headline {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.line-white,
+.line-blue {
+  display: block;
+  font-family: 'Arial Black', Impact, sans-serif;
+  
+  /* Tipografía fluida: se achica en notebooks y se agranda en pantallas pro sin romperse */
+  font-size: clamp(1.8rem, 5vw, 3.8rem); 
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  
+  /* EVITA EL TERCER SALTO: Le prohíbe textualmente al navegador cortar la frase */
+  white-space: nowrap; 
+}
+
+.line-white {
+  color: #ffffff;
+}
+
+.line-blue {
+  color: #1e90ff; /* Tu azul deportivo Racing */
+}
+
+/* ==========================================
+   8. BOTÓN CTA (VER CURSOS) Y LÍNEA HORIZONTAL
+========================================== */
+
+/* Contenedor posicionado de manera absoluta respecto al Hero */
+.cta-container {
+  position: absolute;
+  /* En lugar de usar top, usamos bottom: 0 para que siempre se apoye en la base del Hero */
+  bottom: 60px; 
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  
+  /* LÍNEA HORIZONTAL: Pasa de punta a punta por el borde superior del botón */
+  border-top: 2px solid #e5e5e5; 
+  
+  /* Alineación del botón */
   display: flex;
   justify-content: flex-end;
-  width: 82.8%;
+  padding-right: 71.8398px; /* Modificado con tu medida exacta */
+}
+.cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Medidas exactas de tu diseño */
+  width: 265.716px;
+  height: 70.2903px;
+  
+  
+  /* Estilo visual y tipografía */
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  
+  border: 2px solid #e5e5e5;
+  /* Hacemos que el botón suba 2px para morder exactamente la línea horizontal del contenedor */
+  margin-top: -2px; 
+
+  /* ESQUINAS ASIMÉTRICAS: Superior-izq e inferior-der RECTAS. Las otras con curva de 17.051px */
+  border-radius: 0 17.051px 0 17.051px;
+  
+  transition: all 0.2s ease;
 }
 
-.nav__links {
+.cta-btn:hover {
+  background-color: #0059ff;
+  color: #ffffff;
+}
+/* ==========================================================================
+   SECCIÓN DE BENEFICIOS (GEOMETRÍA RÍGIDA Y BORDES SUPERPUESTOS)
+   ========================================================================== */
+
+.benefits-section {
+  position: absolute;               /* Posicionamiento matemático exacto solicitado */
+  top: 1225.6617px;                  /* Distancia exacta al píxel desde el borde superior */
+  left: 0;
+  width: 100%;
+  padding: 0;
+  z-index: 10;
+  background: transparent;          /* Deja ver las líneas verticales de tu body */
+}
+
+/* Encabezado opcional si querés estilizar el título */
+.benefits-header {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 0 80px;
+}
+
+.benefits-title {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+/* El contenedor que aloja las flechas de navegación laterales */
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 80px;                  /* Espacio de seguridad para que las flechas no tapen el contenido */
+}
+
+/* Ventana de recorte que esconde el desborde de las tarjetas que queden afuera */
+.carousel-track-container {
+  width: 100%;
+  overflow: hidden;                 /* Clave: prohíbe el scroll vertical o saltos de línea */
+}
+
+/* ESTA ES LA TIRA HORIZONTAL REAL DE TU HTML (carousel-track) */
+.carousel-track {
+  display: flex !important;          /* Fuerza el comportamiento Flexbox horizontal */
+  flex-direction: row !important;    /* Una al lado de la otra */
+  flex-wrap: nowrap !important;      /* IMPRESCINDIBLE: Prohíbe que las tarjetas caigan abajo */
+  align-items: flex-start;
+  width: max-content !important;     /* El contenedor se estira horizontalmente todo lo que haga falta */
+  padding: 20px 0;
+  margin: 0;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Suavizado para cuando actúe el JS */
+}
+
+/* ==========================================================================
+   ESTRUCTURA DE TARJETA INDIVIDUAL (ANCHO FIJO 366.5934px)
+   ========================================================================== */
+.benefit-card {
+  position: relative;
+  
+  /* MEDIDAS CRÍTICAS SOLICITADAS */
+  width: 366.5934px !important;       /* Ancho exacto fijado por el usuario */
+  flex: 0 0 366.5934px !important;    /* Bloquea por completo la compresión del navegador */
+  
+  background-color: #050506;          /* Fondo oscuro idéntico a tu SVG original (.cls-3) */
+  border: 2px solid #e5e5e5 !important; /* Trazo exacto de 2pt solicitado */
+  border-radius: 17.56px;             /* Radio geométrico extraído del SVG (rx="17.56") */
+  
+  /* COLAPSO Y SUPERPOSICIÓN PERFECTA DE BORDES LATERALES */
+  margin-right: -2px !important;      /* Margen negativo igual al espesor del borde para encastrarlas */
+  
+  padding: 55px 24px 30px 24px;
   display: flex;
+  flex-direction: column;
+  min-height: 290px;
+  box-sizing: border-box;             /* Evita que los paddings alteren el ancho matemático */
+  z-index: 1;                         /* Capa base */
 }
 
-.nav__link {
+/* La pestaña superior izquierda adaptada de tu vector */
+.benefit-card .card-tab {
+  position: absolute;
+  top: -2px;                         /* Sincroniza sobre el contorno superior */
+  left: -2px;                        /* Sincroniza sobre el contorno izquierdo */
+  width: 76.48px;                    /* Medida exacta del nodo de tu SVG */
+  height: 42px;
+  background-color: #050506;
+  border-top: 2px solid #e5e5e5;
+  border-left: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+  border-bottom: none;
+  border-top-left-radius: 17.56px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #fff;
-  background: #000;
-  padding: 16px 28px;
-  border-left: 1px solid rgba(255, 255, 255, 0.45);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
-  white-space: nowrap;
-  transition: background-color 0.2s ease, opacity 0.2s ease;
+  z-index: 3;
 }
 
-.nav__link:last-child {
-  border-right: none;
-}
-
-.nav__link:hover,
-.nav__link:focus-visible {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.nav__link:focus-visible {
-  outline: 2px solid #2b6cb0;
-  outline-offset: -2px;
-}
-
-/* =========================================================
-   HERO IMAGE
-   Occupies ~73% of viewport height. Placeholder gradient
-   stands in for the photographic asset — swap the
-   background-image in the modifier class below with your
-   licensed photo.
-   ========================================================= */
-.hero__image {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 73vh;
-  background:
-    radial-gradient(circle at 18% 55%, rgba(255, 90, 60, 0.18), transparent 45%),
-    radial-gradient(circle at 78% 50%, rgba(60, 180, 220, 0.16), transparent 55%),
-    linear-gradient(115deg, #0c0c0e 0%, #15151a 35%, #1c2a33 65%, #0e1418 100%);
-  background-size: cover;
-  background-position: center;
-}
-
-/* Drop your real photo in by uncommenting and pointing to your asset:
-.hero__image {
-  background-image: url('assets/hero-driver.jpg');
-}
-*/
-
-/* =========================================================
-   BOTTOM BANNER
-   Dark band hosting the headline (main column) and the
-   "Ver cursos" CTA (sidebar column), top-aligned to the band.
-   ========================================================= */
-.banner {
-  position: relative;
+/* Oculta el pedazo de borde de la tarjeta que cruza por debajo de la pestaña */
+.benefit-card::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: -2px;
+  width: 76.48px;
+  height: 2px;
+  background-color: #050506;
   z-index: 2;
-  width: 100%;
-  flex: 1;
-  background: #0a0a0a;
-  display: flex;
-  align-items: stretch;
 }
 
-.banner__text {
-  width: 82.8%;
-  padding: 56px 64px 64px 64px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.benefit-card .card-tab .icon {
+  font-size: 18px;
+  color: #e5e5e5;
 }
 
-.banner__title {
-  font-family: 'Saira Condensed', 'Archivo', sans-serif;
-  font-weight: 800;
+.benefit-card .card-content {
+  margin-top: 15px;
+}
+
+.benefit-card .card-content h3 {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.05;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
-.banner__title .line {
-  display: block;
-  font-size: clamp(2.25rem, 5vw, 4.25rem);
+.benefit-card .card-content p {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #b3b3b3;
 }
 
-.line--light {
-  color: #e9e9ea;
+/* INTERACCIÓN DINÁMICA DE ENFOQUE (HOVER) */
+.benefit-card:hover {
+  border-color: #015bfa !important;  /* Mutación al azul de la escudería APEX */
+  transform: translateY(-4px);
+  z-index: 5;                        /* Pasa al frente para pisar los bordes grises adyacentes */
+  transition: all 0.25s ease;
 }
 
-.line--accent {
-  color: #2b6cb0;
+.benefit-card:hover .card-tab {
+  border-top-color: #015bfa;
+  border-left-color: #015bfa;
+  border-right-color: #015bfa;
 }
 
-.banner__cta {
-  width: 13.5%;
-  margin-left: 3.7%;
+/* ==========================================================================
+   BOTONES DEL CARRUSEL (FLECHAS DE NAVEGACIÓN)
+   ========================================================================== */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  background-color: #050506;
+  border: 2px solid #e5e5e5;
+  border-radius: 50%;
+  color: #e5e5e5;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 20;
   display: flex;
-  align-items: flex-start;
-  justify-content: stretch;
-  padding-top: 28px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
 
-.cta {
-  width: 100%;
-  text-align: center;
-  background: #d9d9d9;
-  color: #111;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 16px 20px;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+.carousel-btn:hover {
+  background-color: #015bfa;
+  border-color: #015bfa;
+  color: #050506;
 }
 
-.cta:hover,
-.cta:focus-visible {
-  background: #2b6cb0;
-  color: #fff;
-  transform: translateY(-1px);
-}
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
 
-.cta:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 2px;
-}
-
-/* =========================================================
-   RESPONSIVE BREAKPOINTS
-   ========================================================= */
-
-/* Tablet */
-@media (max-width: 900px) {
-  .nav {
-    width: 100%;
+/* ==========================================================================
+   MEDIA QUERY DE SEGURIDAD (EVITA DESPLOMES EN CUALQUIER PANTALLA)
+   ========================================================================== */
+@media (max-width: 1400px) {
+  .carousel-track {
+    flex-wrap: nowrap !important;    /* Mantiene la hilera horizontal intacta */
   }
-
-  .nav__link {
-    padding: 14px 18px;
-    font-size: 0.85rem;
-  }
-
-  .grid-line--1,
-  .grid-line--2 {
-    display: none;
-  }
-
-  .hero__image {
-    height: 55vh;
-  }
-
-  .banner {
-    flex-direction: column;
-  }
-
-  .banner__text {
-    width: 100%;
-    padding: 40px 28px 24px 28px;
-  }
-
-  .banner__cta {
-    width: 100%;
-    margin-left: 0;
-    padding: 0 28px 40px 28px;
-  }
-
-  .cta {
-    width: 100%;
-  }
-}
-
-/* Mobile */
-@media (max-width: 540px) {
-  .nav__links {
-    width: 100%;
-  }
-
-  .nav__link {
-    flex: 1;
-    padding: 12px 8px;
-    font-size: 0.75rem;
-  }
-
-  .hero__image {
-    height: 45vh;
-  }
-
-  .banner__title .line {
-    font-size: clamp(1.6rem, 8vw, 2.4rem);
-  }
-
-  .banner__text {
-    padding: 32px 20px 20px 20px;
-  }
-
-  .banner__cta {
-    padding: 0 20px 32px 20px;
-  }
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .nav__link,
-  .cta {
-    transition: none;
+  .benefit-card {
+    width: 366.5934px !important;
+    flex: 0 0 366.5934px !important; /* Preserva las proporciones rígidas del diseño */
+    margin-right: -2px !important;   /* No rompe el acople de bordes */
   }
 }

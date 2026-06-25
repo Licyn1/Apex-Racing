@@ -1,50 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Replica - Unificado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://use.typekit.net/pyw3kic.css">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Saira+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Racing Esports Academy</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <header class="nav">
-    <nav class="nav__links" aria-label="Navegación principal">
-      <a href="#inicio" class="nav__link is-active">Inicio</a>
-      <a href="#cursos" class="nav__link">Cursos</a>
-      <a href="#contacto" class="nav__link">Contacto</a>
-    </nav>
-  </header>
+  <section class="hero">
 
-  <main>
-    <section class="hero">
+<nav class="navbar">
+  <ul class="nav-list">
+    <li>
+      <a href="#" class="nav-link active">
+        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+        </svg>
+        <span class="btn-text">Inicio</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link">
+        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+        </svg>
+        <span class="btn-text">Cursos</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link">
+        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+        </svg>
+        <span class="btn-text">Contacto</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
-      <div class="grid-line grid-line--1" aria-hidden="true"></div>
-      <div class="grid-line grid-line--2" aria-hidden="true"></div>
+    <div class="hero-bg">
+      <img src="assets/Jugador von movimiento hero.png" alt="Piloto en simulador de F1" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
 
-      <div class="hero__image-container">
-        <img src="ruta-a-tu-imagen.jpg" alt="Piloto de sim racing gritando frente a un cockpit con triple monitor curvo mostrando una carrera" class="hero__image">
-      </div>
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        <span class="line-white">NO JUGÁS A CORRER.</span>
+        <span class="line-blue">ENTRENÁS PARA COMPETIR.</span>
+      </h1>
+    </div>
 
-      <div class="banner">
-        <div class="banner__text">
-          <h1 class="banner__title">
-            <span class="line line--light">No jugás a correr.</span>
-            <span class="line line--accent">Entrenás para competir.</span>
-          </h1>
+   </div> <div class="cta-container">
+    <a href="#" class="cta-btn">Ver Cursos</a>
+  </div>
+
+  </section>
+  <section class="benefits-section">
+    
+    <div class="benefits-header">
+        <h2 class="benefits-title">¿POR QUÉ ENTRENAR EN SIMULADOR?</h2>
+    </div>
+
+    <div class="carousel-container">
+        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#8592;</button>
+        
+        <div class="carousel-track-container">
+            <div class="carousel-track" id="carouselTrack">
+                
+                <div class="benefit-card">
+                    <div class="card-tab"><span class="icon">⚡</span></div>
+                    <div class="card-content">
+                        <h3>REFLEJOS</h3>
+                        <p>Mejorá tu tiempo de reacción y capacidad de respuesta.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-tab"><span class="icon">📈</span></div>
+                    <div class="card-content">
+                        <h3>TOMA DE DECISIONES</h3>
+                        <p>Desarrollo de decisiones precisas bajo presión.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-tab"><span class="icon">🧠</span></div>
+                    <div class="card-content">
+                        <h3>MEMORIA MUSCULAR</h3>
+                        <p>Repetición consciente para automatizar trayectorias óptimas.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-tab"><span class="icon">⌘</span></div>
+                    <div class="card-content">
+                        <h3>CONTROL VEHICULAR</h3>
+                        <p>Dominio del auto al límite con precisión y estabilidad.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-tab"><span class="icon">🏁</span></div>
+                    <div class="card-content">
+                        <h3>TELEMETRÍA</h3>
+                        <p>Análisis de datos crudos para raspar cada décima de segundo.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="banner__cta">
-          <a href="#cursos" class="cta">Ver cursos</a>
-        </div>
-      </div>
+        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Siguiente">&#8594;</button>
+    </div>
+</section>
 
-    </section>
-  </main>
-
-  <script src="script.js"></script>
 </body>
+<link rel="stylesheet" href="css/styles.css" />
 </html>
