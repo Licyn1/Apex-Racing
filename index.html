@@ -8,116 +8,309 @@
 </head>
 <body>
 
+  <!-- ==========================================
+       LÍNEAS GUÍA ESTRUCTURALES GLOBAL
+  =========================================== -->
+  <div class="horizontal-grid-line"></div>
+  <div class="segunda-linea-horizontal"></div>
+
+  <!-- ==========================================
+       NAVBAR (Libre y absoluta al techo)
+  =========================================== -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      
+      <!-- LÍNEA DEL LOGO INTEGRADA AL FLEXBOX -->
+      <div class="linea-logo"></div>
+
+      <li>
+        <a href="#" class="nav-link active">
+          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+          </svg>
+          <span class="btn-text">Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+          </svg>
+          <span class="btn-text">Cursos</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link">
+          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
+            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
+            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
+          </svg>
+          <span class="btn-text">Contacto</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================
+       HERO SECTION
+  =========================================== -->
   <section class="hero">
-
-<nav class="navbar">
-  <ul class="nav-list">
-    <li>
-      <a href="#" class="nav-link active">
-        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-        </svg>
-        <span class="btn-text">Inicio</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link">
-        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-        </svg>
-        <span class="btn-text">Cursos</span>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link">
-        <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-          <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-          <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-        </svg>
-        <span class="btn-text">Contacto</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-
     <div class="hero-bg">
       <img src="assets/Jugador von movimiento hero.png" alt="Piloto en simulador de F1" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
-
+    
+    <div class="linea-horizontal-pantalla"></div>
+    
     <div class="hero-content">
       <h1 class="hero-headline">
         <span class="line-white">NO JUGÁS A CORRER.</span>
         <span class="line-blue">ENTRENÁS PARA COMPETIR.</span>
       </h1>
+      <p class="hero-subtext">
+        Somos una academia con simuladores profesionales y programas diseñados para llevar tu rendimiento al siguiente nivel.
+      </p>
     </div>
-
-   </div> <div class="cta-container">
-    <a href="#" class="cta-btn">Ver Cursos</a>
-  </div>
-
-  </section>
-  <section class="benefits-section">
     
-    <div class="benefits-header">
-        <h2 class="benefits-title">¿POR QUÉ ENTRENAR EN SIMULADOR?</h2>
+    <div class="cta-container">
+      <a href="#" class="cta-btn">Ver Cursos</a>
     </div>
+  </section>
 
-    <div class="carousel-container">
-        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Anterior">&#8592;</button>
+  <!-- ==========================================
+       PLANTILLA SVG (No se ve, sirve de molde)
+  =========================================== -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <g id="marco-card">
+        <path fill="#d7d7d7" d="M350.5,0h-52.63c.14.66.25,1.33.36,2h52.28c8.87,0,16.09,7.22,16.09,16.09v80.85c.14.38.29.74.42,1.14.83,2.58,1.12,5.35.93,8.15h.65V18.09C368.59,8.12,360.48,0,350.5,0Z"/>
+        <path fill="#d7d7d7" d="M1.62,100.34c.1-.46.24-.92.38-1.37V18.09C2,9.22,9.22,2,18.09,2h57.39v76.31c.67,0,1.33.01,2,.05V0H18.09C8.12,0,0,8.12,0,18.09v90.13h1.02c-.16-2.68.03-5.35.6-7.88Z"/>
+        <path fill="#d7d7d7" d="M350.04,346.05H18.56c-10.23,0-18.56-8.32-18.56-18.56V95.72c0-10.23,8.32-18.56,18.56-18.56h331.48c10.23,0,18.56,8.32,18.56,18.56v231.77c0,10.23-8.32,18.56-18.56,18.56ZM18.56,79.16c-9.13,0-16.56,7.43-16.56,16.56v231.77c0,9.13,7.43,16.56,16.56,16.56h331.48c9.13,0,16.56-7.43,16.56-16.56V95.72c0-9.13-7.43-16.56-16.56-16.56H18.56Z"/>
+        <path fill="#d7d7d7" d="M336.34,1H28.87c102.22.26,204.73.26,307.47.01,0,0,0,0,0-.01Z"/>
+        <path fill="#d7d7d7" d="M336.18,0H28.87v2h307.67c-.14-.66-.26-1.33-.37-2Z"/>
+      </g>
+      <g id="icono-original">
+        <path fill="#d7d7d7" d="M57.14,53.36c-.38.63-1.19.83-1.81.45l-15.61-9.37v17.04c0,.73-.59,1.32-1.32,1.32s-1.32-.59-1.32-1.32v-17.04l-15.61,9.37c-.21.12-.44.19-.68.19-.73,0-1.32-.59-1.33-1.32,0-.47.24-.9.64-1.14l15.73-9.43-15.72-9.43c-.63-.38-.83-1.19-.45-1.81.38-.63,1.19-.83,1.81-.45l15.61,9.37v-17.04c0-.73.59-1.32,1.32-1.32s1.32.59,1.32,1.32v17.04l15.61-9.37c.63-.38,1.44-.17,1.81.45.38.63.17,1.44-.45,1.81l-15.72,9.43,15.72,9.43c.63.38.83,1.19.45,1.81,0,0,0,0,0,0Z"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ==========================================
+       CARRUSEL
+  =========================================== -->
+  <div class="carrusel-wrapper">
+    <header class="carrusel-header">
+    <svg viewBox="0 0 943.27 57.72" class="header-svg">
+      <rect class="cls-1" width="943.27" height="57.72" fill="#e5e5e5"/>
+      <text class="cls-2" transform="translate(76.79 45.06) scale(0.99 1)" 
+            style="fill:#050506; font-family: sans-serif; font-size: 44.13px; font-weight: 700;">
+        ¿POR QUÉ ENTRENAR EN SIMULADOR?
+      </text>
+    </svg>
+  </header>
+    <!-- MÁSCARAS OSCURAS FIJAS INDEPENDIENTES -->
+    <div class="mascara-oscura mascara-izq"></div>
+    <div class="mascara-oscura mascara-der"></div>
+
+    <!-- Botón Anterior (Mira a la izquierda) -->
+    <button class="nav-btn prev-btn back-button" aria-label="Anterior">
+      <div class="back-arrow">
+        <div class="arrow-stem"></div>
+        <div class="arrow-arm arrow-arm--top"></div>
+        <div class="arrow-arm arrow-arm--bottom"></div>
+      </div>
+    </button>
+
+    <!-- LAS CUATRO LÍNEAS VERTICALES DEL CARRUSEL -->
+    <div class="linea-carrusel lc-1"></div>
+    <div class="linea-carrusel lc-2"></div>
+    <div class="linea-carrusel lc-3"></div>
+    <div class="linea-carrusel lc-4"></div>
+
+    <div class="carrusel-contenedor">
+      <div class="carrusel-track">
         
-        <div class="carousel-track-container">
-            <div class="carousel-track" id="carouselTrack">
-                
-                <div class="benefit-card">
-                    <div class="card-tab"><span class="icon">⚡</span></div>
-                    <div class="card-content">
-                        <h3>REFLEJOS</h3>
-                        <p>Mejorá tu tiempo de reacción y capacidad de respuesta.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="card-tab"><span class="icon">📈</span></div>
-                    <div class="card-content">
-                        <h3>TOMA DE DECISIONES</h3>
-                        <p>Desarrollo de decisiones precisas bajo presión.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="card-tab"><span class="icon">🧠</span></div>
-                    <div class="card-content">
-                        <h3>MEMORIA MUSCULAR</h3>
-                        <p>Repetición consciente para automatizar trayectorias óptimas.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="card-tab"><span class="icon">⌘</span></div>
-                    <div class="card-content">
-                        <h3>CONTROL VEHICULAR</h3>
-                        <p>Dominio del auto al límite con precisión y estabilidad.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-card">
-                    <div class="card-tab"><span class="icon">🏁</span></div>
-                    <div class="card-content">
-                        <h3>TELEMETRÍA</h3>
-                        <p>Análisis de datos crudos para raspar cada décima de segundo.</p>
-                    </div>
-                </div>
-
-            </div>
+        <!-- CARD 1 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">CONTROL<br>DE REFLEJOS</h2>
+            <p class="card-text">Mejorá tu tiempo de reacción y capacidad de respuesta.</p>
+          </div>
         </div>
 
-        <button class="carousel-btn next-btn" id="nextBtn" aria-label="Siguiente">&#8594;</button>
+        <!-- CARD 2 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 2<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la segunda tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 3<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la tercera tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 4<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la cuarta tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 5<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la quinta tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 6<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la sexta tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 7<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la séptima tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="card">
+          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
+          <div class="card-content">
+            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
+            <h2 class="card-title">TÍTULO 8<br>AQUÍ</h2>
+            <p class="card-text">Texto descriptivo de la octava tarjeta listo para ser editado.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
+    
+    <!-- Botón Siguiente -->
+    <button class="nav-btn next-btn back-button arrow-right" aria-label="Siguiente">
+      <div class="back-arrow">
+        <div class="arrow-stem"></div>
+        <div class="arrow-arm arrow-arm--top"></div>
+        <div class="arrow-arm arrow-arm--bottom"></div>
+      </div>
+    </button>
+  </div>
+
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // YA NO NECESITAMOS LA LÓGICA DE CLASE "ACTIVE" PARA EL COLOR
+      
+      // Lógica del Carrusel (se mantiene igual)
+      const contenedor = document.querySelector('.carrusel-contenedor');
+      const btnPrev = document.querySelector('.prev-btn');
+      const btnNext = document.querySelector('.next-btn');
+
+      if (contenedor && btnPrev && btnNext) {
+        btnNext.addEventListener('click', () => {
+          const cardWidth = document.querySelector('.card').offsetWidth;
+          contenedor.scrollLeft += cardWidth;
+        });
+
+        btnPrev.addEventListener('click', () => {
+          const cardWidth = document.querySelector('.card').offsetWidth;
+          contenedor.scrollLeft -= cardWidth;
+        });
+      }
+    });
+  </script>
+  <!-- Tarjeta Activa -->
+  <section class="tech-section">
+  <!-- Título fuera del carrusel -->
+  <h2 class="tech-title">NUESTRAS TECNOLOGÍAS NOS HACEN DISTINTOS</h2>
+  
+  <!-- Contenedor independiente para el carrusel -->
+  <div class="tech-carousel-container">
+    <div class="tech-carousel">
+      <!-- Tarjeta 1 (Activa) -->
+      <div class="tech-card active">
+        <svg viewBox="0 0 1114.51 837.52" class="card-svg" preserveAspectRatio="none">
+          <rect x="1" y="1" width="1112.51" height="835.52" rx="17.91" ry="17.91" fill="none" stroke="#e5e5e5" stroke-width="2"/>
+        </svg>
+      </div>
+      
+      <!-- Tarjetas 2 a 5 (Cerradas) -->
+      <div class="tech-card"><svg viewBox="0 0 149.93 835.52" class="card-svg" preserveAspectRatio="none"><rect width="149.93" height="835.52" rx="17.91" ry="17.91" fill="#e5e5e5"/></svg></div>
+      <div class="tech-card"><svg viewBox="0 0 149.93 835.52" class="card-svg" preserveAspectRatio="none"><rect width="149.93" height="835.52" rx="17.91" ry="17.91" fill="#e5e5e5"/></svg></div>
+      <div class="tech-card"><svg viewBox="0 0 149.93 835.52" class="card-svg" preserveAspectRatio="none"><rect width="149.93" height="835.52" rx="17.91" ry="17.91" fill="#e5e5e5"/></svg></div>
+      <div class="tech-card"><svg viewBox="0 0 149.93 835.52" class="card-svg" preserveAspectRatio="none"><rect width="149.93" height="835.52" rx="17.91" ry="17.91" fill="#e5e5e5"/></svg></div>
+    </div>
+  </div>
+  <!-- Nuevo subtítulo -->
+ <div class="tech-subtitle-container">
+  <p class="tech-subtitle">Inspirado en la máxima categoría</p>
+</div>
 </section>
+  <script>
+    const cards = document.querySelectorAll('.tech-card');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelector('.tech-card.active').classList.remove('active');
+        card.classList.add('active');
+      });
+    });
+  </script>
+  <div class="linea-guia-tecnologias"></div>
+  <section class="sticky-transition-section">
+  <div class="sticky-container">
+    <img src="assets/formula-1.png" class="img-transition img-a active" alt="Imagen A">
+    <img src="assets/simulador.png" class="img-transition img-b" alt="Imagen B">
+  </div>
+</section>
+<script>
+ window.addEventListener('scroll', () => {
+    const section = document.querySelector('.sticky-transition-section');
+    const imgA = document.querySelector('.img-a');
+    const imgB = document.querySelector('.img-b');
+    
+    const rect = section.getBoundingClientRect();
+    
+    // Calculamos qué tan avanzado está el scroll dentro de la sección (0 a 1)
+    // 0 es el inicio, 1 es el final
+    const scrollProgress = -rect.top / (rect.height - window.innerHeight);
 
+    // Si el progreso es mayor a 0.5 (la mitad), cambiamos la imagen
+    if (scrollProgress > 0.5) {
+        imgA.classList.remove('active');
+        imgB.classList.add('active');
+    } else {
+        imgA.classList.add('active');
+        imgB.classList.remove('active');
+    }
+});
+</script>
 </body>
-
 </html>
