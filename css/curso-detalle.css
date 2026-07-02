@@ -1,0 +1,253 @@
+/* ==========================================================================
+   COURSE DETAIL PAGE — hereda paleta, tipografías y constantes globales
+   de styles.css (fondo #050506, acento #015bfa, Hyper Space + Fira Sans,
+   margen estructural de 70px, radio diagonal 0 12px 0 12px).
+   Prefijo "cd-" para no colisionar con clases existentes.
+   ========================================================================== */
+
+/* Esta vista no usa las líneas verticales estructurales del home
+   (body::before / body::after definidas en styles.css). Se desactivan
+   solo acá, sin tocar el archivo global, para no afectar al resto del sitio. */
+body.curso-detalle::before,
+body.curso-detalle::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* --- HERO DE CURSO --- */
+.cd-hero {
+  width: 100%;
+  background-color: #050506;
+  padding: 160px 70px 80px 70px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.cd-hero-eyebrow {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #015bfa;
+  margin-bottom: 18px;
+}
+
+.cd-hero-title {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 1;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.cd-hero-grid {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+/* Imagen principal del curso: mantiene la proporción 60% vista en las
+   tarjetas tech (media-container al 60% del bloque). */
+.cd-hero-media {
+  flex: 1 1 55%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 0 24px 0 24px;
+  border: 2px solid #e5e5e5;
+  position: relative;
+}
+
+.cd-hero-media-crop {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+
+.cd-hero-media-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cd-hero-media-footer {
+  height: 40%;
+  width: 100%;
+  padding: 24px 30px;
+  box-sizing: border-box;
+  background-color: #0B0B0F;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cd-hero-price {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.cd-hero-price span {
+  color: #015bfa;
+}
+
+/* Bloque introductorio */
+.cd-hero-intro {
+  flex: 1 1 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cd-hero-text {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 19px;
+  line-height: 1.4;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.cd-hero-line {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0.3;
+}
+
+.cd-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cd-hero-stat {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 15px;
+  color: #e5e5e5;
+}
+
+.cd-hero-stat strong {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.cd-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 52px;
+  padding: 0 32px;
+  background-color: #015bfa;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0 12px 0 12px;
+  transition: all 0.2s ease;
+}
+
+.cd-hero-cta:hover {
+  background-color: #ffffff;
+  color: #015bfa;
+}
+
+/* --- SECCIÓN MÓDULOS / TEMARIO --- */
+.cd-modulos-header {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  border-top: 2.66px solid #000000;
+  border-bottom: 2.66px solid #000000;
+  padding: 30px 70px;
+  box-sizing: border-box;
+}
+
+.cd-modulos-kicker {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #015bfa;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cd-modulos-title {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  color: #000000;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.cd-modulos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 70px;
+  padding: 20px 0 80px 0;
+}
+
+.cd-modulo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid #3a3a3f;
+}
+
+.cd-modulo-num {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-size: 28px;
+  color: #015bfa;
+  min-width: 70px;
+}
+
+.cd-modulo-body h3 {
+  font-family: "hyperspace-race-variable", sans-serif;
+  font-size: 24px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cd-modulo-body p {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 17px;
+  color: #ffffff;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Sección envolvente oscura para que los módulos convivan con el resto del sitio */
+.cd-modulos-section {
+  background-color: #050506;
+  width: 100%;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .cd-hero { padding: 120px 24px 60px 24px; }
+  .cd-hero-title { font-size: 38px; }
+  .cd-hero-grid { flex-direction: column; }
+  .cd-hero-media { height: 340px; }
+  .cd-modulos-header,
+  .cd-modulos-grid { padding-left: 24px; padding-right: 24px; margin-left: 0; margin-right: 0; }
+  .cd-modulo-item { gap: 20px; }
+}
