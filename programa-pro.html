@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa Pro — Apex Academy</title>
+  <meta name="description" content="Programa Pro de Apex Academy: dominá el desgaste de neumáticos, la estrategia de boxes y el sobrepaso defensivo con telemetría real. 8 sesiones mensuales, grupos reducidos.">
+
+  <meta property="og:title" content="Apex Academy — Programa Pro">
+  <meta property="og:description" content="Dominio absoluto del vehículo en situaciones de alta presión.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image-pro.jpg">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/programadetail.css">
+</head>
+<body>
+
+  <a href="#main" class="visually-hidden">Saltar al contenido principal</a>
+
+  <!-- ============================================================
+       NAVBAR (idéntica a Inicio; los links a secciones que no
+       existen en esta página apuntan de vuelta a index.html)
+  ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Apex Academy — Inicio">
+        <img src="assets/icons/marca_apex.svg" alt="Apex Academy" class="navbar__logo-img">
+      </a>
+
+      <nav class="navbar__links" aria-label="Navegación principal">
+        <a href="index.html#inicio" data-nav-link>Inicio</a>
+        <a href="index.html#beneficios" data-nav-link>Beneficios</a>
+        <a href="index.html#tecnologia" data-nav-link>Tecnologías</a>
+        <a href="index.html#programas" data-nav-link>Cursos</a>
+        <a href="index.html#pilotos" data-nav-link>Pilotos</a>
+        <a href="#contacto" data-nav-link>Contacto</a>
+      </nav>
+
+      <a href="index.html#programas" class="btn btn-primary navbar__cta">Ver cursos</a>
+
+      <button class="navbar__burger" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" data-state="closed">
+    <nav class="mobile-menu__links" aria-label="Navegación móvil">
+      <a href="index.html#inicio" data-nav-link>Inicio</a>
+      <a href="index.html#beneficios" data-nav-link>Beneficios</a>
+      <a href="index.html#tecnologia" data-nav-link>Tecnologías</a>
+      <a href="index.html#programas" data-nav-link>Cursos</a>
+      <a href="index.html#pilotos" data-nav-link>Pilotos</a>
+      <a href="#contacto" data-nav-link>Contacto</a>
+    </nav>
+    <a href="index.html#programas" class="btn btn-primary mobile-menu__cta">Ver cursos</a>
+  </div>
+
+  <main id="main">
+
+    <section class="hero hero--program">
+
+    <div class="hero__media">
+        <img src="assets/curso_2.png" alt="Programa Pro">
+    </div>
+
+    <div class="hero__overlay"></div>
+
+    <span class="corner-code">
+        APX://PROGRAMA-PRO
+    </span>
+
+    <div class="hero__content--program">
+
+        <span class="eyebrow reveal" style="--i:0">
+            Programa Nivel 2
+        </span>
+
+        <h1 class="hero__title reveal" style="--i:1">
+    Programa Pro</h1>
+
+        <p class="hero__lede reveal" style="--i:2">
+            Domina el vehículo en condiciones reales de carrera mediante
+            simuladores profesionales, análisis de telemetría y entrenamiento
+            personalizado.
+        </p>
+
+        <div class="hero__actions reveal" style="--i:3">
+
+            <a class="btn btn-primary" href="#contacto">
+                Reservar lugar
+            </a>
+
+            <a class="btn btn-secondary" href="#contenido">
+                Ver programa
+            </a>
+
+        </div>
+
+        <div class="hero__stats reveal" style="--i:4">
+
+            <div class="hero__stat">
+                <strong>8</strong>
+                <span>Sesiones</span>
+            </div>
+
+            <div class="hero__stat">
+                <strong>2</strong>
+                <span>Semanales</span>
+            </div>
+
+            <div class="hero__stat">
+                <strong>6</strong>
+                <span>Módulos</span>
+            </div>
+
+            <div class="hero__stat">
+                <strong>$99k</strong>
+                <span>ARS / mes</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero__scroll-hint">
+        <span></span>
+    </div>
+
+</section>
+    <!-- ============================================================
+         GALERÍA DE FOTOS DEL CURSO
+    ============================================================ -->
+    <section class="section theme-light" id="galeria">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow section-head__eyebrow">Galería</span>
+          <span class="gallery-count text-small">
+            
+          </span>
+          <h2 class="section-head__title">Así se entrena en Pro</h2>
+          <p class="section-head__lede">
+            Simuladores profesionales, puestos de telemetría y sesiones grabadas
+            en Session Replay 360°. Un vistazo real a cada clase.
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery-bleed">
+        <div class="carousel gallery-carousel" data-carousel>
+          <div class="carousel__track" data-carousel-track>
+
+            <article class="card-neu gallery-card reveal" style="--i:0">
+              <img src="assets/img/galeria1.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Puesto de simulación multi-monitor</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:1">
+              <img src="assets/img/galeria2.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Telemetría en vivo durante la sesión</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:2">
+              <img src="assets/img/galeria 3.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Briefing técnico antes de salir a pista</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:3">
+              <img src="assets/curso_2.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Feedback personalizado con el instructor</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:0">
+              <img src="assets/img/tech3.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Sesión de clima adverso simulado</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:1">
+              <img src="assets/curso_2.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Repaso de vuelta en Session Replay 360°</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:2">
+              <img src="assets/img/galeria1.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Grupo reducido de pilotos Nivel 2</p>
+            </article>
+
+            <article class="card-neu gallery-card reveal" style="--i:3">
+              <img src="assets/img/galeria2.png" alt="Programa Pro">
+              <div class="gallery-card__scrim"></div>
+              <p class="gallery-card__caption">Cierre de ciclo y entrega de certificado</p>
+            </article>
+
+          </div>
+          <div class="carousel__controls">
+            <button class="carousel__btn" data-carousel-prev aria-label="Anterior">‹</button>
+            <button class="carousel__btn" data-carousel-next aria-label="Siguiente">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LO QUE SE VA A VER EN EL PROGRAMA
+    ============================================================ -->
+    <section class="section" id="contenido">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow section-head__eyebrow">Programa</span>
+          <h2 class="section-head__title">Lo que vas a entrenar</h2>
+          <p class="section-head__lede">
+            Seis módulos progresivos, pensados para llevarte del control fino
+            del auto a la toma de decisiones bajo presión real de carrera.
+          </p>
+        </div>
+
+        <div class="modules-grid">
+
+          <article class="card-neu module-card reveal" style="--i:0" data-number="01">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/>
+              <path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2 2M15.7 15.7l2 2M17.7 6.3l-2 2M8.3 15.7l-2 2"/>
+            </svg>
+            </div>
+            <span class="module-card__index">01</span>
+            <h4>Gestión de neumáticos</h4>
+            <p>Identificá el punto exacto en el que un neumático empieza a
+              ceder y ajustá tu ritmo para estirar su ventana de rendimiento.</p>
+          </article>
+
+          <article class="card-neu module-card reveal" style="--i:1" data-number="02">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <path d="M4 20V10l8-6 8 6v10"/><path d="M4 20h16"/><path d="M9 20v-6h6v6"/>
+            </svg>
+            </div>
+            <span class="module-card__index">02</span>
+            <h4>Estrategia de boxes</h4>
+            <p>Planificá ventanas de parada, undercut y overcut según el
+              desgaste real y tu posición en pista, no según instinto.</p>
+          </article>
+
+          <article class="card-neu module-card reveal" style="--i:2" data-number="03">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <path d="M3 8h9l-3-3M12 8l-3 3"/><path d="M21 16h-9l3-3M12 16l3 3"/>
+            </svg>
+            </div>
+            <span class="module-card__index">03</span>
+            <h4>Sobrepaso defensivo</h4>
+            <p>Dominá el posicionamiento del auto para cerrar líneas sin
+              arriesgar el incidente, incluso con un rival más rápido detrás.</p>
+          </article>
+
+          <article class="card-neu module-card reveal" style="--i:3" data-number="04">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <path d="M7 16a4 4 0 0 1 .5-8 5.5 5.5 0 0 1 10.6 1.6A3.5 3.5 0 0 1 17 16H7Z"/>
+              <path d="M9 19v1M13 19v2M17 19v1"/>
+            </svg>
+            </div>
+            <span class="module-card__index">04</span>
+            <h4>Simulación en clima adverso</h4>
+            <p>Adaptá trazada, puntos de frenada y gestión de tracción cuando
+              la pista cambia de condición de un giro a otro.</p>
+          </article>
+
+          <article class="card-neu module-card reveal" style="--i:0" data-number="05">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/>
+              <path d="M12 6v4M7.5 14.5l3-2.5M16.5 14.5l-3-2.5"/>
+            </svg>
+            </div>
+            <span class="module-card__index">05</span>
+            <h4>Control de sobreviraje</h4>
+            <p>Reaccioná con precisión cuando el tren trasero se suelta, en
+              curvas rápidas y con carga aerodinámica al límite.</p>
+          </article>
+
+          <article class="card-neu module-card reveal" style="--i:1" data-number="06">
+            <div class="module-card__icon-wrap">
+              <svg class="icon module-card__icon" viewBox="0 0 24 24">
+              <path d="M3 18l5-7 4 5 9-11"/><circle cx="8" cy="11" r="1.2"/><circle cx="12" cy="16" r="1.2"/>
+            </svg>
+            </div>
+            <span class="module-card__index">06</span>
+            <h4>Lectura de telemetría comparada</h4>
+            <p>Cruzá tu vuelta con la de tus compañeros de grupo para
+              encontrar, sector por sector, dónde estás perdiendo tiempo real.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         INFORMACIÓN
+    ============================================================ -->
+    <section class="section theme-light" id="informacion">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow section-head__eyebrow">Información</span>
+          <h2 class="section-head__title">Todo lo que necesitás saber</h2>
+          <p class="section-head__lede">
+            Formato, requisitos y lo que incluye cada mes de entrenamiento en
+            el programa Pro.
+          </p>
+        </div>
+
+        <div class="info-layout">
+          <div class="info-copy">
+
+            <div class="info-block reveal" style="--i:0">
+              <div class="info-block__title">
+                <span class="tag">Incluye</span>
+                <h3>Qué incluye tu mensualidad</h3>
+              </div>
+              <ul class="check-list">
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>8 sesiones mensuales (2 por semana) en simulador profesional</span></li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>Telemetría completa y comparativa de cada vuelta</span></li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>Feedback individual del instructor después de cada sesión</span></li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>Acceso a Session Replay 360° para repasar tus entrenamientos</span></li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>Certificado Apex Nivel 2 al finalizar el ciclo</span></li>
+              </ul>
+            </div>
+
+            <div class="info-block reveal" style="--i:1">
+              <div class="info-block__title">
+                <span class="tag">Requisitos</span>
+                <h3>Requisitos para anotarte</h3>
+              </div>
+              <p>
+                No necesitás equipo propio: los simuladores, el software y el
+                hardware de telemetría son provistos por la academia. Sí pedimos
+                haber completado el programa Base o rendir una evaluación de
+                nivel previa, para asegurarnos de que el ritmo del grupo sea
+                parejo para todos.
+              </p>
+              <a href="index.html#programas" class="info-block__link">
+                ¿Todavía no hiciste el Programa Base? Conocé el resto de nuestros cursos
+                <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+
+            <div class="info-block reveal" style="--i:2">
+              <div class="info-block__title">
+                <span class="tag">Beneficios</span>
+                <h3>Por qué elegir Pro</h3>
+              </div>
+              <div class="benefits-row">
+                <article class="card-neu benefit-tile">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+                  <strong>Grupos reducidos</strong>
+                  <span>Máx. 6 pilotos por turno, con seguimiento cercano del instructor.</span>
+                </article>
+                <article class="card-neu benefit-tile">
+                  <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v6m0 0-9 4 9 4 9-4-9-4Z"/><path d="M3 13v3l9 4 9-4v-3"/></svg>
+                  <strong>Telemetría comparada</strong>
+                  <span>Cruzá tu vuelta con la de tus compañeros de grupo sector a sector.</span>
+                </article>
+                <article class="card-neu benefit-tile">
+                  <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+                  <strong>Certificación Nivel 2</strong>
+                  <span>Certificado Apex al finalizar el ciclo de 8 sesiones mensuales.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="info-block reveal" style="--i:3">
+              <div class="info-block__title">
+                <span class="tag">FAQ</span>
+                <h3>Preguntas frecuentes</h3>
+              </div>
+              <div class="faq-list">
+                <details class="faq-item card-neu">
+                  <summary class="faq-item__question">
+                    <span>¿Qué pasa si falto a una sesión?</span>
+                    <span class="faq-item__chevron-wrap"><svg class="icon faq-item__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+                  </summary>
+                  <p class="faq-item__answer">Podés recuperarla dentro del mismo mes, sujeto a disponibilidad de turnos.</p>
+                </details>
+
+                <details class="faq-item card-neu">
+                  <summary class="faq-item__question">
+                    <span>¿Se puede pagar en cuotas?</span>
+                    <span class="faq-item__chevron-wrap"><svg class="icon faq-item__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+                  </summary>
+                  <p class="faq-item__answer">Sí, el programa Pro está disponible en hasta 3 cuotas sin interés.</p>
+                </details>
+
+                <details class="faq-item card-neu">
+                  <summary class="faq-item__question">
+                    <span>¿Cuántos pilotos hay por grupo?</span>
+                    <span class="faq-item__chevron-wrap"><svg class="icon faq-item__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+                  </summary>
+                  <p class="faq-item__answer">Grupos reducidos, de hasta 6 pilotos por turno, para que el instructor pueda seguir de cerca a cada uno.</p>
+                </details>
+
+                <details class="faq-item card-neu">
+                  <summary class="faq-item__question">
+                    <span>¿Necesito rendir evaluación si ya hice Base en Apex?</span>
+                    <span class="faq-item__chevron-wrap"><svg class="icon faq-item__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+                  </summary>
+                  <p class="faq-item__answer">No. Con el programa Base aprobado en Apex pasás directo a Pro.</p>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="info-card-wrap reveal" style="--i:1">
+            <article class="card-tilt card-tilt--featured">
+              <div class="card-tilt__inner" data-tilt>
+                <span class="card-tilt__badge">Nivel 2</span>
+                <img src="assets/curso_2.png" alt="Programa Pro" class="card-tilt__image">
+                <h3>Pro</h3>
+                <p>Todo lo que necesitás para anotarte este mes.</p>
+                <ul>
+                  <li>8 sesiones mensuales (2 por semana)</li>
+                  <li>Grupos reducidos, máx. 6 pilotos</li>
+                  <li>Duración total: 2 meses</li>
+                  <li>Certificado Apex al finalizar</li>
+                </ul>
+                <div class="card-tilt__footer">
+                  <span class="card-tilt__price">$99.000 <small>ARS / mes</small></span>
+                  <a href="#contacto" class="card-tilt__cta" aria-label="Reservar lugar en Pro">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA FINAL
+    ============================================================ -->
+    <section class="cta-final" id="reservar">
+      <div class="cta-final__media img-placeholder"><span>[CTA_PRO_BACKGROUND]</span></div>
+      <div class="cta-final__overlay"></div>
+      <div class="cta-final__speedlines" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="container cta-final__content">
+        <h2 class="reveal" style="--i:0">¿Listo para el nivel Pro?</h2>
+        <p class="cta-final__lede reveal" style="--i:1">
+          Cupos limitados por grupo. Reservá tu lugar para el próximo ciclo
+          de 8 sesiones.
+        </p>
+        <div class="cta-final__cta-wrap reveal" style="--i:2">
+          <a href="#contacto" class="btn btn-primary cta-final__btn">Reservar mi lugar</a>
+        </div>
+        <div class="cta-final__stats reveal" style="--i:3">
+          <span class="cta-final__stat"><strong>8</strong>sesiones por mes</span>
+          <span class="cta-final__stat"><strong>2</strong>meses de duración</span>
+          <span class="cta-final__stat"><strong>3</strong>cuotas sin interés</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACTO Y LEGAL (idéntico al de Inicio)
+    ============================================================ -->
+    <footer class="footer" id="contacto">
+      <div class="container footer__grid">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <img src="assets/icons/marca_apex.svg" alt="Apex Academy" class="navbar__logo-img">
+          </div>
+          <p class="text-small">Academia de simulación de alto rendimiento. Entrenamiento
+            medido, analizado y documentado en cada sesión.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Navegación del pie de página">
+          <h4 class="footer__col-title">Navegación</h4>
+          <a href="index.html#inicio">Inicio</a>
+          <a href="index.html#tecnologia">Tecnologías</a>
+          <a href="index.html#programas">Programas</a>
+          <a href="index.html#pilotos">Pilotos</a>
+        </nav>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contacto</h4>
+          <a href="mailto:contacto@apexacademy.placeholder">contacto@apexacademy.placeholder</a>
+          <a href="tel:+5400000000">+54 00 0000 0000</a>
+          <span class="text-small">[UBICACIÓN_PLACEHOLDER]</span>
+        </div>
+
+        <div class="footer__col">
+          <h4 class="footer__col-title">Legal</h4>
+          <a href="#">Términos y condiciones</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Política de cookies</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom container">
+        <span class="text-small">© Apex Academy. Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/scroll.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/tilt.js" defer></script>
+  <script src="js/rest.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

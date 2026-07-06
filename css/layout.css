@@ -1,0 +1,74 @@
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--grid-padding-desktop);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gap);
+}
+
+main {
+  overflow-x: clip;
+}
+
+.section {
+  position: relative;
+  padding-block: var(--space-16);
+}
+
+.section--tight {
+  padding-block: var(--space-10);
+}
+
+.section-head {
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.section-head__eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.section-head__title {
+  margin-bottom: var(--gap-title-lede);
+}
+
+.section-head__lede {
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* fondo técnico compartido: cuadrícula tenue + ruido + líneas */
+.bg-technical {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.5;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.corner-code {
+  position: absolute;
+  bottom: var(--space-3);
+  right: var(--grid-padding-desktop);
+  z-index: 1;
+}

@@ -1,0 +1,167 @@
+/* ==========================================================================
+   COMPONENTES
+   ========================================================================== */
+
+/* ---- Botones ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  height: var(--btn-height);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-button);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform var(--duration-standard) var(--ease-premium),
+              filter var(--duration-standard) var(--ease-premium),
+              background var(--duration-standard) var(--ease-premium);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-contrast);
+}
+.btn-primary:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-contrast);
+  border: 1px solid rgba(239, 239, 239, 0.25);
+}
+.btn-secondary:hover {
+  background: rgba(239, 239, 239, 0.06);
+  border-color: var(--color-accent);
+}
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ---- Inputs ---- */
+.input {
+  height: var(--btn-height);
+  border-radius: var(--radius-input);
+  padding-inline: 20px;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-neu);
+  border: none;
+  color: var(--color-contrast);
+  width: 100%;
+  transition: box-shadow var(--duration-standard) var(--ease-premium);
+}
+.input:focus {
+  box-shadow: var(--shadow-neu-hover), 0 0 0 2px var(--color-accent);
+  outline: none;
+}
+.input::placeholder {
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
+   CARD NEUMÓRFICA — componente base
+   Traducción directa de la card de referencia del cliente:
+
+   .card {
+     width: 190px; height: 254px;
+     background: #e8e8e8;
+     border: 3px inset white;
+     box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+     transition: all .5s ease-in-out;
+     border-radius: 1.5rem;
+     display: flex; justify-content: center; align-items: center;
+     font-weight: bolder; color: #8a8989;
+   }
+   .card:hover { transform: translateY(-5px); }
+
+   Se preserva: proporción vertical, radio de 24px (1.5rem), relieve neumórfico
+   tallado hacia adentro, tipografía en negrita, y el lift de -5px al hover.
+   Se traduce a la paleta oscura del cliente: el "gris claro + blanco" del
+   neumorfismo original se reemplaza por --neu-shadow-dark / --neu-shadow-light,
+   ambos derivados del mismo #132436, para que el relieve se perciba sobre
+   fondo oscuro en lugar de sobre fondo claro.
+   ========================================================================== */
+
+.card-neu {
+  background: var(--color-primary);
+  border: 1px solid var(--neu-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-neu);
+  transition: transform var(--duration-card) var(--ease-premium),
+              box-shadow var(--duration-card) var(--ease-premium);
+}
+.card-neu:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-neu-hover);
+}
+
+/* ---- Etiquetas / tags ---- */
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid rgba(239, 239, 239, 0.18);
+  color: var(--color-muted);
+}
+.tag--accent {
+  color: var(--color-accent);
+  border-color: rgba(var(--color-accent-rgb), 0.4);
+  background: rgba(var(--color-accent-rgb), 0.1);
+}
+
+/* ---- Íconos outline ---- */
+.icon {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- Indicador / cifra destacada ---- */
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* ---- Reveal-on-scroll genérico ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--duration-large) var(--ease-premium),
+              transform var(--duration-large) var(--ease-premium);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[style*="--i"] {
+  transition-delay: calc(var(--i, 0) * 110ms);
+}

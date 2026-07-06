@@ -1,0 +1,107 @@
+/* ==========================================================================
+   APEX ACADEMY — DESIGN TOKENS (v2)
+   Paleta y sistema neumórfico derivados de la card madre provista por el cliente.
+   ========================================================================== */
+
+:root {
+  /* ---- Color (paleta definida por el cliente) ---- */
+  --color-primary: #0f1d2d;        /* fondo general y base de cards */
+  --color-secondary: #2c5578;      /* superficies elevadas, bordes activos, highlight neumórfico */
+  --color-contrast: #efefef;       /* texto principal, alto contraste */
+  --color-muted: #b3b3b3;          /* texto secundario */
+  --color-accent: #d94d37;         /* detalles: CTAs, íconos activos, indicadores */
+  --color-accent-rgb: 204, 54, 30;
+
+  /* tonos derivados para el neumorfismo (la card madre pide luz/sombra sobre el mismo fondo) */
+  --neu-shadow-dark: #0a1520;       /* sombra: versión más oscura de #132436 */
+  --neu-shadow-light: #1e3b57;      /* luz: versión más clara, entre primary y secondary */
+  --neu-border: rgba(239, 239, 239, 0.06);
+
+  --gradient-main: linear-gradient(180deg, #132436 0%, #0a1520 100%);
+
+  /* ---- Tipografía ----
+     La card de referencia trae Trebuchet MS como resabio de un snippet genérico de Uiverse,
+     no una decisión tipográfica. Se reemplaza por un par con más carácter para un producto
+     de simulación/telemetría: Rajdhani (display, técnica, angulosa) + Inter (texto, legible). */
+  --font-display: 'Rajdhani', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-h1: 50px;
+  --fs-h2: 37px;
+  --fs-h3: 27px;
+  --fs-h4: 20px;
+  --fs-body: 17px;
+  --fs-small: 14px;
+  --fs-eyebrow: 13px;
+
+  --lh-h1: 1.15;
+  --lh-h2: 1.2;
+  --lh-h3: 1.3;
+  --lh-body: 1.6;
+  --tracking-wide: 0.16em;
+
+  /* Distancia entre título y bajada de cada sección: variable propia
+     (independiente de --space-3) para poder ajustarla sin afectar otros
+     espaciados que también usan esa escala. */
+  --gap-title-lede: 20px;
+
+  /* ---- Espaciado (base 8px) ---- */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+
+  /* ---- Grid ---- */
+  --container-max: 1320px;
+  --grid-gap: 24px;
+  --grid-padding-desktop: 112px;
+  --grid-padding-tablet: 64px;
+  --grid-padding-mobile: 28px;
+
+  /* ---- Radios (1.5rem de la card madre = 24px, se mantiene como radio base) ---- */
+  --radius-button: 16px;
+  --radius-input: 16px;
+  --radius-card: 24px;
+  --radius-pill: 999px;
+
+  /* ---- Sombras ----
+     Traducción directa de la card madre:
+     box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+     Se escala a una versión más sutil (la original es para una card chica de 190px;
+     en componentes más grandes ese blur se ve exagerado). */
+  --shadow-neu:
+    inset 6px 6px 14px var(--neu-shadow-dark),
+    inset -6px -6px 14px var(--neu-shadow-light);
+  --shadow-neu-hover:
+    inset 8px 8px 18px var(--neu-shadow-dark),
+    inset -8px -8px 18px var(--neu-shadow-light);
+  --shadow-ambient: 0 20px 40px rgba(0, 0, 0, 0.35);
+  --shadow-navbar: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  /* ---- Transiciones ----
+     La card madre usa transition: all .5s ease-in-out; se mantiene esa cadencia como estándar. */
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-card: 500ms;
+  --duration-standard: 250ms;
+  --duration-large: 600ms;
+
+  /* ---- Superficie clara (ritmo de fondo entre secciones) ----
+     El neumorfismo original del cliente era justamente claro-sobre-claro
+     (#e8e8e8 con sombra #c5c5c5/blanco). Se usa esa misma receta, sin
+     adaptar, para las secciones que alternan a fondo claro. */
+  --color-surface-light: #f2f2f2;
+  --neu-shadow-dark-light: #d1d1d1;
+  --neu-shadow-light-light: #ffffff;
+  --neu-border-light: rgba(19, 36, 54, 0.1);
+
+  /* ---- Componentes ---- */
+  --navbar-height: 72px;
+  --navbar-top: 24px;
+  --btn-height: 56px;
+}

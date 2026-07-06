@@ -1,0 +1,77 @@
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* ---- Tablet (<=1024px) ---- */
+@media (max-width: 1024px) {
+  .container { padding-inline: var(--grid-padding-tablet); }
+  .hero__content { padding-inline: var(--grid-padding-tablet); }
+
+  h1 { font-size: 48px; }
+  h2 { font-size: 36px; }
+  h3 { font-size: 26px; }
+
+  .navbar__inner { margin-inline: var(--space-2); padding-inline: var(--space-3); }
+  .navbar__links { gap: var(--space-3); }
+  .navbar__links a { font-size: 14px; }
+
+  .tech-panels { height: 420px; }
+
+  .carousel__track > *{
+
+    flex:0 0 calc((100% - var(--grid-gap))/2);
+
+}
+  .testimonial-card { flex: 0 0 46vw; }
+
+  .programs__grid { grid-template-columns: 1fr; max-width: 420px; }
+  .results__grid { grid-template-columns: 1fr 1fr; }
+
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---- Mobile (<=640px) ---- */
+@media (max-width: 640px) {
+  .container { padding-inline: var(--grid-padding-mobile); }
+  .hero__content { padding-inline: var(--grid-padding-mobile); }
+
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 22px; }
+  .section { padding-block: var(--space-10); }
+
+  .navbar__links, .navbar__cta { display: none; }
+  .navbar__burger { display: flex; }
+  .navbar__inner { border-radius: var(--radius-card); }
+
+  .hero { min-height: 100svh; }
+
+  .carousel__track > *{
+
+
+    flex:0 0 100%;
+
+
+  }
+  .testimonial-card { flex: 0 0 82vw; }
+
+  /* Tecnologías -> acordeón vertical */
+  .tech-panels { flex-direction: column; height: auto; }
+  .tech-panel { flex: none !important; height: 76px; flex-direction: column; }
+  .tech-panel.is-open { height: 380px; }
+  .tech-panel__name { writing-mode: horizontal-tb; transform: none; align-self: center; margin: auto; }
+
+  .programs__grid { grid-template-columns: 1fr; }
+  .results__grid { grid-template-columns: 1fr; }
+
+  .reveal-compare { cursor: auto; }
+  .reveal-compare__hint { display: none; }
+
+  .sponsors__logo { width: 120px; height: 56px; }
+
+  .band__track { font-size: 16px; }
+
+  .rest__word { font-size: clamp(40px, 12vw, 72px); }
+
+  .footer__grid { grid-template-columns: 1fr; }
+}

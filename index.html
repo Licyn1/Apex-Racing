@@ -1,656 +1,604 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Racing Esports Academy</title>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="https://use.typekit.net/pyw3kic.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apex Academy — No jugás a correr. Entrenás para competir.</title>
+<meta content="Academia de simulación de alto rendimiento. Telemetría real, tecnología propia y programas diseñados para llevar tu rendimiento al siguiente nivel." name="description"/>
+<meta content="Apex Academy" property="og:title"/>
+<meta content="No jugás a correr. Entrenás para competir." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="assets/img/og-image.jpg" property="og:image"/>
+<link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="css/variables.css" rel="stylesheet"/>
+<link href="css/reset.css" rel="stylesheet"/>
+<link href="css/base.css" rel="stylesheet"/>
+<link href="css/layout.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/sections.css" rel="stylesheet"/>
+<link href="css/animations.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- ==========================================
-       LÍNEAS GUÍA ESTRUCTURALES GLOBAL
-  =========================================== -->
-  <div class="horizontal-grid-line"></div>
-  <div class="segunda-linea-horizontal"></div>
-
-  <!-- ==========================================
-       NAVBAR (Libre y absoluta al techo)
-  =========================================== -->
-  <nav class="navbar">
-    <ul class="nav-list">
-      
-      <!-- LÍNEA DEL LOGO INTEGRADA AL FLEXBOX -->
-      <div class="linea-logo"></div>
-
-      <li>
-        <a href="#" class="nav-link active">
-          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-          </svg>
-          <span class="btn-text">Inicio</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link">
-          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-          </svg>
-          <span class="btn-text">Cursos</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link">
-          <svg class="btn-svg-bg" viewBox="0 0 85.44 42.05" xmlns="http://www.w3.org/2000/svg">
-            <path class="cls-path-accent" d="M1,29.47v11.57h11.57c-6.39,0-11.57-5.18-11.57-11.57Z"/>
-            <path class="cls-path-frame" d="M0,0v42.05h85.44V0H0ZM2,40.05V2h75.56c2.62,1.16,4.72,3.27,5.88,5.88v32.16H2Z"/>
-          </svg>
-          <span class="btn-text">Contacto</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- ==========================================
-       HERO SECTION
-  =========================================== -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="assets/Jugador von movimiento hero.png" alt="Piloto en simulador de F1" class="hero-img" />
-      <div class="hero-overlay"></div>
-    </div>
-    
-    <div class="linea-horizontal-pantalla"></div>
-    
-    <div class="hero-content">
-      <h1 class="hero-headline">
-        <span class="line-white">NO JUGÁS A CORRER. ENTRENÁS PARA COMPETIR.</span>
-        
-      </h1>
-      <p class="hero-subtext">
-        Somos una academia con simuladores profesionales y programas diseñados para llevar tu rendimiento al siguiente nivel.
-      </p>
-    </div>
-    
-    <div class="cta-container">
-      <a href="#" class="cta-btn">Ver Cursos</a>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PLANTILLA SVG (No se ve, sirve de molde)
-  =========================================== -->
-  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <g id="marco-card">
-        <path fill="#d7d7d7" d="M350.5,0h-52.63c.14.66.25,1.33.36,2h52.28c8.87,0,16.09,7.22,16.09,16.09v80.85c.14.38.29.74.42,1.14.83,2.58,1.12,5.35.93,8.15h.65V18.09C368.59,8.12,360.48,0,350.5,0Z"/>
-        <path fill="#d7d7d7" d="M1.62,100.34c.1-.46.24-.92.38-1.37V18.09C2,9.22,9.22,2,18.09,2h57.39v76.31c.67,0,1.33.01,2,.05V0H18.09C8.12,0,0,8.12,0,18.09v90.13h1.02c-.16-2.68.03-5.35.6-7.88Z"/>
-        <path fill="#d7d7d7" d="M350.04,346.05H18.56c-10.23,0-18.56-8.32-18.56-18.56V95.72c0-10.23,8.32-18.56,18.56-18.56h331.48c10.23,0,18.56,8.32,18.56,18.56v231.77c0,10.23-8.32,18.56-18.56,18.56ZM18.56,79.16c-9.13,0-16.56,7.43-16.56,16.56v231.77c0,9.13,7.43,16.56,16.56,16.56h331.48c9.13,0,16.56-7.43,16.56-16.56V95.72c0-9.13-7.43-16.56-16.56-16.56H18.56Z"/>
-        <path fill="#d7d7d7" d="M336.34,1H28.87c102.22.26,204.73.26,307.47.01,0,0,0,0,0-.01Z"/>
-        <path fill="#d7d7d7" d="M336.18,0H28.87v2h307.67c-.14-.66-.26-1.33-.37-2Z"/>
-      </g>
-      <g id="icono-original">
-        <path fill="#d7d7d7" d="M57.14,53.36c-.38.63-1.19.83-1.81.45l-15.61-9.37v17.04c0,.73-.59,1.32-1.32,1.32s-1.32-.59-1.32-1.32v-17.04l-15.61,9.37c-.21.12-.44.19-.68.19-.73,0-1.32-.59-1.33-1.32,0-.47.24-.9.64-1.14l15.73-9.43-15.72-9.43c-.63-.38-.83-1.19-.45-1.81.38-.63,1.19-.83,1.81-.45l15.61,9.37v-17.04c0-.73.59-1.32,1.32-1.32s1.32.59,1.32,1.32v17.04l15.61-9.37c.63-.38,1.44-.17,1.81.45.38.63.17,1.44-.45,1.81l-15.72,9.43,15.72,9.43c.63.38.83,1.19.45,1.81,0,0,0,0,0,0Z"/>
-      </g>
-    </defs>
-  </svg>
-
-  <!-- ==========================================
-       CARRUSEL
-  =========================================== -->
-  <div class="carrusel-wrapper">
-    <header class="carrusel-header">
-    <svg viewBox="0 0 943.27 57.72" class="header-svg">
-      <rect class="cls-1" width="943.27" height="57.72" fill="#e5e5e5"/>
-      <text class="cls-2" transform="translate(76.79 45.06) scale(0.99 1)" 
-            style="fill:#050506; font-family: sans-serif; font-size: 44.13px; font-weight: 700;">
-        ¿POR QUÉ ENTRENAR EN SIMULADOR?
-      </text>
-    </svg>
-  </header>
-    <!-- MÁSCARAS OSCURAS FIJAS INDEPENDIENTES -->
-    <div class="mascara-oscura mascara-izq"></div>
-    <div class="mascara-oscura mascara-der"></div>
-
-    <!-- Botón Anterior (Mira a la izquierda) -->
-    <button class="nav-btn prev-btn back-button" aria-label="Anterior">
-      <div class="back-arrow">
-        <div class="arrow-stem"></div>
-        <div class="arrow-arm arrow-arm--top"></div>
-        <div class="arrow-arm arrow-arm--bottom"></div>
-      </div>
-    </button>
-
-    <!-- LAS CUATRO LÍNEAS VERTICALES DEL CARRUSEL -->
-    <div class="linea-carrusel lc-1"></div>
-    <div class="linea-carrusel lc-2"></div>
-    <div class="linea-carrusel lc-3"></div>
-    <div class="linea-carrusel lc-4"></div>
-
-    <div class="carrusel-contenedor">
-      <div class="carrusel-track">
-        
-        <!-- CARD 1 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">CONTROL<br>DE REFLEJOS</h2>
-            <p class="card-text">Mejorá tu tiempo de reacción y capacidad de respuesta.</p>
-          </div>
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">TOMA DE<br>DECISIONES</h2>
-            <p class="card-text">Desarrolla tu capacidad de tomar decisiones rápidas y efectivas en situaciones de alta presión.</p>
-          </div>
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">MEMORIA<br>MUSCULAR</h2>
-            <p class="card-text">Mejora tu capacidad de recordar y ejecutar movimientos complejos bajo presión y estrés.</p>
-          </div>
-        </div>
-
-        <!-- CARD 4 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">CONTROL<br>VEHICULAR</h2>
-            <p class="card-text">Desarrolla tu capacidad de manejar el vehículo con precisión y eficiencia en condiciones de alta demanda.</p>
-          </div>
-        </div>
-
-        <!-- CARD 5 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">LECTURA<br>DE CARRERA</h2>
-            <p class="card-text">Desarrolla tu capacidad de interpretar y analizar la información de la carrera en tiempo real.</p>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">GESTIÓN<br>DE RIESGOS</h2>
-            <p class="card-text">Desarrolla tu capacidad de identificar y gestionar los riesgos asociados a la conducción de alta presión.</p>
-          </div>
-        </div>
-
-        <!-- CARD 7 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">GESTIÓN<br>DE CANSANCIO</h2>
-            <p class="card-text">Desarrolla tu capacidad de gestionar el cansancio físico y mental durante la conducción.</p>
-          </div>
-        </div>
-
-        <!-- CARD 8 -->
-        <div class="card">
-          <svg viewBox="0 0 368.59 346.05" class="card-bg"><use href="#marco-card"></use></svg>
-          <div class="card-content">
-            <div class="card-icon"><svg viewBox="0 0 368.59 346.05"><use href="#icono-original"></use></svg></div>
-            <h2 class="card-title">RESISTENCIA<br>MENTAL</h2>
-            <p class="card-text">Desarrolla tu capacidad de mantener el rendimiento óptimo bajo presión y estrés durante la conducción.</p>
-          </div>
-        </div>
-        <!-- ESPACIADOR INVISIBLE PARA QUE LA ÚLTIMA CARD NO SE CORTE -->
-        <div class="carrusel-spacer"></div>
-
-      </div>
-    </div>
-    
-    <!-- Botón Siguiente -->
-    <button class="nav-btn next-btn back-button arrow-right" aria-label="Siguiente">
-      <div class="back-arrow">
-        <div class="arrow-stem"></div>
-        <div class="arrow-arm arrow-arm--top"></div>
-        <div class="arrow-arm arrow-arm--bottom"></div>
-      </div>
-    </button>
-  </div>
-
- <script>
-   document.addEventListener('DOMContentLoaded', () => {
-  const contenedor = document.querySelector('.carrusel-contenedor');
-  const btnPrev = document.querySelector('.prev-btn');
-  const btnNext = document.querySelector('.next-btn');
-
-  if (contenedor && btnPrev && btnNext) {
-    let IDAnimacion = null;
-    const velocidad = 6; // <-- Cambiá este número para regular qué tan rápido avanza al mantener apretado
-
-    // Función que ejecuta el scroll en bucle frame por frame
-    const iniciarScrollContinuo = (direccion) => {
-      if (IDAnimacion) return; // Evita que se duplique la velocidad si buglean el click
-
-      const bucle = () => {
-        contenedor.scrollLeft += direccion * velocidad;
-        IDAnimacion = requestAnimationFrame(bucle);
-      };
-      
-      IDAnimacion = requestAnimationFrame(bucle);
-    };
-
-    // Función que frena el motor inmediatamente
-    const detenerScrollContinuo = () => {
-      if (IDAnimacion) {
-        cancelAnimationFrame(IDAnimacion);
-        IDAnimacion = null;
-      }
-    };
-
-    /* --- EVENTOS PARA EL BOTÓN SIGUIENTE (DERECHA) --- */
-    // Al apretar con el mouse o tocar en el celu, arranca hacia adelante (1)
-    btnNext.addEventListener('mousedown', () => iniciarScrollContinuo(1));
-    btnNext.addEventListener('touchstart', (e) => { e.preventDefault(); iniciarScrollContinuo(1); });
-
-    // Al soltar o salir del botón, frena
-    btnNext.addEventListener('mouseup', detenerScrollContinuo);
-    btnNext.addEventListener('mouseleave', detenerScrollContinuo);
-    btnNext.addEventListener('touchend', detenerScrollContinuo);
-
-    /* --- EVENTOS PARA EL BOTÓN ANTERIOR (IZQUIERDA) --- */
-    // Al apretar con el mouse o tocar en el celu, arranca hacia atrás (-1)
-    btnPrev.addEventListener('mousedown', () => iniciarScrollContinuo(-1));
-    btnPrev.addEventListener('touchstart', (e) => { e.preventDefault(); iniciarScrollContinuo(-1); });
-
-    // Al soltar o salir del botón, frena
-    btnPrev.addEventListener('mouseup', detenerScrollContinuo);
-    btnPrev.addEventListener('mouseleave', detenerScrollContinuo);
-    btnPrev.addEventListener('touchend', detenerScrollContinuo);
-  }
-});
-  </script>
- <div class="linea-divisora-tech"></div>
-  <!-- Tarjeta Activa -->
-  <section class="tech-section">
-  <!-- Título fuera del carrusel -->
-  <h2 class="tech-title">NUESTRAS TECNOLOGÍAS NOS HACEN REALMENTE DISTINTOS</h2>
-  
-
-<div class="tech-carousel-container">
-  <div class="tech-carousel">
-    
-    <!-- Tarjeta 1 (Activa por defecto) -->
-    <div class="tech-card active">
-      <div class="media-container">
-        <img src="assets/pedal_tech.png" class="card-img" alt="pedal_tech.png">
-      </div>
-      <div class="text-container">
-        <h3 class="tech-card-title">STAGE PILOT</h3>
-        <p class="tech-card-description">Maximización de tracción y control dinámico sobre superficies de alta complejidad.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta 2 -->
-    <div class="tech-card">
-      <div class="media-container">
-        <img src="assets/telemetría_tech.png" class="card-img" alt="Rally Stage 2">
-      </div>
-      <div class="text-container">
-        <h3 class="tech-card-title">TELEMETRY DATA</h3>
-        <p class="tech-card-description">Análisis predictivo de curvas y optimización del mapa de motor en tiempo real.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta 3 -->
-    <div class="tech-card">
-      <div class="media-container">
-        <img src="assets/volante_tech.png" class="card-img" alt="Rally Stage 3">
-      </div>
-      <div class="text-container">
-        <h3 class="tech-card-title">VOLANTE DIRECT DRIVE</h3>
-        <p class="tech-card-description">Calibración geométrica de amortiguadores para absorber impactos críticos.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4 -->
-    <div class="tech-card">
-      <div class="media-container">
-        <img src="assets/pedal_tech.png" class="card-img" alt="Rally Stage 4">
-      </div>
-      <div class="text-container">
-        <h3 class="tech-card-title">CO-DRIVER PACENOTES</h3>
-        <p class="tech-card-description">Sincronización milimétrica de navegación y anticipación de puntos de quiebre.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta 5 -->
-    <div class="tech-card">
-      <div class="media-container">
-        <img src="assets/telemetría_tech.png" class="card-img" alt="Rally Stage 4">
-      </div>
-      <div class="text-container">
-        <h3 class="tech-card-title">CO-DRIVER PACENOTES</h3>
-        <p class="tech-card-description">Sincronización milimétrica de navegación y anticipación de puntos de quiebre.</p>
-      </div>
-    </div>
-
-  </div>
+<a class="visually-hidden" href="#main">Saltar al contenido principal</a>
+<!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+<header class="navbar" id="navbar">
+<div class="navbar__inner">
+<a aria-label="Apex Academy — Inicio" class="navbar__logo" href="#inicio">
+  <img src="assets/icons/marca_apex.svg"
+         alt="Apex Academy"
+         class="navbar__logo-img">
+<nav aria-label="Navegación principal" class="navbar__links">
+<a class="is-active" data-nav-link="" href="#inicio">Inicio</a>
+<a data-nav-link="" href="#beneficios">Beneficios</a>
+<a data-nav-link="" href="#tecnologia">Tecnologías</a>
+<a data-nav-link="" href="#programas">Cursos</a>
+<a data-nav-link="" href="#pilotos">Pilotos</a>
+<a data-nav-link="" href="#contacto">Contacto</a>
+</nav>
+<a class="btn btn-primary navbar__cta" href="#programas">Ver cursos</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" class="navbar__burger" id="burgerBtn">
+<span></span><span></span><span></span>
+</button>
 </div>
-
-  </div>
+</header>
+<div class="mobile-menu" data-state="closed" id="mobileMenu">
+<nav aria-label="Navegación móvil" class="mobile-menu__links">
+<a data-nav-link="" href="#inicio">Inicio</a>
+<a data-nav-link="" href="#beneficios">Beneficios</a>
+<a data-nav-link="" href="#tecnologia">Tecnologías</a>
+<a data-nav-link="" href="#programas">Cursos</a>
+<a data-nav-link="" href="#pilotos">Pilotos</a>
+<a data-nav-link="" href="#contacto">Contacto</a>
+</nav>
+<a class="btn btn-primary mobile-menu__cta" href="#programas">Ver cursos</a>
+</div>
+<main id="main">
+<!-- ============================================================
+         SECCIÓN 1 · HERO
+    ============================================================ -->
+<section class="hero" id="inicio">
+<div class="hero__media">
+    <img src="/assets/img/Jugador von movimiento hero.png" alt="Jugador en movimiento">
+</div>
+<div class="hero__content">
+<span class="eyebrow reveal" style="--i:0">Academia de simulación</span>
+<h1 class="hero__title reveal" style="--i:1">No jugás,<br/>Entrenás para competir.</h1>
+<p class="hero__lede reveal" style="--i:2">
+          Somos una academia con simuladores profesionales y programas diseñados
+          para hacer crecer tu rendimiento.
+        </p>
+<div class="hero__actions reveal" style="--i:3">
+<a class="btn btn-primary" href="#programas">Ver cursos</a>
+</div>
+</div>
+<div aria-hidden="true" class="hero__scroll-hint"><span></span></div>
+</section>
+<!-- ============================================================
+         SECCIÓN 2 · BENEFICIOS DEL SIMULADOR (carrusel de 8 cards)
+    ============================================================ -->
+<section class="section benefits theme-light" id="beneficios">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow section-head__eyebrow">Beneficios</span>
+<h2 class="section-head__title">¿Por qué entrenar en simulador?</h2>
+<p class="section-head__lede">
+            Cada sesión trabaja una habilidad concreta. Esto es lo que un simulador
+            profesional entrena en vos, sesión a sesión.
+          </p>
+</div>
+<div class="carousel" data-carousel="">
+<div class="carousel__track" data-carousel-track="">
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"></path></svg>
+<h4>Control<br/>de reflejos</h4>
+<p>Mejorá tu tiempo de reacción y capacidad de respuesta.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M12 3v6m0 0-9 4 9 4 9-4-9-4Z"></path><path d="M3 13v3l9 4 9-4v-3"></path></svg>
+<h4>Toma de<br/>decisiones</h4>
+<p>Desarrollá tu capacidad de decidir rápido y bien bajo alta presión.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M4 12a8 8 0 0 1 8-8m8 8a8 8 0 0 1-8 8"></path></svg>
+<h4>Memoria<br/>muscular</h4>
+<p>Mejorá tu capacidad de recordar y ejecutar movimientos complejos bajo estrés.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M4 17h3l2-9 4 12 2-7h5"></path></svg>
+<h4>Control<br/>vehicular</h4>
+<p>Manejá el vehículo con precisión y eficiencia en condiciones de alta demanda.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"></path></svg>
+<h4>Lectura<br/>de carrera</h4>
+<p>Interpretá y analizá la información de la carrera en tiempo real.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M12 2 2 21h20L12 2Z"></path><path d="M12 9v5"></path><circle cx="12" cy="17" r="0.6"></circle></svg>
+<h4>Gestión<br/>de riesgos</h4>
+<p>Identificá y gestioná los riesgos asociados a la conducción de alta presión.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9"></path><path d="M12 7v5l3 2"></path></svg>
+<h4>Gestión<br/>de cansancio</h4>
+<p>Gestioná el cansancio físico y mental durante la conducción.</p>
+</article>
+<article class="card-neu benefit-card">
+<svg class="icon" viewbox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10a24 24 0 0 1-4-2Z"></path></svg>
+<h4>Resistencia<br/>mental</h4>
+<p>Mantené el rendimiento óptimo bajo presión y estrés durante la conducción.</p>
+</article>
+</div>
+<div class="carousel__controls">
+<button aria-label="Anterior" class="carousel__btn" data-carousel-prev="">‹</button>
+<button aria-label="Siguiente" class="carousel__btn" data-carousel-next="">›</button>
+</div>
+</div>
 </div>
 </section>
-  <script>
-    const cards = document.querySelectorAll('.tech-card');
-    cards.forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelector('.tech-card.active').classList.remove('active');
-        card.classList.add('active');
-      });
-    });
-  </script>
-  <div class="linea-guia-tecnologias"></div>
-  <section class="sticky-transition-section">
-  <div class="sticky-container">
-    <!-- NUEVO TÍTULO EN CAPA SUPERIOR (FLOTA SOBRE LAS FOTOS) -->
-      <div class="transicion-title-container">
-        <h2 class="transicion-subtitle">Inspirados en la máxima categoría</h2>
-      </div>
-    <img src="assets/formula-1.png" class="img-transition img-a active" alt="Imagen A">
-    <img src="assets/simulador.png" class="img-transition img-b" alt="Imagen B">
-  </div>
-</section>
-<script>
- window.addEventListener('scroll', () => {
-    const section = document.querySelector('.sticky-transition-section');
-    const imgA = document.querySelector('.img-a');
-    const imgB = document.querySelector('.img-b');
-    const title = document.querySelector('.transicion-title-container'); 
-    
-    const rect = section.getBoundingClientRect();
-    
-    // Calculamos el progreso (0 a 1)
-    let scrollProgress = -rect.top / (rect.height - window.innerHeight);
-    scrollProgress = Math.max(0, Math.min(1, scrollProgress));
+<!-- ============================================================
+         SECCIÓN 3 · TECNOLOGÍAS
+    ============================================================ -->
+<section class="section tech" id="tecnologia">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow section-head__eyebrow">Tecnologías</span>
+<h2 class="section-head__title">Nuestras tecnologías nos hacen distintos.</h2>
+<p class="section-head__lede">
+            No alcanza con girar un volante. Cada entrenamiento se mide, se analiza
+            y se convierte en información precisa para tu evolución como piloto.
+          </p>
+</div>
+<div class="tech-panels" id="techPanels" role="list">
+<article class="tech-panel is-open" data-tech="" role="listitem" tabindex="0">
 
-    // Lógica de imágenes
-    if (scrollProgress > 0.5) {
-        imgA.classList.remove('active');
-        imgB.classList.add('active');
-    } else {
-        imgA.classList.add('active');
-        imgB.classList.remove('active');
-    }
-
-    // AJUSTE DEL TÍTULO: 
-    // Usamos el alto de la ventana menos el tamaño del bloque del título (ej: 150px)
-    // para que se detenga justo encima de la sección siguiente.
-    const paddingFinal = 130; 
-    const distanciaMax = window.innerHeight - paddingFinal;
-    
-    title.style.transform = `translateY(${scrollProgress * distanciaMax}px)`;
-});
-</script>
-<!-- SECCIÓN CONTENEDORA GENERAL -->
-<section class="cursos-section" id="cursos-section">
-  
-  <!-- ENCABEZADO SUPERIOR -->
-  <header class="cursos-header">
-    <div class="cursos-header-content">
-      <h2 class="cursos-header-title">Tu curso ideal</h2>
-      <p class="cursos-header-text">
-        El entrenamiento adecuado permite desarrollar habilidades<br>y fortalezas que impactan en cada decisión dentro de la pista.
-      </p>
-    </div>
-  </header>
-
-  <!-- GRID DE TARJETAS (Pegado sin márgenes verticales al encabezado) -->
-
-  <header class="cursos-header">
-    <span class="cursos-kicker">Inspirados en la máxima categoría</span>
-    <h2 class="cursos-title">Tu curso ideal</h2>
-  </header>
-
-  <!-- GRID DE TARJETAS CON AJUSTE VERTICAL E INYECCIÓN DE PRECIOS -->
-  <main class="cursos-grid">
-    <!-- TARJETA 1 -->
-    <article class="curso-card">
-      <div class="curso-card-media">
-        <img src="assets/curso_2.png" alt="Stage Pilot" class="curso-img">
-      </div>
-      <div class="curso-card-content">
-        <h3 class="curso-card-title">STAGE PILOT</h3>
-        <p class="curso-card-description">Perfeccionamiento de trazo dinámico y telemetría avanzada.</p>
-        <div class="curso-card-line"></div>
-        <ul class="curso-card-list">
-          <li>Análisis de transferencia de pesos</li>
-          <li>Optimización del punto de cuerda</li>
-          <li>Gestión avanzada de tracción</li>
-          <li>Simulación en clima adverso</li>
-        </ul>
-        <!-- Inyección de Precio -->
-        <div class="curso-card-price">$89.000ars</div>
-      </div>
-      <a href="#" class="btn-ver-mas" role="button">Ver más</a>
-    </article>
-
-    <!-- TARJETA 2 -->
-    <article class="curso-card">
-      <div class="curso-card-media">
-        <img src="assets/telemetría_tech.png" alt="Pro Racing" class="curso-img">
-      </div>
-      <div class="curso-card-content">
-        <h3 class="curso-card-title">PRO RACING</h3>
-        <p class="curso-card-description">Dominio absoluto del vehículo en situaciones de alta presión.</p>
-        <div class="curso-card-line"></div>
-        <ul class="curso-card-list">
-          <li>Control de desgaste de neumáticos</li>
-          <li>Estrategia de paradas en boxes</li>
-          <li>Técnicas de sobrepaso defensivo</li>
-          <li>Simulación en clima adverso</li>
-        </ul>
-        <!-- Inyección de Precio -->
-        <div class="curso-card-price">$99.000ars</div>
-      </div>
-      <a href="#" class="btn-ver-mas" role="button">Ver más</a>
-    </article>
-
-    <!-- TARJETA 3 -->
-    <article class="curso-card">
-      <div class="curso-card-media">
-        <img src="assets/curso_3.png" alt="Endurance" class="curso-img">
-      </div>
-      <div class="curso-card-content">
-        <h3 class="curso-card-title">ENDURANCE</h3>
-        <p class="curso-card-description">Resistencia mental y gestión de ritmo para carreras largas.</p>
-        <div class="curso-card-line"></div>
-        <ul class="curso-card-list">
-          <li>Gestión de combustible y mapas</li>
-          <li>Tráfico y gestión de multicategoría</li>
-          <li>Concentración prolongada</li>
-          <li>Simulación en clima adverso</li>
-        </ul>
-        <!-- Inyección de Precio -->
-        <div class="curso-card-price">$110.000ars</div>
-      </div>
-      <!-- ENRUTAMIENTO: enlaza a la vista de detalle del Curso 3 -->
-      <a href="cursos/curso-3.html" class="btn-ver-mas" role="button">Ver más</a>
-    </article>
-  </main>
-  <!-- DIVISOR INFERIOR DE CIERRE -->
-  <footer class="cursos-footer"></footer>
-</section>
-<section class="ellos-lo-hicieron">
-  <div class="content-wrapper">
-    <h2 class="title-hicieron">A un paso de poner 1era,>ellos lo hicieron.</h2>
-    
-    <div class="pilot-showcase">
-      <div class="pilot-id">
-        <h3 class="pilot-name">Valentina Lopez</h3>
-      
-      </div>
-      <div class="pilot-stats-grid">
-        <div class="stat-item"><span>Horas de simulador</span> <strong>1.280</strong></div>
-        <div class="stat-item"><span>Mejor vuelta</span> <strong>01:24.597</strong></div>
-        <div class="stat-item"><span>Carreras</span> <strong>38</strong></div>
-        <div class="stat-item"><span>Podios</span> <strong>17</strong></div>
-        <div class="stat-item"><span>Efectividad</span> <strong>%85</strong></div>
-      </div>
+    <div class="tech-panel__media">
+        <img src="/assets/img/tech1.png" alt="Jugador en movimiento" class="tech-image">
     </div>
 
-    <h3 class="cta-blue-text">¿qué esperás para ser el próximo piloto consagrado?</h3>
-  </div>
-  <div class="border-break"></div>
+    <div class="tech-panel__name">Apex Telemetry Core</div>
+<div class="tech-panel__content">
+<h4>Apex Telemetry Core</h4>
+<p>Cada vuelta queda registrada con cientos de variables que permiten
+                detectar patrones invisibles durante la conducción.</p>
+</div>
+</article>
+<article class="tech-panel" data-tech="" role="listitem" tabindex="0">
+<div class="tech-panel__media">
+        <img src="/assets/img/tech4.png" alt="Jugador en movimiento" class="tech-image">
+    </div>
+<div class="tech-panel__name">Racing Line AI</div>
+<div class="tech-panel__content">
+<h4>Racing Line AI</h4>
+<p>Comparamos tu trazada con líneas óptimas y detectamos pérdidas de
+                tiempo de apenas milésimas.</p>
+</div>
+</article>
+<article class="tech-panel" data-tech="" role="listitem" tabindex="0">
+<div class="tech-panel__media">
+        <img src="/assets/img/tech3.png" alt="Jugador en movimiento" class="tech-image">
+    </div>
+<div class="tech-panel__name">Biometric Response</div>
+<div class="tech-panel__content">
+<h4>Biometric Response</h4>
+<p>Relacionamos tu comportamiento físico con el rendimiento en pista
+                para detectar el impacto del cansancio y el estrés.</p>
+</div>
+</article>
+<article class="tech-panel" data-tech="" role="listitem" tabindex="0">
+<div class="tech-panel__media">
+        <img src="/assets/img/tech2.png" alt="Jugador en movimiento" class="tech-image">
+    </div>
+<div class="tech-panel__name">Session Replay 360°</div>
+<div class="tech-panel__content">
+<h4>Session Replay 360°</h4>
+<p>Revisá cada entrenamiento desde múltiples perspectivas: telemetría,
+                cámara onboard e inputs del volante.</p>
+</div>
+</article>
+<article class="tech-panel" data-tech="" role="listitem" tabindex="0">
+<div class="tech-panel__media">
+        <img src="/assets/img/tech5.png" alt="Jugador en movimiento" class="tech-image">
+    </div>
+<div class="tech-panel__name">Performance Evolution Engine</div>
+<div class="tech-panel__content">
+<h4>Performance Evolution Engine</h4>
+<p>Construimos un historial completo de tu evolución para planificar
+                objetivos concretos en cada entrenamiento.</p>
+</div>
+</article>
+</div>
+</div>
 </section>
-
-<section class="hero-inmersivo">
-  <div class="hero-parallax-bg"></div>
-  <div class="hero-overlay-center">
-    <h2 class="hero-inmersivo-text">Mentalidad <span class="divider">|</span> Progreso <span class="divider">|</span> Resultados</h2>
-  </div>
+<!-- ============================================================
+         SECCIÓN 4 · COMPARACIÓN SIMULADOR VS FÓRMULA 1
+    ============================================================ -->
+<section class="section comparison theme-light" id="comparacion">
+<div class="container">
+<div class="section-head section--center reveal">
+<span class="eyebrow section-head__eyebrow">Comparativa</span>
+<h2 class="section-head__title">Lo que se corre en pista,<br>se entrena en simulador.</h2>
+<p class="section-head__lede">
+            Los equipos reales ya buscan talento en los simuladores. La distancia entre ambos mundos es cada
+            vez más chica.
+          </p>
+</div>
+<div class="reveal-compare reveal" id="revealCompare">
+<div class="reveal-compare__layer reveal-compare__layer--sim img-placeholder">
+ <img src="/assets/formula-1.png" alt="Simulador Apex">
+</div>
+<div class="reveal-compare__layer reveal-compare__layer--f1 img-placeholder" id="revealF1">
+ <img src="/assets/simulador.png" alt="Simulador Apex">
+</div>
+<div class="reveal-compare__tooltip" id="revealTooltip">
+<span class="reveal-compare__tooltip-label">Telemetría en tiempo real</span>
+</div>
+<span class="tag reveal-compare__hint">Mové el mouse sobre la imagen</span>
+</div>
+</div>
 </section>
+<!-- ============================================================
+         SECCIÓN 5 · PROGRAMAS
+    ============================================================ -->
+<section class="section programs" id="programas">
+<div class="container">
+<div class="section-head section--center reveal">
+<span class="eyebrow section-head__eyebrow">Programas</span>
+<h2 class="section-head__title">Tu programa ideal</h2>
+<p class="section-head__lede">
+            El entrenamiento adecuado permite desarrollar habilidades y fortalezas
+            que impactan en cada decisión dentro de la pista.
+          </p>
+</div>
+<div class="programs__grid">
+<article class="card-tilt">
+<div class="card-tilt__inner" data-tilt="">
+<div class="card-tilt__image">
+    <img src="assets/curso_1.png" alt="Programa Base">
+</div>
+<h3>Base</h3>
+<p>Perfeccionamiento de trazo dinámico y telemetría avanzada.</p>
+<ul>
+<li>Análisis de transferencia de pesos</li>
+<li>Optimización del punto de cuerda</li>
+<li>Gestión avanzada de tracción</li>
+<li>Simulación en clima adverso</li>
+</ul>
+<div class="card-tilt__footer">
+  <span class="card-tilt__price">$89.000 <small>ARS/mes</small></span>
+  <a href="#contacto" class="btn btn-primary btn-card">
+    Ver más
+</a>
+</div>
+</div>
+</article>
+<article class="card-tilt card-tilt--featured">
 
-<section class="section-resultados">
-  <h2 class="resultados-title">Transformá cada sección en mejores resultados</h2>
-  
-  <div class="accordion-grid">
-    <!-- Tarjeta 1: Mejora de tiempos -->
-    <div class="accordion-card" onclick="this.classList.toggle('expanded')">
-      <h3 class="accordion-header">Mejora de tiempos <span class="icon">+</span></h3>
-      <div class="accordion-body">
-        <div class="chart-container">
-          <!-- Telemetría Lineal Real en SVG -->
-          <svg class="telemetry-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
-            <path d="M 0 80 Q 50 20 100 65 T 200 30 T 300 75 T 400 15" fill="none" stroke="#015bfa" stroke-width="3" />
-            <path d="M 0 85 Q 50 35 100 75 T 200 45 T 300 85 T 400 30" fill="none" stroke="#3a3a3f" stroke-width="1.5" stroke-dasharray="4" />
-          </svg>
+    <div class="card-tilt__inner" data-tilt="">
+
+        <span class="card-tilt__badge">Destacado</span>
+
+        <div class="card-tilt__image">
+    <img src="assets/curso_2.png" alt="Programa Master">
+</div>
+
+        <h3>Pro</h3>
+<p>Dominio absoluto del vehículo en situaciones de alta presión.</p>
+<ul>
+<li>Control de desgaste de neumáticos</li>
+<li>Estrategia de paradas en boxes</li>
+<li>Técnicas de sobrepaso defensivo</li>
+<li>Simulación en clima adverso</li>
+</ul>
+<div class="card-tilt__footer">
+  <span class="card-tilt__price">$99.000 <small>ARS/mes</small></span>
+   <a href="programa-pro.html" class="btn btn-primary btn-card">
+    Ver más
+</a>
+</div>
+</article>
+<article class="card-tilt">
+<div class="card-tilt__inner" data-tilt="">
+<div class="card-tilt__image">
+    <img src="assets/curso_3.png" alt="Programa Master">
+</div>
+<h3>Master</h3>
+<p>Resistencia mental y gestión de ritmo para carreras largas.</p>
+<ul>
+<li>Gestión de combustible y mapas</li>
+<li>Tráfico y gestión de multicategoría</li>
+<li>Concentración prolongada</li>
+<li>Simulación en clima adverso</li>
+</ul>
+<div class="card-tilt__footer">
+  <span class="card-tilt__price">$110.000 <small>ARS/mes</small></span>
+  <a href="#contacto" class="btn btn-primary btn-card">
+    Ver más
+</a>
+</div>
+</div>
+</article>
+</div>
+<p class="programs__note reveal">
+          Cada programa incluye 8 sesiones mensuales. Disponible en hasta 3 cuotas sin interés.
+        </p>
+</div>
+</section>
+<!-- ============================================================
+         SECCIÓN 6 · SPONSORS (franja publicitaria)
+    ============================================================ -->
+<section aria-label="Marcas que patrocinan Apex" class="sponsors theme-light" id="sponsors">
+<div class="sponsors__track">
+<!-- Grupo 1 -->
+<div class="sponsors__group">
+<img alt="Marca Apex 1" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0005_Capa-1.png"/>
+<img alt="Marca Apex 2" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0004_Capa-2.png"/>
+<img alt="Marca Apex 3" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0003_Capa-3.png"/>
+<img alt="Marca Apex 4" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0002_Capa-4.png"/>
+<img alt="Marca Apex 5" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0001_Capa-5.png"/>
+<img alt="Marca Apex 6" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0000_Capa-6.png"/>
+</div>
+<!-- Grupo 2 (Duplicado exacto para el efecto infinito) -->
+<div aria-hidden="true" class="sponsors__group">
+<img alt="Marca Apex 1" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0005_Capa-1.png"/>
+<img alt="Marca Apex 2" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0004_Capa-2.png"/>
+<img alt="Marca Apex 3" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0003_Capa-3.png"/>
+<img alt="Marca Apex 4" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0002_Capa-4.png"/>
+<img alt="Marca Apex 5" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0001_Capa-5.png"/>
+<img alt="Marca Apex 6" class="sponsors__logo" src="/assets/icons/MARCAS_APEX_0000_Capa-6.png"/>
+</div>
+</div>
+</section>
+<!-- ============================================================
+         SECCIÓN 7 · PILOTOS
+    ============================================================ -->
+
+<!-- ============================================================
+         SECCIÓN 8 · SECCIÓN DE DESCANSO (scroll fijo, palabras)
+    ============================================================ -->
+<section class="rest" data-rest="" id="descanso">
+<div class="rest__sticky">
+<div aria-hidden="true" class="rest__speedlines">
+<span></span><span></span><span></span><span></span><span></span>
+</div>
+<h3 class="rest__word" data-rest-word="">Mentalidad</h3>
+<h3 class="rest__word" data-rest-word="">Progreso</h3>
+<h3 class="rest__word" data-rest-word="">Resultados</h3>
+</div>
+</section>
+<!-- ============================================================
+         SECCIÓN 9 · RESULTADOS
+    ============================================================ -->
+<section class="section results theme-light" id="resultados">
+    <div class="container">
+
+        <div class="section-head section--center reveal">
+            <span class="eyebrow section-head__eyebrow">Resultados</span>
+
+            <h2 class="section-head__title results__title">
+                Transformá cada sesión en mejores
+                <span class="results__word-merge">habilidades.</span>
+            </h2>
         </div>
-        <p class="accordion-desc">Análisis sector por sector contrastado con métricas globales para limar cada milésima.</p>
-      </div>
+<div class="result-item__panel">
+
+    <div class="result-item__content">
+
+        <svg class="result-item__chart" viewBox="0 0 200 50">
+            ...
+        </svg>
+
+        <p class="result-item__text">
+            ...
+        </p>
+
     </div>
 
-    <!-- Tarjeta 2: Consistencia -->
-    <div class="accordion-card" onclick="this.classList.toggle('expanded')">
-      <h3 class="accordion-header">Consistencia <span class="icon">+</span></h3>
-      <div class="accordion-body">
-        <div class="chart-container">
-          <!-- Gráfico de Dispersión / Estabilidad Delta -->
-          <svg class="telemetry-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
-            <line x1="0" y1="50" x2="400" y2="50" stroke="#3a3a3f" stroke-width="1" stroke-dasharray="5 5"/>
-            <path d="M 0 48 L 40 52 L 80 49 L 120 51 L 160 50 L 200 49 L 240 50 L 280 51 L 320 49 L 360 50 L 400 48" fill="none" stroke="#ffffff" stroke-width="2" />
-            <circle cx="160" cy="50" r="4" fill="#015bfa"/>
-            <circle cx="320" cy="49" r="4" fill="#015bfa"/>
-          </svg>
+</div>
+        <div class="results__grid">
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>MEJORA DE TIEMPOS</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
+                    </svg>
+                      <p class="result-item__text">
+        Análisis sector por sector contrastado con métricas globales para reducir cada décima y optimizar el rendimiento.
+    </p>
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>CONSISTENCIA</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path d="M0,25 C40,23 60,27 100,24 C140,26 160,23 200,25"/>
+                    </svg>
+                     <p class="result-item__text">
+        Mantené un ritmo constante durante todo el stint y reducí las diferencias entre vueltas.
+    </p>
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>ANÁLISIS DE SECTORES</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path d="M0,38 L50,38 L50,12 L100,12 L100,30 L150,30 L150,8 L200,8"/>
+                    </svg>
+                     <p class="result-item__text">
+        Identificá dónde ganás y perdés tiempo mediante un análisis detallado de cada sector del circuito.
+    </p>
+
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>EVOLUCIÓN</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path d="M0,46 C50,42 70,8 200,4"/>
+                    </svg>
+                     <p class="result-item__text">
+        Seguimiento de tu progreso para comparar sesiones y medir la evolución de forma objetiva.
+    </p>
+                </div>
+
+            </article>
+
         </div>
-        <p class="accordion-desc">Mantené tu delta de tiempo dentro del margen óptimo durante stints prolongados.</p>
-      </div>
+        
     </div>
-
-    <!-- Tarjeta 3: Análisis de sectores -->
-    <div class="accordion-card" onclick="this.classList.toggle('expanded')">
-      <h3 class="accordion-header">Análisis de sectores <span class="icon">+</span></h3>
-      <div class="accordion-body">
-        <div class="chart-container">
-          <!-- Mapa de Calor Sectorizado -->
-          <svg class="telemetry-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
-            <path d="M 10 50 C 90 10, 120 90, 200 50 C 280 10, 310 90, 390 50" fill="none" stroke="#3a3a3f" stroke-width="6" stroke-linecap="round"/>
-            <path d="M 10 50 C 90 10, 120 90, 150 70" fill="none" stroke="#015bfa" stroke-width="6" stroke-linecap="round"/>
-            <path d="M 280 23 C 310 90, 350 70, 390 50" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <p class="accordion-desc">Desglose de frenada, punto de vértice y tracción en micro-sectores.</p>
-      </div>
-    </div>
-
-    <!-- Tarjeta 4: Evolución -->
-    <div class="accordion-card" onclick="this.classList.toggle('expanded')">
-      <h3 class="accordion-header">Evolución <span class="icon">+</span></h3>
-      <div class="accordion-body">
-        <div class="chart-container">
-          <!-- Barras de Progreso e Incremento de Performance -->
-          <svg class="telemetry-svg" viewBox="0 0 400 100" preserveAspectRatio="none">
-            <rect x="20" y="70" width="40" height="30" fill="#3a3a3f" rx="3"/>
-            <rect x="100" y="55" width="40" height="45" fill="#3a3a3f" rx="3"/>
-            <rect x="180" y="40" width="40" height="60" fill="rgba(1, 91, 250, 0.4)" rx="3"/>
-            <rect x="260" y="25" width="40" height="75" fill="rgba(1, 91, 250, 0.7)" rx="3"/>
-            <rect x="340" y="10" width="40" height="90" fill="#015bfa" rx="3"/>
-          </svg>
-        </div>
-        <p class="accordion-desc">Trazabilidad de tu progreso a lo largo de las sesiones de entrenamiento de la academia.</p>
-      </div>
-    </div>
-  </div>
 </section>
-<section class="section-tickers">
-  <div class="ticker-row">
-    <div class="ticker-title">Eventos y competencias</div>
-    <div class="ticker-wrap"><div class="ticker-move">
-      <span>campeonatos internos / ligas menores / torneos / clasificaciones / </span>
-      <span>campeonatos internos / ligas menores / torneos / clasificaciones / </span>
-    </div></div>
-  </div>
-  <div class="ticker-row outline-bg">
-    <div class="ticker-title">Nos eligen</div>
-    <div class="ticker-wrap"><div class="ticker-move reverse">
-      <span>"La mejor telemetría" - Juan P. / "Mejoré 2 segundos" - Marcos / "Setup increíble" - Sofía / </span>
-      <span>"La mejor telemetría" - Juan P. / "Mejoré 2 segundos" - Marcos / "Setup increíble" - Sofía / </span>
-    </div></div>
-  </div>
-  <div class="ticker-row">
-    <div class="ticker-title">Vivilo en vivo</div>
-    <div class="ticker-wrap"><div class="ticker-move fast">
-      <span>Sumate a nuestro Twitch / Reviví las carreras en YouTube / Seguí el streaming / </span>
-      <span>Sumate a nuestro Twitch / Reviví las carreras en YouTube / Seguí el streaming / </span>
-    </div></div>
-  </div>
+<!-- ============================================================
+         SECCIÓN 10 · BANDAS CONTRARIAS
+    ============================================================ -->
+<section aria-label="Eventos, competencias y transmisiones en vivo" class="bands" id="eventos">
+<div class="band band--left">
+<div class="band__track">
+<span>Eventos y competencias</span><span>Torneos</span><span>Campeonatos internos</span><span>Ligas menores</span><span>Clasificaciones</span>
+<span>Eventos y competencias</span><span>Torneos</span><span>Campeonatos internos</span><span>Ligas menores</span><span>Clasificaciones</span>
+</div>
+</div>
+<div class="band band--right">
+<div class="band__track">
+<span>Vivilo en vivo</span><span>Sumate a nuestro Twitch</span><span>Apex_On</span><span>Revívi las carreras por Youtube</span><span>Apex_On</span>
+<span>Vivilo en vivo</span><span>Sumate a nuestro Twitch</span><span>Apex_On</span><span>Revívi las carreras por Youtube</span><span>Apex_On</span>
+</div>
+</div>
 </section>
-
-<section class="cta-final-massive">
-  <div class="cta-massive-content">
-    <h2 class="cta-massive-title">¿ESTÁS LISTO?</h2>
-    <a href="#" class="cta-btn cta-massive-btn">Ver Cursos</a>
-  </div>
-  <div class="cta-massive-img">
-    <img src="assets/VOLANTE_1.png" alt="Volante Simracing">
-  </div>
+<!-- ============================================================
+         SECCIÓN 11 · TESTIMONIOS
+    ============================================================ -->
+<section class="section testimonials theme-light" id="testimonios">
+<div class="container">
+<div class="section-head reveal">
+<span class="eyebrow section-head__eyebrow">Testimonios</span>
+<h2 class="section-head__title">¿Por qué nos eligen?</h2>
+</div>
+<div aria-label="Testimonios de alumnos" class="testimonials-marquee">
+<div class="testimonials-marquee__track">
+<article class="card-neu testimonial-card">
+<p>"Empecé sin entender por qué perdía tiempo en la misma curva.
+                Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+</article>
+<article class="card-neu testimonial-card">
+<p>"Nunca había entrenado en simulador. El seguimiento sesión a
+                sesión me ayudó a entender exactamente qué mejorar."</p>
+</article>
+<article class="card-neu testimonial-card">
+<p>"El análisis biométrico me mostró que perdía precisión cuando
+                me cansaba, no por falta de técnica. Cambió cómo entreno."</p>
+</article>
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Empecé sin entender por qué perdía tiempo en la misma curva.
+                Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+</article>
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Nunca había entrenado en simulador. El seguimiento sesión a
+                sesión me ayudó a entender exactamente qué mejorar."</p>
+</article>
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"El análisis biométrico me mostró que perdía precisión cuando
+                me cansaba, no por falta de técnica. Cambió cómo entreno."</p>
+</article>
+</div> <span class="cta-final__stat"><strong>+2500</strong>pilotos entrenados.</span>
+</div>
+</div>
 </section>
-
-<footer class="apex-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <h2 class="apex-logo">APEX <span>Academy</span></h2>
-      <p class="apex-desc">No jugás a correr. Entrenás para competir.</p>
-    </div>
-    <div class="footer-links">
-      <div class="link-col">
-        <h4>Plataforma</h4>
-        <a href="#">Cursos</a>
-        <a href="#">Telemetría</a>
-        <a href="#">Simuladores</a>
-      </div>
-      <div class="link-col">
-        <h4>Comunidad</h4>
-        <a href="#">Discord</a>
-        <a href="#">Twitch</a>
-        <a href="#">YouTube</a>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 APEX Racing Esports Academy. Todos los derechos reservados.</p>
-    <a href="#">Términos y Condiciones</a>
-  </div>
+<!-- ============================================================
+         SECCIÓN 12 · CTA FINAL
+    ============================================================ -->
+<section class="cta-final" id="cta">
+<!-- CORRECCIÓN: Se reemplazó el <span> por una etiqueta <img> real -->
+<div class="cta-final__media">
+<img alt="¿Estás listo?" src="/assets/estaslisto.png">
+</img></div>
+<div class="cta-final__overlay"></div>
+<div class="cta-final__speedlines" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="container cta-final__content">
+<h2 class="reveal" style="--i:1">¿Estás listo?</h2>
+<div class="cta-final__cta-wrap reveal" style="--i:3">
+<a class="btn btn-primary cta-final__btn" href="#programas">Ver cursos</a>
+</div>
+<div class="cta-final__stats reveal" style="--i:4">
+</div>
+</div>
+</section>
+<!-- ============================================================
+         SECCIÓN 13 · CONTACTO Y LEGAL
+    ============================================================ -->
+<footer class="footer" id="contacto">
+<div class="container footer__grid">
+<div class="footer__col">
+<div class="footer__logo">
+<span class="navbar__logo-mark card-neu"><span>AX</span></span>
+<span class="navbar__logo-text">APEX</span>
+</div>
+<p class="text-small">Academia de simulación de alto rendimiento. Entrenamiento
+            medido, analizado y documentado en cada sesión.</p>
+</div>
+<nav aria-label="Navegación del pie de página" class="footer__col">
+<h4 class="footer__col-title">Navegación</h4>
+<a href="#inicio">Inicio</a>
+<a href="#tecnologia">Tecnologías</a>
+<a href="#programas">Programas</a>
+<a href="#pilotos">Pilotos</a>
+</nav>
+<div class="footer__col">
+<h4 class="footer__col-title">Contacto</h4>
+<a href="mailto:contacto@apexacademy.placeholder">contacto@apexacademy.placeholder</a>
+<a href="tel:+5400000000">+54 00 0000 0000</a>
+<span class="text-small">[UBICACIÓN_PLACEHOLDER]</span>
+</div>
+<div class="footer__col">
+<h4 class="footer__col-title">Legal</h4>
+<a href="#">Términos y condiciones</a>
+<a href="#">Política de privacidad</a>
+<a href="#">Política de cookies</a>
+</div>
+</div>
+<div class="footer__bottom container">
+<span class="text-small">© Apex Academy. Todos los derechos reservados.</span>
+</div>
 </footer>
+</main>
+<script defer="" src="js/scroll.js"></script>
+<script defer="" src="js/navbar.js"></script>
+<script defer="" src="js/accordion.js"></script>
+<script defer="" src="js/carousel.js"></script>
+<script defer="" src="js/tilt.js"></script>
+<script defer="" src="js/rest.js"></script>
+<script defer="" src="js/reveal-compare.js"></script>
+<script defer="" src="js/smooth-scroll.js"></script>
+<script defer="" src="js/animations.js"></script>
+<script defer="" src="js/main.js"></script>
 </body>
 </html>
