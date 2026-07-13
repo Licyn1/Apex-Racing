@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Academy — Biblioteca de Componentes UI</title>
+<!-- Usa tus mismos archivos CSS reales. No se modifica ni duplica nada. -->
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/programadetail.css">
+<link rel="stylesheet" href="componentes.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+<div class="navbar__inner">
+<a aria-label="Apex Academy — Inicio" class="navbar__logo" href="index.html">
+  <img src="assets/icons/marca_apex.svg" alt="Apex Academy" class="navbar__logo-img">
+</a>
+<nav aria-label="Navegación principal" class="navbar__links">
+<a class="is-active" data-nav-link href="#fundamentos">Fundamentos</a>
+<a data-nav-link href="#cards-programas">Cards &amp; Programas</a>
+<a data-nav-link href="#paneles-metricas">Paneles &amp; Métricas</a>
+</nav>
+<a class="btn btn-primary navbar__cta" href="index.html">Volver al sitio</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" class="navbar__burger" id="burgerBtn">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<div class="mobile-menu" data-state="closed" id="mobileMenu">
+<nav aria-label="Navegación móvil" class="mobile-menu__links">
+<a data-nav-link href="#fundamentos">Fundamentos</a>
+<a data-nav-link href="#cards-programas">Cards &amp; Programas</a>
+<a data-nav-link href="#paneles-metricas">Paneles &amp; Métricas</a>
+</nav>
+<a class="btn btn-primary mobile-menu__cta" href="index.html">Volver al sitio</a>
+</div>
+
+<main id="main">
+<div class="navbar-spacer" aria-hidden="true"></div>
+
+<div class="lib-intro container">
+  <span class="eyebrow">.</span>
+  <h1 class="lib-title">.</h1>
+</div>
+
+<!-- ============================================================
+     GRUPO 1 · FUNDAMENTOS (fondo oscuro, igual que Hero/Tecnología)
+     ============================================================ -->
+<section class="lib-section" id="fundamentos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow section-head__eyebrow">Grupo 1</span>
+      <h2 class="section-head__title">Fundamentos</h2>
+      <p class="section-head__lede">Botones, etiquetas y la card neumórfica base sobre la que se construye todo lo demás.</p>
+    </div>
+
+    <article class="lib-item">
+      <h3>Botón <code>.btn</code></h3>
+      <p class="lib-desc">Componente único de botón usado en navbar, hero, cards y CTA final.</p>
+      <div class="lib-demo">
+        <a class="btn btn-primary" href="#">Ver más</a>
+        <button class="btn btn-primary" disabled>Deshabilitado</button>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;a class="btn btn-primary" href="#programas"&gt;Ver cursos&lt;/a&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Tag <code>.tag</code></h3>
+      <p class="lib-desc">Etiqueta pill para categorías y estados destacados.</p>
+      <div class="lib-demo">
+        <span class="tag">Etiqueta</span>
+        <span class="tag tag--accent">Destacado</span>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;span class="tag"&gt;Etiqueta&lt;/span&gt;
+&lt;span class="tag tag--accent"&gt;Destacado&lt;/span&gt;</pre>
+      </details>
+    </article>
+
+
+    <article class="lib-item">
+      <h3>Card neumórfica <code>.card-neu</code></h3>
+      <p class="lib-desc">Base de toda card del sitio (testimonios, FAQ, benefit cards) en su variante oscura por defecto.</p>
+      <div class="lib-demo">
+        <div class="card-neu" style="padding:24px; width:220px;">Contenido de la card</div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;div class="card-neu"&gt;Contenido de la card&lt;/div&gt;</pre>
+      </details>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     GRUPO 2 · CARDS & PROGRAMAS (fondo claro, igual que Beneficios/Programas)
+     ============================================================ -->
+<section class="lib-section theme-light" id="cards-programas">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow section-head__eyebrow">Grupo 2</span>
+      <h2 class="section-head__title">Cards &amp; Programas</h2>
+      <p class="section-head__lede">Componentes que en el sitio viven sobre fondo claro (<code>.theme-light</code>): benefit cards, pricing, FAQ, testimonios y sponsors.</p>
+    </div>
+
+    <article class="lib-item">
+      <h3>Benefit Card + Carousel</h3>
+      <p class="lib-desc">Card dentro del carrusel de "Beneficios". Requiere <code>js/carousel.js</code>.</p>
+      <div class="lib-demo">
+        <div class="carousel carousel--secondary" data-carousel style="width:100%;">
+          <div class="carousel__track" data-carousel-track>
+            <article class="card-neu benefit-card">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"></path></svg>
+              <h4>Reacción</h4>
+              <p>Trabajás tiempos de reacción reales.</p>
+            </article>
+            <article class="card-neu benefit-card">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M4 12a8 8 0 0 1 8-8m8 8a8 8 0 0 1-8 8"></path></svg>
+              <h4>Precisión</h4>
+              <p>Trazadas medidas con telemetría.</p>
+            </article>
+          </div>
+          <div class="carousel__controls">
+            <button aria-label="Anterior" class="carousel__btn" data-carousel-prev>‹</button>
+            <button aria-label="Siguiente" class="carousel__btn" data-carousel-next>›</button>
+          </div>
+        </div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;div class="carousel carousel--secondary" data-carousel&gt;
+     &lt;div class="carousel__track" data-carousel-track&gt;
+    &lt;article class="card-neu benefit-card"&gt;
+      &lt;svg class="icon" viewBox="0 0 24 24"&gt;...&lt;/svg&gt;
+      &lt;h3&gt;Título&lt;/h3&gt;
+      &lt;p&gt;Descripción&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+  &lt;div class="carousel__controls"&gt;
+    &lt;button class="carousel__btn" data-carousel-prev&gt;‹&lt;/button&gt;
+    &lt;button class="carousel__btn" data-carousel-next&gt;›&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+      
+    </article>
+
+    <article class="lib-item">
+      <h3>Card Tilt (pricing)</h3>
+      <p class="lib-desc">Card de programas/precios con efecto tilt 3D. Requiere <code>js/tilt.js</code> (<code>data-tilt</code>).</p>
+      <div class="lib-demo">
+        <article class="card-tilt" style="max-width:280px;">
+          <div class="card-tilt__inner" data-tilt>
+            <div class="card-tilt__image">
+              <img src="assets/curso_1.png" alt="Programa Base">
+            </div>
+            <h3>Base</h3>
+            <p>Descripción breve del programa.</p>
+            <ul><li>Beneficio uno</li><li>Beneficio dos</li></ul>
+            <div class="card-tilt__footer">
+              <span class="card-tilt__price">$89.000 <small>ARS/mes</small></span>
+              <a href="#" class="btn btn-primary btn-card">Ver más</a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;article class="card-tilt"&gt;
+  &lt;div class="card-tilt__inner" data-tilt&gt;
+    &lt;h3&gt;Base&lt;/h3&gt;
+    &lt;p&gt;Descripción&lt;/p&gt;
+    &lt;ul&gt;&lt;li&gt;Beneficio&lt;/li&gt;&lt;/ul&gt;
+    &lt;div class="card-tilt__footer"&gt;
+      &lt;span class="card-tilt__price"&gt;$89.000 &lt;small&gt;ARS/mes&lt;/small&gt;&lt;/span&gt;
+      &lt;a href="#" class="btn btn-primary btn-card"&gt;Ver más&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+&lt;!-- variante destacada: card-tilt card-tilt--featured + &lt;span class="card-tilt__badge"&gt;Destacado&lt;/span&gt; --&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Testimonial Card</h3>
+      <p class="lib-desc">Card dentro del marquee infinito de testimonios (animación en <code>animations.css</code>).</p>
+      <div class="lib-demo">
+        <article class="card-neu testimonial-card testimonial-card--highlight" style="max-width:260px;">
+          <p>"Comentario destacado de un alumno."</p>
+          <span class="testimonial-card__author">Martín R.</span>
+        </article>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;article class="card-neu testimonial-card testimonial-card--highlight"&gt;
+  &lt;p&gt;"Comentario"&lt;/p&gt;
+  &lt;span class="testimonial-card__author"&gt;Nombre&lt;/span&gt;
+&lt;/article&gt;
+&lt;!-- variante normal: card-neu testimonial-card (sin --highlight) --&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>FAQ Accordion</h3>
+      <p class="lib-desc">Usa <code>&lt;details&gt;</code> nativo, sin JS adicional.</p>
+      <div class="lib-demo stack">
+        <details class="faq-item card-neu">
+          <summary class="faq-item__question">¿Puedo recuperar una clase?
+            <span class="faq-item__chevron-wrap"><svg class="icon faq-item__chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </summary>
+          <p class="faq-item__answer">Podés recuperarla dentro del mismo mes, sujeto a disponibilidad.</p>
+        </details>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;details class="faq-item card-neu"&gt;
+  &lt;summary class="faq-item__question"&gt;Pregunta
+    &lt;span class="faq-item__chevron-wrap"&gt;&lt;svg class="icon faq-item__chevron" viewBox="0 0 24 24"&gt;&lt;path d="M6 9l6 6 6-6"/&gt;&lt;/svg&gt;&lt;/span&gt;
+  &lt;/summary&gt;
+  &lt;p class="faq-item__answer"&gt;Respuesta.&lt;/p&gt;
+&lt;/details&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Pilots Roster Row</h3>
+      <p class="lib-desc">Fila del listado de pilotos formados.</p>
+      <div class="lib-demo stack">
+        <div class="pilots-roster__list">
+          <article class="pilots-roster__row">
+            <span class="pilots-roster__avatar"></span>
+            <div class="pilots-roster__info">
+              <h3 class="pilots-roster__name">Lucas Bianchi</h3>
+              <p class="pilots-roster__text">Texto de testimonio breve.</p>
+            </div>
+            <span class="pilots-roster__choice">Eligió <strong>Pro</strong></span>
+          </article>
+        </div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;article class="pilots-roster__row"&gt;
+  &lt;span class="pilots-roster__avatar"&gt;&lt;img src="..." alt=""&gt;&lt;/span&gt;
+  &lt;div class="pilots-roster__info"&gt;
+    &lt;h3 class="pilots-roster__name"&gt;Nombre&lt;/h3&gt;
+    &lt;p class="pilots-roster__text"&gt;Texto&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;span class="pilots-roster__choice"&gt;Eligió &lt;strong&gt;Pro&lt;/strong&gt;&lt;/span&gt;
+&lt;/article&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Sponsors Marquee</h3>
+      <p class="lib-desc">Franja de logos con scroll infinito. El segundo grupo (<code>aria-hidden="true"</code>) es la duplicación para el loop continuo.</p>
+      <div class="lib-demo">
+        <div class="sponsors__track" style="width:100%;">
+          <div class="sponsors__group">
+            <img class="sponsors__logo" src="assets/icons/MARCAS_APEX_0005_Capa-1.png" alt="Marca Apex 1">
+            <img class="sponsors__logo" src="assets/icons/MARCAS_APEX_0004_Capa-2.png" alt="Marca Apex 2">
+          </div>
+          <div class="sponsors__group" aria-hidden="true">
+            <img class="sponsors__logo" src="assets/icons/MARCAS_APEX_0005_Capa-1.png" alt="">
+            <img class="sponsors__logo" src="assets/icons/MARCAS_APEX_0004_Capa-2.png" alt="">
+          </div>
+        </div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;div class="sponsors__track"&gt;
+  &lt;div class="sponsors__group"&gt;&lt;img class="sponsors__logo" src="..." alt="Marca"&gt;&lt;/div&gt;
+  &lt;div class="sponsors__group" aria-hidden="true"&gt;&lt;img class="sponsors__logo" src="..." alt=""&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     GRUPO 3 · PANELES & MÉTRICAS (fondo oscuro, igual que Tecnología/Resultados)
+     ============================================================ -->
+<section class="lib-section" id="paneles-metricas">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow section-head__eyebrow">Grupo 3</span>
+      <h2 class="section-head__title">Paneles &amp; Métricas</h2>
+      <p class="section-head__lede">Componentes de datos y proceso: paneles de tecnología, línea de metodología y métricas con gráfico.</p>
+    </div>
+
+    <article class="lib-item">
+      <h3>Tech Panel (acordeón horizontal)</h3>
+      <p class="lib-desc">Panel expandible de "Tecnologías". Requiere <code>js/accordion.js</code> (<code>ApexAccordion.initTechPanels</code>).</p>
+      <div class="lib-demo">
+        <div class="tech-panels" style="height:260px; width:100%;">
+          <article class="tech-panel is-open" data-tech tabindex="0">
+            <div class="tech-panel__name">Apex Telemetry Core</div>
+            <div class="tech-panel__content"><p>Contenido del panel abierto.</p></div>
+          </article>
+          <article class="tech-panel" data-tech tabindex="0">
+            <div class="tech-panel__name">Racing Line AI</div>
+            <div class="tech-panel__content"><p>Contenido del panel cerrado.</p></div>
+          </article>
+        </div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;div class="tech-panels" id="techPanels"&gt;
+  &lt;article class="tech-panel is-open" data-tech tabindex="0"&gt;
+    &lt;div class="tech-panel__name"&gt;Nombre&lt;/div&gt;
+    &lt;div class="tech-panel__content"&gt;&lt;p&gt;Texto&lt;/p&gt;&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Method Step (timeline)</h3>
+      <p class="lib-desc">Paso de la línea de metodología. Requiere <code>js/method-progress.js</code> para el progreso animado.</p>
+      <div class="lib-demo">
+        <div class="method__step" style="--i:0">
+          <span class="method__dot">01</span>
+          <h3 class="method__title">Mentalidad</h3>
+          <p class="method__text">Texto breve del paso.</p>
+        </div>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;div class="method__step" style="--i:0"&gt;
+  &lt;span class="method__dot"&gt;01&lt;/span&gt;
+  &lt;h3 class="method__title"&gt;Mentalidad&lt;/h3&gt;
+  &lt;p class="method__text"&gt;Texto&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </details>
+    </article>
+
+    <article class="lib-item">
+      <h3>Result Item (métrica con gráfico)</h3>
+      <p class="lib-desc">Card de "Resultados" con mini-gráfico SVG.</p>
+      <div class="lib-demo">
+        <article class="result-item" style="max-width:280px;">
+          <div class="result-item__header"><h3>Reacción</h3></div>
+          <div class="result-item__panel">
+            <svg class="result-item__chart" viewBox="0 0 200 50">
+              <path class="result-item__chart-base" d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
+              <path class="result-item__chart-line" d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
+            </svg>
+            <p class="result-item__text">Descripción de la métrica.</p>
+          </div>
+        </article>
+      </div>
+      <details class="lib-code-wrap">
+        <summary>Ver código</summary>
+        <pre class="lib-code">&lt;article class="result-item"&gt;
+  &lt;div class="result-item__header"&gt;&lt;h3&gt;Título&lt;/h3&gt;&lt;/div&gt;
+  &lt;div class="result-item__panel"&gt;
+    &lt;svg class="result-item__chart" viewBox="0 0 200 50"&gt;
+      &lt;path class="result-item__chart-base" d="M0,42 ..."/&gt;
+      &lt;path class="result-item__chart-line" d="M0,42 ..."/&gt;
+    &lt;/svg&gt;
+    &lt;p class="result-item__text"&gt;Texto&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
+      </details>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<!-- Scripts reales del sitio, para que los componentes interactivos
+     (tilt, acordeón de tecnologías, carrusel, navbar) funcionen igual que en producción -->
+<script src="js/animations.js"></script>
+<script src="js/scroll.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/accordion.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/tilt.js"></script>
+<script src="js/method-progress.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

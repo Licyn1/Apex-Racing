@@ -4,30 +4,16 @@
    compartido (variables/reset/base/layout/components/sections/animations/
    responsive): todo lo de acá son piezas nuevas que reutilizan los mismos
    tokens, y donde fue posible, los mismos componentes ya existentes
-   (card-neu, card-tilt, tag, section-head, btn, etc.).
+   (card-neu, tag, section-head, btn, etc.).
    ========================================================================== */
 
-/* ----------------------------------------------------------------------
-   BREADCRUMB
-   ---------------------------------------------------------------------- */
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--space-1);
-  font-size: var(--fs-small);
-  color: var(--color-muted);
-  margin-bottom: var(--space-3);
-}
-.breadcrumb a {
-  color: var(--color-muted);
-  transition: color var(--duration-standard) var(--ease-premium);
-}
-.breadcrumb a:hover { color: var(--color-accent); }
-.breadcrumb__sep { opacity: 0.5; }
-.breadcrumb [aria-current] { color: var(--color-contrast); font-weight: 600; }
-
 /* ==========================================================================
-   1. HERO — cinematográfico, todo centrado, un único bloque de foco
+   1. HERO — cinematográfico, todo centrado. El precio es su propio
+   elemento (badge con brillo de acento), no una cifra más entre las stats.
+   ========================================================================== */
+/* ==========================================================================
+   1. HERO — título compacto, sin resplandores, botones blancos, menos
+   aire entre elementos.
    ========================================================================== */
 .hero--program {
   min-height: 100vh;
@@ -41,7 +27,7 @@
   text-align: center;
 }
 
-/* Fondo: más protagonismo, deriva lenta en vez de una escala estática */
+/* Fondo: deriva lenta */
 .hero--program .hero__media {
   position: absolute;
   inset: 0;
@@ -58,21 +44,19 @@
   100% { transform: scale(1.16) translate3d(0, -1.5%, 0); }
 }
 
-/* Vignette centrado en vez del degradé lateral heredado del index.
-   CRÍTICO: sin position:absolute este div queda como item suelto dentro
-   del flex del hero y descentra todo el contenido. */
+/* Vignette centrado */
 .hero--program .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 70% 60% at 50% 62%, rgba(10, 21, 32, .55), rgba(10, 21, 32, .92) 72%),
-    linear-gradient(180deg, rgba(10, 21, 32, .35) 0%, rgba(10, 21, 32, .55) 45%, rgba(10, 21, 32, .97) 100%);
+    /* Viñeta radial: bajamos de .42/.84 a .15/.55 para limpiar el centro */
+    radial-gradient(ellipse 70% 60% at 50% 58%, rgba(10, 21, 32, .15), rgba(10, 21, 32, .55) 72%),
+    /* Degradado vertical: bajamos de .22/.48/.92 a .05/.25/.75 */
+    linear-gradient(180deg, rgba(10, 21, 32, .05) 0%, rgba(10, 21, 32, .25) 45%, rgba(10, 21, 32, .75) 100%);
 }
 
-/* Etiqueta técnica de esquina — mismo motivo: necesita position:absolute
-   para no participar del flex del hero */
 .hero--program .corner-code {
   position: absolute;
   top: var(--space-4);
@@ -89,54 +73,37 @@
   .hero--program .corner-code { top: var(--space-3); left: var(--space-3); font-size: 10px; }
 }
 
-/* halo sutil de acento detrás del título — el "signature" del hero */
-.hero--program::before {
-  content: '';
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  width: min(70vw, 900px);
-  height: min(70vw, 900px);
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 22%, transparent) 0%, transparent 68%);
-  filter: blur(10px);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .hero__content--program {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 780px;
+  max-width: 720px;
   margin-inline: auto;
-  padding-top: var(--space-6);
-  padding-bottom: var(--space-4);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-3);
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
+  gap: 14px;
   text-align: center;
 }
 
-/* Defensivo: cualquier elemento heredado con text-align o alineación
-   propia (eyebrow, botones, etc.) queda forzado al centro acá adentro,
-   para que ningún estilo de components.css pueda desalinear el bloque. */
+/* Defensivo: fuerza el centrado de cualquier hijo heredado */
 .hero__content--program > * {
   align-self: center;
   text-align: center;
 }
 
 .hero__content--program .eyebrow {
-  margin-bottom: var(--space-1);
+  margin-bottom: 0;
 }
 
 .hero__content--program .hero__title {
   margin: 0;
-  font-size: clamp(3.75rem, 9.5vw, 8rem);
-  line-height: .88;
-  letter-spacing: -0.02em;
-  white-space: nowrap;
+  font-size: clamp(2rem, 3.8vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   background: linear-gradient(180deg, var(--color-contrast) 0%, var(--color-contrast) 55%, var(--color-accent) 130%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -144,216 +111,237 @@
 }
 
 .hero__content--program .hero__lede {
-  max-width: 540px;
-  font-size: 18px;
-  line-height: 1.7;
-  margin: var(--space-2) 0 0;
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  margin: 0;
 }
 
-/* Botones: jerarquía clara — primario grande y con brillo, secundario fantasma */
+/* ---- Precio: mismo badge, sin resplandor detrás ---- */
+.hero__price {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: 2px;
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-input);
+  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.hero__price-amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 1;
+  color: var(--color-contrast);
+  white-space: nowrap;
+}
+.hero__price-currency {
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 2px;
+}
+.hero__price-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-align: left;
+  padding-left: var(--space-2);
+  border-left: 1px solid color-mix(in srgb, var(--color-contrast) 25%, transparent);
+}
+.hero__price-period {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.hero__price-note {
+  font-size: 12px;
+  color: color-mix(in srgb, var(--color-contrast) 72%, transparent);
+}
+
+/* ---- Botones: blancos (uno relleno, uno fantasma), sin glow, un poco
+   más chicos que antes ---- */
 .hero__content--program .hero__actions {
-  margin-top: var(--space-3);
+  margin-top: var(--space-8);
   display: flex;
   gap: var(--space-2);
   justify-content: center;
   flex-wrap: wrap;
 }
 .hero__content--program .btn-primary {
-  padding: 18px 38px;
-  font-size: 15px;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-accent) 40%, transparent),
-              0 16px 40px -12px color-mix(in srgb, var(--color-accent) 65%, transparent);
+  padding: 14px 30px;
+  font-size: 14px;
+  background: var(--color-contrast);
+  color: var(--color-primary);
+  border: 1px solid var(--color-contrast);
+  box-shadow: none;
+}
+.hero__content--program .btn-primary:hover {
+  background: color-mix(in srgb, var(--color-contrast) 88%, transparent);
 }
 .hero__content--program .btn-secondary {
-  padding: 18px 34px;
+  padding: 14px 28px;
+  font-size: 14px;
   background: transparent;
-  border: 1px solid color-mix(in srgb, var(--color-contrast) 25%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-contrast) 45%, transparent);
   color: var(--color-contrast);
+  box-shadow: none;
 }
 .hero__content--program .btn-secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-contrast);
+  background: color-mix(in srgb, var(--color-contrast) 10%, transparent);
 }
 
-/* Estadísticas integradas: panel único, no una grilla suelta al final */
-.hero__stats {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  margin-top: var(--space-6);
-  padding: var(--space-3) var(--space-4);
-  max-width: 700px;
-  width: 100%;
-  border-radius: var(--radius-input);
-  background: color-mix(in srgb, #0a1520 55%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-contrast) 12%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
-.hero__stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 0 var(--space-2);
-  border-right: 1px solid color-mix(in srgb, var(--color-contrast) 14%, transparent);
-}
-.hero__stat:last-child { border-right: none; }
-.hero__stat strong {
-  font-size: 34px;
-  color: var(--color-accent);
-  font-family: var(--font-display);
-  line-height: 1;
-}
-.hero__stat span {
-  font-size: 12px;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  letter-spacing: .08em;
-  text-align: center;
-}
+
 
 @media (max-width: 900px) {
-  .hero__content--program .hero__title { white-space: normal; font-size: clamp(3rem, 12vw, 5.5rem); }
-  .hero__stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-2) 0; }
-  .hero__stat:nth-child(2) { border-right: none; }
-  .hero__stat { border-bottom: 1px solid color-mix(in srgb, var(--color-contrast) 14%, transparent); padding-bottom: var(--space-2); }
-  .hero__stat:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+  .hero__content--program .hero__title { font-size: clamp(1.9rem, 5.5vw, 2.75rem); }
 }
 
 @media (max-width: 640px) {
   .hero--program { min-height: 92vh; }
   .hero__content--program { padding-top: var(--space-4); }
-  .hero__content--program .hero__lede { font-size: 16px; }
+  .hero__content--program .hero__title { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .hero__content--program .hero__lede { font-size: 15px; }
+  .hero__price { flex-direction: column; gap: 6px; padding: var(--space-2); width: 100%; max-width: 300px; }
+  .hero__price-meta { border-left: none; align-items: center; text-align: center; padding-left: 0; }
   .hero__content--program .hero__actions { flex-direction: column; width: 100%; }
   .hero__content--program .btn-primary,
   .hero__content--program .btn-secondary { width: 100%; }
+  .hero__stats { max-width: 100%; }
+  .hero__stat strong { font-size: 22px; }
 }
 
-/* ----------------------------------------------------------------------
-   2. GALERÍA — cards grandes, caption superpuesto, flechas premium
-   ---------------------------------------------------------------------- */
-/* Contenedor propio, más ancho que el .container estándar del sitio,
-   para que la galería respire y las fotos ganen protagonismo real */
-.gallery-bleed {
-  max-width: 1600px;
-  margin-inline: auto;
-  padding-inline: var(--space-4);
+/* ==========================================================================
+   2. GALERÍA — RECALIBRADA (Scroll fix, flechas visibles y zoom táctil)
+   ========================================================================== */
+/* ==========================================================================
+   2. GALERÍA — 4 IMÁGENES EN CUADRÍCULA (Fondo Secondary e Impacto Pop-Out)
+   ========================================================================== */
+.gallery-section {
+  background-color: var(--neu-shadow-dark); /* Aplica el color secundario de tu web */
+  padding-block: var(--space-5);
+  margin-top: var(--space-4);
 }
-@media (max-width: 640px) {
-  .gallery-bleed { padding-inline: var(--space-3); }
+.gallery-section .tag {
+  color: var(--color-accent);
 }
 
-.gallery-carousel .carousel__track > * {
-  flex: 0 0 min(920px, 76%);
+.gallery-section .section-head {
+  margin-bottom: var(--space-4);
 }
-@media (max-width: 1024px) {
-  .gallery-carousel .carousel__track > * { flex-basis: 88%; }
-}
-@media (max-width: 640px) {
-  .gallery-carousel .carousel__track > * { flex-basis: 94%; }
-}
-.gallery-carousel .carousel__track { gap: var(--space-4); }
 
-.gallery-card {
-  position: relative;
-  padding: 0;
-  overflow: hidden;
-  border-radius: var(--radius-input);
-}
-.gallery-card__media {
-  position: relative;
+/* Grilla que respeta perfectamente los márgenes globales */
+.gallery-four-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
   width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
 }
-.gallery-card__media img,
-.gallery-card__media .img-placeholder {
+
+.gallery-four-card {
+  position: relative;
+  border-radius: var(--radius-input); /* Respeta los bordes redondeados típicos de tu web */
+  overflow: hidden; /* Mantiene la foto recortada a los bordes redondeados */
+  aspect-ratio: 4 / 5;
+  cursor: pointer;
+  isolation: isolate;
+  background-color: #0a1520;
+  
+  /* Transición fluida para el escalado y la sombra */
+  transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 450ms cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+  will-change: transform;
+}
+
+.gallery-four-card > img {
   width: 100%;
   height: 100%;
-  transition: transform 900ms var(--ease-premium);
-}
-.gallery-card:hover .gallery-card__media img,
-.gallery-card:hover .gallery-card__media .img-placeholder {
-  transform: scale(1.06);
-}
-.gallery-card__scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(10, 21, 32, .92) 0%, rgba(10, 21, 32, .15) 55%, transparent 75%);
-  opacity: .85;
-  transition: opacity var(--duration-standard) var(--ease-premium);
-}
-.gallery-card:hover .gallery-card__scrim { opacity: 1; }
-.gallery-card__caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding: var(--space-3);
-  text-align: left;
-  color: var(--color-contrast);
-  font-size: var(--fs-small);
-  transform: translateY(6px);
-  transition: transform var(--duration-standard) var(--ease-premium);
-}
-.gallery-card:hover .gallery-card__caption { transform: translateY(0); }
-
-.gallery-carousel .carousel__controls {
-  margin-top: var(--space-4);
-  gap: var(--space-2);
-}
-.gallery-carousel .carousel__btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  background: color-mix(in srgb, #0a1520 40%, transparent);
-  border: 1px solid color-mix(in srgb, var(--color-contrast) 16%, transparent);
-  backdrop-filter: blur(8px);
-  transition: border-color var(--duration-standard) var(--ease-premium),
-              color var(--duration-standard) var(--ease-premium),
-              transform var(--duration-standard) var(--ease-premium);
-}
-.gallery-carousel .carousel__btn:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  transform: translateY(-2px);
+  object-fit: cover;
+  display: block;
 }
 
-/* ----------------------------------------------------------------------
-   3. MÓDULOS — grilla numerada con más profundidad
-   ---------------------------------------------------------------------- */
+/* ==========================================================================
+   INTERACCIÓN: Incremento de escala al 15% (Hover y Mobile Touch)
+   ========================================================================== */
+.gallery-four-card:hover,
+.gallery-four-card:active {
+  transform: scale(1.40); /* Se agranda un 30% de su tamaño original hacia afuera */
+  z-index: 20; /* Prioridad de superposición muy alta sobre las tarjetas vecinas */
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75); /* Sombra mucho más densa y expansiva */
+}
+
+/* --- Adaptación a Tablets (2x2) --- */
+@media (max-width: 1024px) {
+  .gallery-four-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-four-card {
+    aspect-ratio: 14 / 10;
+  }
+  /* En pantallas medianas reducimos sutilmente a 1.20 para evitar que tape demasiado los bordes */
+  .gallery-four-card:hover,
+  .gallery-four-card:active {
+    transform: scale(1.20); 
+  }
+}
+
+/* --- Adaptación a Celulares (1 Columna con márgenes) --- */
+@media (max-width: 640px) {
+  .gallery-four-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-four-card {
+    aspect-ratio: 16 / 10;
+  }
+  /* En celular, un 15% es ideal para que no se salga de los límites de la pantalla del dispositivo */
+  .gallery-four-card:hover,
+  .gallery-four-card:active {
+    transform: scale(1.15); 
+  }
+}
+/* ==========================================================================
+   3. PLAN DE ESTUDIO — recalibrado para entrar en una sola pantalla,
+   sin animación de hover (no son clickeables) y con el módulo más
+   importante del programa destacado.
+   ========================================================================== */
+.plan-fit .section-head { margin-bottom: var(--space-3); margin-top: var(--space-4); }
+
 .modules-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 .module-card {
   position: relative;
-  padding: var(--space-4);
+  padding: var(--space-3);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 6px;
   overflow: hidden;
-  transition: transform var(--duration-standard) var(--ease-premium),
-              box-shadow var(--duration-standard) var(--ease-premium),
-              border-color var(--duration-standard) var(--ease-premium);
 }
+/* Estas tarjetas son informativas, no clickeables: se anula el lift/shadow
+   de hover heredado de .card-neu para no sugerir una interacción que no
+   existe. */
 .module-card:hover {
-  transform: translateY(-6px);
-  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
-  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .55);
+  transform: none;
+  box-shadow: var(--shadow-card);
+  border-color: var(--neu-border);
 }
+.theme-light .module-card:hover { box-shadow: var(--shadow-card-light); border-color: var(--neu-border-light); }
 .module-card__index {
   font-family: var(--font-display);
-  font-size: var(--fs-small);
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: var(--tracking-wide);
   color: var(--color-accent);
@@ -366,7 +354,7 @@
   top: -0.15em;
   right: var(--space-2);
   font-family: var(--font-display);
-  font-size: 6rem;
+  font-size: 4.75rem;
   font-weight: 700;
   line-height: 1;
   color: color-mix(in srgb, var(--color-accent) 10%, transparent);
@@ -376,126 +364,177 @@
 .module-card__icon-wrap {
   position: relative;
   z-index: 1;
-  width: 56px;
-  height: 56px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 .module-card__icon {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   color: var(--color-accent);
 }
-.module-card h4,
-.module-card p { position: relative; z-index: 1; }
+.module-card h4 {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.module-card p {
+  position: relative;
+  z-index: 1;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+/* ---- Módulo destacado: "lo más importante del curso" ---- */
+.module-card--featured {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--color-accent) 10%, var(--color-primary)) 0%, var(--color-primary) 60%);
+}
+
+/* SOLUCIÓN: Forzamos a que al pasar el mouse mantenga exactamente el mismo borde fijo */
+.module-card--featured:hover {
+  border-color: color-mix(in srgb, var(--color-accent) 45%, transparent);
+}
+
+.module-card--featured .module-card__icon-wrap {
+  background: color-mix(in srgb, var(--color-accent) 26%, transparent);
+}
 
 @media (max-width: 1024px) {
   .modules-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
   .modules-grid { grid-template-columns: 1fr; }
-  .module-card::after { font-size: 4.5rem; }
+  .module-card::after { font-size: 4rem; }
 }
 
-/* ----------------------------------------------------------------------
-   4. INFORMACIÓN — bloques separados + card lateral con más peso
-   ---------------------------------------------------------------------- */
-.info-layout {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: var(--space-6);
-  align-items: start;
+/* ==========================================================================
+   4. QUÉ INCLUYE TU MENSUALIDAD — tabla de precio única: plan, precio y
+   features en un solo bloque (antes eran dos piezas sueltas: lista +
+   card flotante).
+   ========================================================================== */
+.pricing-table {
+  max-width: 920px;
+  margin-inline: auto;
+  padding: var(--space-5);
 }
 
-.info-block { display: flex; flex-direction: column; gap: var(--space-2); }
-.info-block + .info-block { margin-top: var(--space-6); }
-.info-block__title {
+.pricing-table__head {
   display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin: 0 0 var(--space-1);
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--neu-border);
 }
-.info-block__title .tag { flex-shrink: 0; }
+.theme-light .pricing-table__head { border-color: var(--neu-border-light); }
 
-.check-list {
+.pricing-table__plan {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  margin: 0;
+  align-items: flex-start;
+  gap: 8px;
+  text-align: left;
 }
-.check-list li {
+.pricing-table__name { margin: 4px 0 0; font-size: 24px; }
+.pricing-table__cycle { font-size: var(--fs-small); color: var(--color-muted); }
+
+.pricing-table__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+.pricing-table__amount {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--color-accent);
+}
+.pricing-table__currency { font-size: 26px; margin-right: 2px; }
+.pricing-table__period {
+  font-size: var(--fs-small);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.pricing-table__installments {
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.pricing-table__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+.pricing-table__feature {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   font-size: var(--fs-body);
   color: var(--color-muted);
 }
-.check-list .icon {
-  width: 20px;
-  height: 20px;
-  color: var(--color-accent);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.theme-light .check-list li { color: var(--color-secondary); }
-
-/* Link a otros cursos (reemplaza el texto suelto debajo de Requisitos) */
-.info-block__link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-top: var(--space-1);
-  padding: var(--space-2) var(--space-3);
-  width: fit-content;
-  border-radius: var(--radius-input);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
-  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
-  color: var(--color-contrast);
-  font-size: var(--fs-small);
-  font-weight: 600;
-  transition: border-color var(--duration-standard) var(--ease-premium),
-              background var(--duration-standard) var(--ease-premium),
-              transform var(--duration-standard) var(--ease-premium);
-}
-.info-block__link .icon {
+.pricing-table__feature .icon {
   width: 18px;
   height: 18px;
   color: var(--color-accent);
   flex-shrink: 0;
-  transition: transform var(--duration-standard) var(--ease-premium);
+  margin-top: 2px;
 }
-.info-block__link:hover {
-  border-color: var(--color-accent);
-  background: color-mix(in srgb, var(--color-accent) 16%, transparent);
-  transform: translateX(2px);
-}
-.info-block__link:hover .icon { transform: translateX(3px); }
-.theme-light .info-block__link { color: var(--color-primary); }
+.theme-light .pricing-table__feature { color: var(--color-secondary); }
 
-/* Beneficios: tres tarjetas chicas en vez de más texto corrido */
+.pricing-table__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--space-1);
+}
+.pricing-table__footer .btn { min-width: 260px; }
+
+@media (max-width: 640px) {
+  .pricing-table { padding: var(--space-3); }
+  .pricing-table__head { flex-direction: column; align-items: flex-start; }
+  .pricing-table__price { align-items: flex-start; text-align: left; }
+  .pricing-table__features { grid-template-columns: 1fr; }
+  .pricing-table__footer .btn { width: 100%; }
+}
+
+/* ==========================================================================
+   5. POR QUÉ ELEGIR PRO
+   ========================================================================== */
 .benefits-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2);
+  gap: var(--space-3);
+  max-width: 1080px;
+  margin-inline: auto;
 }
 .benefit-tile {
-  padding: var(--space-3);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 .benefit-tile .icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   color: var(--color-accent);
 }
 .benefit-tile strong {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-contrast);
 }
 .theme-light .benefit-tile strong { color: var(--color-primary); }
@@ -504,43 +543,24 @@
   color: var(--color-muted);
   line-height: 1.5;
 }
+.theme-light .benefit-tile span { color: var(--color-secondary); }
 
-.info-card-wrap {
-  position: sticky;
-  max-width: 400px;
-  margin-inline: auto;
-  top: calc(var(--space-6) + 72px);
+@media (max-width: 1024px) {
+  .benefits-row { grid-template-columns: 1fr 1fr; }
 }
-/* halo de acento detrás de la card, para que gane peso frente al copy */
-.info-card-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -10%;
-  background: radial-gradient(circle, color-mix(in srgb, var(--color-accent) 20%, transparent) 0%, transparent 70%);
-  filter: blur(20px);
-  z-index: 0;
-  pointer-events: none;
-}
-/* La card en sí reutiliza .card-tilt / .card-tilt--featured / .card-tilt__inner
-   tal cual están definidas en sections.css — mismo componente que las cards
-   de Programas en Inicio. Acá sólo se le da más presencia porque es la
-   pieza de conversión de la página. */
-.info-card-wrap .card-tilt--featured {
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 32px 64px -24px rgba(0, 0, 0, .55),
-              0 0 0 1px color-mix(in srgb, var(--color-accent) 30%, transparent);
-}
-.info-card-wrap .card-tilt__price {
-  font-size: 28px;
+@media (max-width: 640px) {
+  .benefits-row { grid-template-columns: 1fr; }
 }
 
-/* ---- FAQ: acordeón nativo (details/summary), sin JS nuevo ---- */
+/* ==========================================================================
+   6. PREGUNTAS FRECUENTES — acordeón nativo (details/summary), sin JS nuevo
+   ========================================================================== */
 .faq-list {
-  margin-top: var(--space-2);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
+  max-width: 760px;
+  margin-inline: auto;
 }
 .faq-item {
   padding: var(--space-3) var(--space-4);
@@ -603,25 +623,38 @@
 .theme-light .faq-item__question { color: var(--color-primary); }
 .theme-light .faq-item__answer { border-color: var(--neu-border-light); }
 
-@media (max-width: 1024px) {
-  .info-layout { grid-template-columns: 1fr; }
-  .info-card-wrap { max-width: 420px; margin-inline: auto; position: static; }
-  .benefits-row { grid-template-columns: 1fr 1fr; }
+/* ---- Acentos de esquina estilo telemetría (mismo lenguaje que Inicio) ---- */
+#plan-estudio::after,
+#incluye::after,
+#beneficios-pro::after,
+#faq::after {
+  content: attr(data-corner-code);
+  position: absolute;
+  z-index: 1;
+  bottom: var(--space-3);
+  right: var(--grid-padding-desktop);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  font-family: 'Courier New', monospace;
+  opacity: 0.55;
+  pointer-events: none;
 }
+#incluye::after, #beneficios-pro::after { color: var(--color-secondary); }
+#plan-estudio::after, #faq::after { color: var(--color-muted); }
 @media (max-width: 640px) {
-  .benefits-row { grid-template-columns: 1fr; }
-  .info-block__link { width: 100%; white-space: normal; }
+  #plan-estudio::after,
+  #incluye::after,
+  #beneficios-pro::after,
+  #faq::after { content: none; }
 }
 
-/* ----------------------------------------------------------------------
-   5. CTA FINAL — cierre de página, un solo botón protagonista
-   Se reutiliza .cta-final tal cual, incluyendo piezas que ya estaban
-   definidas en sections.css pero sin usar en Inicio (__lede, __stats,
-   __cta-wrap, __speedlines). Acá sólo se completa el pulso del botón,
-   que nunca se enganchó a ningún elemento (el keyframe existía suelto).
-   ---------------------------------------------------------------------- */
+/* ==========================================================================
+   7. RESERVAR MI LUGAR — cierre de página; nombra los requisitos para
+   anotarse (equipo / nivel) junto al botón principal, en vez de una
+   sección aparte.
+   ========================================================================== */
 #reservar.cta-final {
-  min-height: 78vh;
+  min-height: 86vh;
 }
 #reservar .cta-final__overlay {
   background: linear-gradient(180deg, rgba(10, 21, 32, .55) 0%, rgba(10, 21, 32, .88) 60%, rgba(10, 21, 32, .98) 100%);
@@ -629,33 +662,57 @@
 #reservar .cta-final__content h2 {
   font-size: clamp(2.75rem, 6vw, 5rem);
 }
-#reservar .cta-final__cta-wrap {
-  position: relative;
-  display: inline-flex;
-  margin-inline: auto;
+
+#reservar .cta-final__requisitos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-2);
+  max-width: 720px;
 }
-#reservar .cta-final__cta-wrap::before {
-  content: '';
-  position: absolute;
-  inset: -10px;
-  border-radius: var(--radius-input);
-  background: color-mix(in srgb, var(--color-accent) 55%, transparent);
-  filter: blur(18px);
-  animation: cta-pulse 2.6s ease-in-out infinite;
-  z-index: 0;
+#reservar .cta-final__requisito {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(239, 239, 239, 0.82);
 }
-#reservar .cta-final__btn {
-  position: relative;
-  z-index: 1;
-  padding: 20px 48px;
-  font-size: 16px;
+#reservar .cta-final__requisito .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent);
+  flex-shrink: 0;
 }
-@keyframes cta-pulse {
-  0%, 100% { transform: scale(1); opacity: 0.35; }
-  50% { transform: scale(1.06); opacity: 0.55; }
+#reservar .cta-final__requisito strong { color: var(--color-contrast); font-weight: 700; }
+#reservar .cta-final__requisito a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
+#reservar .cta-final__requisito a:hover { color: var(--color-contrast); }
 
 @media (max-width: 640px) {
-  #reservar.cta-final { min-height: 70vh; }
+  #reservar.cta-final { min-height: 78vh; }
   #reservar .cta-final__btn { width: 100%; text-align: center; }
+  #reservar .cta-final__requisitos { flex-direction: column; align-items: flex-start; gap: var(--space-2); padding-inline: var(--grid-padding-mobile); }
+}
+#reservar .cta-final__requisito,
+#reservar .cta-final__requisito strong {
+  font-weight: 400 !important;
+}
+#reservar .cta-final__btn {
+  background: var(--color-contrast) !important;
+  border-color: var(--color-contrast) !important;
+  color: var(--color-primary) !important;
+}
+#reservar .cta-final__content h2,
+#reservar .cta-final__content h2 span {
+  color: var(--color-contrast) !important;
+}
+#beneficios-pro {
+  padding-top: var(--space-4) !important; /* Reduce drásticamente el espacio superior */
+}
+#galeria {
+  padding-bottom: var(--space-8) !important; /* Reduce el espacio inferior de la galería */
 }

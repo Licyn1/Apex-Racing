@@ -4,7 +4,7 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--color-primary);
+  background: var(--gradient-main);
   color: var(--color-contrast);
   font-size: var(--fs-body);
   overflow-x: hidden;
@@ -60,6 +60,29 @@ small, .text-small {
   color: var(--color-accent);
   font-weight: 700;
   display: inline-block;
+}
+
+/* ---- Jerarquía tipográfica dentro de títulos y párrafos ----
+   Utilidades para destacar palabras puntuales sin tocar el contenido
+   textual: distintos pesos, color de acento y salto a la tipografía
+   display. Se usan como <span> envolviendo únicamente la palabra o frase
+   que se quiere resaltar. */
+.text-accent { color: var(--color-accent); }
+.text-strong { font-weight: 700; }
+.text-display { font-family: var(--font-display); }
+.theme-light .text-accent { color: var(--color-accent); }
+
+/* ---- Separador decorativo bajo los títulos de sección ----
+   Pequeño trazo en el color de acento: continuidad visual entre
+   secciones, reutilizando la paleta de identidad existente. */
+.section-head__title::after {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
 }
 
 /* ---- Foco visible: nunca eliminar ---- */

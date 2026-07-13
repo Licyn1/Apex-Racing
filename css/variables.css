@@ -9,8 +9,9 @@
   --color-secondary: #2c5578;      /* superficies elevadas, bordes activos, highlight neumórfico */
   --color-contrast: #efefef;       /* texto principal, alto contraste */
   --color-muted: #b3b3b3;          /* texto secundario */
-  --color-accent: #d94d37;         /* detalles: CTAs, íconos activos, indicadores */
-  --color-accent-rgb: 204, 54, 30;
+  --color-accent: #ee721c;         /* detalles: CTAs, íconos activos, indicadores */
+  --color-accent-rgb: 238, 114, 28;
+  --color-celeste: #2c5578;        /* borde de comentarios destacados en Testimonios */
 
   /* tonos derivados para el neumorfismo (la card madre pide luz/sombra sobre el mismo fondo) */
   --neu-shadow-dark: #0a1520;       /* sombra: versión más oscura de #132436 */
@@ -18,6 +19,7 @@
   --neu-border: rgba(239, 239, 239, 0.06);
 
   --gradient-main: linear-gradient(180deg, #132436 0%, #0a1520 100%);
+  --gradient-light: linear-gradient(180deg, #ffffff 0%, #f2f2f2 100%);
 
   /* ---- Tipografía ----
      La card de referencia trae Trebuchet MS como resabio de un snippet genérico de Uiverse,
@@ -83,6 +85,26 @@
     inset -8px -8px 18px var(--neu-shadow-light);
   --shadow-ambient: 0 20px 40px rgba(0, 0, 0, 0.35);
   --shadow-navbar: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+  /* ---- Sombra de card unificada (100% externa) ----
+     Sistema único de sombra para todo componente tipo Card del sitio.
+     Reemplaza el relieve interno/neumórfico (--shadow-neu) por una
+     proyección hacia afuera, suave y difusa, calibrada para dar la misma
+     profundidad visual que antes pero sin ningún inset. Dos variantes,
+     una por tipo de fondo de sección, para que la sombra se lea igual de
+     bien sobre fondo oscuro (por defecto) y sobre fondo claro (theme-light). */
+  --shadow-card:
+    0 4px 10px rgba(5, 10, 16, 0.22),
+    0 18px 40px rgba(5, 10, 16, 0.32);
+  --shadow-card-hover:
+    0 6px 14px rgba(5, 10, 16, 0.26),
+    0 26px 54px rgba(5, 10, 16, 0.4);
+  --shadow-card-light:
+    0 4px 10px rgba(19, 36, 54, 0.1),
+    0 18px 40px rgba(19, 36, 54, 0.16);
+  --shadow-card-light-hover:
+    0 6px 14px rgba(19, 36, 54, 0.12),
+    0 26px 54px rgba(19, 36, 54, 0.2);
 
   /* ---- Transiciones ----
      La card madre usa transition: all .5s ease-in-out; se mantiene esa cadencia como estándar. */

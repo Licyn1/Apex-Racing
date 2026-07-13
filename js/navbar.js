@@ -5,8 +5,6 @@
    ========================================================================== */
 
 const ApexNavbar = (() => {
-  let lastScroll = 0;
-
   function initScrollBehavior() {
     const navbar = document.getElementById('navbar');
     if (!navbar) return;
@@ -14,16 +12,9 @@ const ApexNavbar = (() => {
     window.addEventListener('scroll', () => {
       const current = window.scrollY;
 
-      // Tras abandonar el Hero: reduce altura, incrementa opacidad y sombra.
+      // Navbar fija: nunca cambia de posición ni se oculta al scrollear.
+      // Solo ajusta un estilo cosmético (más compacta y opaca) tras dejar el Hero.
       navbar.classList.toggle('is-scrolled', current > window.innerHeight * 0.6);
-
-      // Auto-hide sutil en scroll descendente continuo (nunca desaparece del todo).
-      if (current > lastScroll && current > 200) {
-        navbar.classList.add('is-hidden');
-      } else {
-        navbar.classList.remove('is-hidden');
-      }
-      lastScroll = current;
     }, { passive: true });
   }
 

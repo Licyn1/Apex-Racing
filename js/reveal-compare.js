@@ -2,8 +2,9 @@
    REVEAL-COMPARE.JS
    Sección 4 · Comparación. El cursor actúa como revelador: mueve una
    máscara circular (mask-image) sobre la capa F1 para dejar ver la capa
-   del Simulador Apex exactamente debajo del puntero. Un tooltip flotante
-   sigue al mouse y cambia de texto según el cuadrante donde está ubicado.
+   del Simulador Apex exactamente debajo del puntero. Un panel de texto
+   FIJO (no sigue al mouse) cambia de contenido según el cuadrante donde
+   está ubicado el cursor.
  
    Además, cuando el mouse NO está interactuando, la máscara hace un barrido
    idle automático (curva de Lissajous) para que el bloque no se vea estático
@@ -18,18 +19,19 @@ const ApexRevealCompare = (() => {
     tl: 'Telemetría en tiempo real',
     tr: 'Misma precisión de frenada',
     bl: 'Feedback instantáneo',
-    br: 'Entrenamiento accesible',
+    br: 'Progresión medible',
   };
  
   const IDLE_RESUME_DELAY = 900; // ms de pausa tras salir el mouse antes de retomar el barrido
   const IDLE_PERIOD_X = 9000;    // ms por ciclo horizontal del Lissajous
   const IDLE_PERIOD_Y = 6200;    // ms por ciclo vertical (distinto => trayectoria no repetitiva)
+  const LABEL_SWAP_MS = 160;     // duración del crossfade al cambiar de mensaje
  
   function init() {
     const root = document.getElementById('revealCompare');
     if (!root) return;
-    const tooltip = document.getElementById('revealTooltip');
-    const label = tooltip.querySelector('.reveal-compare__tooltip-label');
+    const label = document.getElementById('revealPanelLabel');
+    let swapTimer = null;
  
     // Posición objetivo (donde está el mouse, o donde apunta el barrido idle)
     // vs. posición actual de la máscara, que se acerca a la objetivo con un
@@ -49,12 +51,22 @@ const ApexRevealCompare = (() => {
       return vertical + horizontal;
     }
  
-    function setMaskPosition(x, y) {
-      root.style.setProperty('--rx', x + '%');
-      root.style.setProperty('--ry', y + '%');
-      const text = QUADRANT_TEXT[quadrantFor(x, y)];
-      if (label.textContent !== text) label.textContent = text;
+    // El panel permanece siempre en el mismo lugar: lo único que cambia es
+    // el contenido del label, con un crossfade breve entre mensajes.
+    function setLabelText(text) {
+      if (label.textContent === text) return;
+      clearTimeout(swapTimer);
+      label.classList.add('is-swapping');
+      swapTimer = setTimeout(() => {
+        label.textContent = text;
+        label.classList.remove('is-swapping');
+      }, LABEL_SWAP_MS);
     }
+ 
+    function setMaskPosition(x, y) {
+  root.style.setProperty('--rx', x + '%');
+  root.style.setProperty('--ry', y + '%');
+}
  
     function updateIdleTarget(timestamp) {
       if (idleStart === null) idleStart = timestamp;
@@ -107,9 +119,6 @@ const ApexRevealCompare = (() => {
       const py = e.clientY - rect.top;
       targetX = Math.max(0, Math.min(100, (px / rect.width) * 100));
       targetY = Math.max(0, Math.min(100, (py / rect.height) * 100));
- 
-      tooltip.style.transform = `translate(${px + 20}px, ${py + 20}px)`;
-      tooltip.classList.add('is-active');
       active = true;
  
       ensureLoop();
@@ -117,7 +126,6 @@ const ApexRevealCompare = (() => {
  
     function onLeave() {
       active = false;
-      tooltip.classList.remove('is-active');
       // Retoma el barrido idle tras una pausa breve, arrancando la fase
       // desde la posición actual para que no haya salto visual.
       resumeTimer = setTimeout(() => {

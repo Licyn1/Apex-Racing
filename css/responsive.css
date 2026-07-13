@@ -6,10 +6,19 @@
 @media (max-width: 1024px) {
   .container { padding-inline: var(--grid-padding-tablet); }
   .hero__content { padding-inline: var(--grid-padding-tablet); }
+  .reveal-compare__copy { padding-inline: var(--grid-padding-tablet); }
 
   h1 { font-size: 48px; }
+  .hero__title { font-size: 48px; }
   h2 { font-size: 36px; }
   h3 { font-size: 26px; }
+
+  /* Corrección imagen de fondo hero */
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .navbar__inner { margin-inline: var(--space-2); padding-inline: var(--space-3); }
   .navbar__links { gap: var(--space-3); }
@@ -18,13 +27,13 @@
   .tech-panels { height: 420px; }
 
   .carousel__track > *{
-
-    flex:0 0 calc((100% - var(--grid-gap))/2);
-
-}
+     flex:0 0 calc((100% - var(--grid-gap))/2);
+  }
+  .carousel__controls { left: -54px; right: -54px; }
   .testimonial-card { flex: 0 0 46vw; }
 
   .programs__grid { grid-template-columns: 1fr; max-width: 420px; }
+  .pilots__grid { grid-template-columns: 1fr; max-width: 420px; }
   .results__grid { grid-template-columns: 1fr 1fr; }
 
   .footer__grid { grid-template-columns: 1fr 1fr; }
@@ -36,23 +45,39 @@
   .hero__content { padding-inline: var(--grid-padding-mobile); }
 
   h1 { font-size: 36px; }
+  .hero__title { font-size: 36px; }
   h2 { font-size: 28px; }
   h3 { font-size: 22px; }
   .section { padding-block: var(--space-10); }
+
+  /* Corrección imagen de fondo hero */
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .navbar__links, .navbar__cta { display: none; }
   .navbar__burger { display: flex; }
   .navbar__inner { border-radius: var(--radius-card); }
 
   .hero { min-height: 100svh; }
+  .comparison { padding-block: 0; }
 
   .carousel__track > *{
-
-
-    flex:0 0 100%;
-
-
+     flex:0 0 100%;
   }
+
+  .method { height: auto; }
+  .method__sticky {
+     position: static;
+     height: auto;
+     overflow: visible;
+     padding-block: var(--space-8) 0;
+  }
+
+  .carousel__controls { left: -26px; right: -26px; }
+  .carousel__btn { width: 24px; height: 24px; font-size: 14px; }
   .testimonial-card { flex: 0 0 82vw; }
 
   /* Tecnologías -> acordeón vertical */
@@ -62,16 +87,34 @@
   .tech-panel__name { writing-mode: horizontal-tb; transform: none; align-self: center; margin: auto; }
 
   .programs__grid { grid-template-columns: 1fr; }
+  .pilots__grid { grid-template-columns: 1fr; }
   .results__grid { grid-template-columns: 1fr; }
 
-  .reveal-compare { cursor: auto; }
-  .reveal-compare__hint { display: none; }
+  .reveal-compare { cursor: auto; --reveal-radius: 75px; }
+  .reveal-compare__copy {
+     max-width: 100%;
+     padding: var(--space-2) var(--grid-padding-mobile);
+  }
+  .reveal-compare__copy .section-head__lede { display: none; }
+  .reveal-compare__panel-label { font-size: 11px; padding: 6px 12px; }
+
+  #beneficios::after,
+  #tecnologia::after,
+  #programas::after,
+  #pilotos::after,
+  #resultados::after { content: none; }
 
   .sponsors__logo { width: 120px; height: 56px; }
 
-  .band__track { font-size: 16px; }
+  .method__timeline { grid-template-columns: 1fr; gap: var(--space-6); max-width: 320px; }
+  .method__line { top: 0; bottom: 0; left: 17px; right: auto; width: 2px; height: auto; }
+  .method__step { text-align: left; padding-left: var(--space-5); }
+  .method__dot { margin: 0 0 var(--space-2) 0; position: absolute; left: 0; top: 0; }
 
-  .rest__word { font-size: clamp(40px, 12vw, 72px); }
+  .pilots-roster__row { flex-wrap: wrap; row-gap: 10px; }
+  .pilots-roster__avatar { order: 1; }
+  .pilots-roster__choice { order: 2; margin-left: auto; }
+  .pilots-roster__info { order: 3; flex: 1 1 100%; }
 
   .footer__grid { grid-template-columns: 1fr; }
 }

@@ -21,7 +21,11 @@ main {
 
 .section {
   position: relative;
-  padding-block: var(--space-16);
+  min-height: 100vh;
+  padding-block: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .section--tight {
@@ -31,7 +35,7 @@ main {
 .section-head {
   max-width: 720px;
   margin-inline: auto;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
   text-align: center;
 }
 
@@ -40,6 +44,8 @@ main {
 }
 
 .section-head__title {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  line-height: 1.08;
   margin-bottom: var(--gap-title-lede);
 }
 
@@ -61,6 +67,27 @@ main {
   opacity: 0.5;
 }
 
+/* Misma cuadrícula técnica, aplicada automáticamente a toda .section para
+   dar continuidad visual entre secciones sin depender de marcado adicional
+   (equivalente a .bg-technical, ya definida arriba, pero autoaplicada). */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(239, 239, 239, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 239, 239, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.5;
+}
+.section.theme-light::before {
+  background-image:
+    linear-gradient(rgba(19, 36, 54, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(19, 36, 54, 0.035) 1px, transparent 1px);
+}
+
 .section > .container {
   position: relative;
   z-index: 1;
@@ -72,3 +99,29 @@ main {
   right: var(--grid-padding-desktop);
   z-index: 1;
 }
+
+/* ---- Acentos de esquina estilo telemetría ----
+   Micro-etiquetas técnicas que refuerzan la identidad de datos/telemetría
+   del sitio y dan continuidad entre secciones. Cada una encierra un dato
+   real de la sección (cantidad de tarjetas/módulos), no un adorno vacío. */
+#beneficios::after,
+#tecnologia::after,
+#programas::after,
+#pilotos::after,
+#resultados::after {
+  content: attr(data-corner-code);
+  position: absolute;
+  z-index: 1;
+  bottom: var(--space-3);
+  right: var(--grid-padding-desktop);
+  font-size: 11px;
+  letter-spacing: var(--tracking-wide);
+  font-family: 'Courier New', monospace;
+  opacity: 0.55;
+  pointer-events: none;
+}
+#beneficios::after,
+#programas::after { color: var(--color-secondary); }
+#tecnologia::after,
+#pilotos::after,
+#resultados::after { color: var(--color-muted); }

@@ -22,6 +22,7 @@
 <link href="css/sections.css" rel="stylesheet"/>
 <link href="css/animations.css" rel="stylesheet"/>
 <link href="css/responsive.css" rel="stylesheet"/>
+
 </head>
 <body>
 <a class="visually-hidden" href="#main">Saltar al contenido principal</a>
@@ -38,8 +39,12 @@
 <a class="is-active" data-nav-link="" href="#inicio">Inicio</a>
 <a data-nav-link="" href="#beneficios">Beneficios</a>
 <a data-nav-link="" href="#tecnologia">Tecnologías</a>
+<a data-nav-link="" href="#comparacion">Comparativa</a>
 <a data-nav-link="" href="#programas">Cursos</a>
+<a data-nav-link="" href="#descanso">Metodología</a>
+<a data-nav-link="" href="#resultados">Resultados</a>
 <a data-nav-link="" href="#pilotos">Pilotos</a>
+<a data-nav-link="" href="#testimonios">Testimonios</a>
 <a data-nav-link="" href="#contacto">Contacto</a>
 </nav>
 <a class="btn btn-primary navbar__cta" href="#programas">Ver cursos</a>
@@ -53,8 +58,12 @@
 <a data-nav-link="" href="#inicio">Inicio</a>
 <a data-nav-link="" href="#beneficios">Beneficios</a>
 <a data-nav-link="" href="#tecnologia">Tecnologías</a>
+<a data-nav-link="" href="#comparacion">Comparativa</a>
 <a data-nav-link="" href="#programas">Cursos</a>
+<a data-nav-link="" href="#descanso">Metodología</a>
+<a data-nav-link="" href="#resultados">Resultados</a>
 <a data-nav-link="" href="#pilotos">Pilotos</a>
+<a data-nav-link="" href="#testimonios">Testimonios</a>
 <a data-nav-link="" href="#contacto">Contacto</a>
 </nav>
 <a class="btn btn-primary mobile-menu__cta" href="#programas">Ver cursos</a>
@@ -65,13 +74,17 @@
     ============================================================ -->
 <section class="hero" id="inicio">
 <div class="hero__media">
-    <img src="assets/img/Jugador von movimiento hero.png" alt="Jugador en movimiento">
+    <img src="assets/img/Jugador von movimiento hero 2.png" alt="Jugador en movimiento">
 </div>
 <div class="hero__content">
 <span class="eyebrow reveal" style="--i:0">Academia de simulación</span>
-<h1 class="hero__title reveal" style="--i:1">No jugás,<br/>Entrenás para competir.</h1>
+<h1 class="hero__title reveal" style="--i:1">
+  No jugás,<br>
+  <span class="text-accent">Entrenás</span><br>
+  <span class="text-accent">para competir.</span>
+</h1>
 <p class="hero__lede reveal" style="--i:2">
-          Somos una academia con simuladores profesionales y programas diseñados
+          Somos una academia con <span class="text-strong">simuladores profesionales</span> y programas diseñados
           para hacer crecer tu rendimiento.
         </p>
 <div class="hero__actions reveal" style="--i:3">
@@ -83,13 +96,13 @@
 <!-- ============================================================
          SECCIÓN 2 · BENEFICIOS DEL SIMULADOR (carrusel de 8 cards)
     ============================================================ -->
-<section class="section benefits theme-light" id="beneficios">
+<section class="section benefits theme-light" id="beneficios" data-corner-code="SIM.DATA — 8 MÉTRICAS">
 <div class="container">
 <div class="section-head reveal">
 <span class="eyebrow section-head__eyebrow">Beneficios</span>
-<h2 class="section-head__title">¿Por qué entrenar en simulador?</h2>
+<h2 class="section-head__title">¿Por qué entrenar en <span class="text-accent">simulador</span>?</h2>
 <p class="section-head__lede">
-            Cada sesión trabaja una habilidad concreta. Esto es lo que un simulador
+            Cada sesión trabaja <span class="text-strong">una habilidad concreta</span>. Esto es lo que un simulador
             profesional entrena en vos, sesión a sesión.
           </p>
 </div>
@@ -146,14 +159,14 @@
 <!-- ============================================================
          SECCIÓN 3 · TECNOLOGÍAS
     ============================================================ -->
-<section class="section tech" id="tecnologia">
+<section class="section tech" id="tecnologia" data-corner-code=.>
 <div class="container">
 <div class="section-head reveal">
 <span class="eyebrow section-head__eyebrow">Tecnologías</span>
-<h2 class="section-head__title">Nuestras tecnologías nos hacen distintos.</h2>
+<h2 class="section-head__title">Nuestras tecnologías nos hacen <span class="text-accent">distintos</span>.</h2>
 <p class="section-head__lede">
             No alcanza con girar un volante. Cada entrenamiento se mide, se analiza
-            y se convierte en información precisa para tu evolución como piloto.
+            y se convierte en <span class="text-strong">información precisa</span> para tu evolución como piloto.
           </p>
 </div>
 <div class="tech-panels" id="techPanels" role="list">
@@ -163,10 +176,10 @@
         <img src="assets/img/tech1.png" alt="Jugador en movimiento" class="tech-image">
     </div>
 
-    <div class="tech-panel__name">Apex Telemetry Core</div>
+    <div class="tech-panel__name">Sistema de Telemetría</div>
 <div class="tech-panel__content">
-<h4>Apex Telemetry Core</h4>
-<p>Cada vuelta queda registrada con cientos de variables que permiten
+<h4>Sistema de Telemetría</h4>
+<p>Cada vuelta queda registrada con <span class="text-strong">cientos de variables</span> que permiten
                 detectar patrones invisibles durante la conducción.</p>
 </div>
 </article>
@@ -174,32 +187,30 @@
 <div class="tech-panel__media">
         <img src="assets/img/tech4.png" alt="Jugador en movimiento" class="tech-image">
     </div>
-<div class="tech-panel__name">Racing Line AI</div>
+<div class="tech-panel__name">Control del volante</div>
 <div class="tech-panel__content">
-<h4>Racing Line AI</h4>
-<p>Comparamos tu trazada con líneas óptimas y detectamos pérdidas de
-                tiempo de apenas milésimas.</p>
+<h4>Control del volante</h4>
+<p>Analizá cada movimiento del volante para perfeccionar <span class="text-strong"> la precisión, la suavidad y el control en cada curva. </span>.</p>
 </div>
 </article>
 <article class="tech-panel" data-tech="" role="listitem" tabindex="0">
 <div class="tech-panel__media">
         <img src="assets/img/tech3.png" alt="Jugador en movimiento" class="tech-image">
     </div>
-<div class="tech-panel__name">Biometric Response</div>
+<div class="tech-panel__name">Control de pedales</div>
 <div class="tech-panel__content">
-<h4>Biometric Response</h4>
-<p>Relacionamos tu comportamiento físico con el rendimiento en pista
-                para detectar el impacto del cansancio y el estrés.</p>
+<h4>Control de pedales</h4>
+<p>Analizá tu uso de los pedales para optimizar <span class="text-strong">la entrega de potencia y el control del vehículo</span>.</p>
 </div>
 </article>
 <article class="tech-panel" data-tech="" role="listitem" tabindex="0">
 <div class="tech-panel__media">
         <img src="assets/img/tech2.png" alt="Jugador en movimiento" class="tech-image">
     </div>
-<div class="tech-panel__name">Session Replay 360°</div>
+<div class="tech-panel__name">Repetición 360°</div>
 <div class="tech-panel__content">
-<h4>Session Replay 360°</h4>
-<p>Revisá cada entrenamiento desde múltiples perspectivas: telemetría,
+<h4>Repetición 360°</h4>
+<p>Revisá cada entrenamiento desde <span class="text-strong">múltiples perspectivas</span>: telemetría,
                 cámara onboard e inputs del volante.</p>
 </div>
 </article>
@@ -207,11 +218,10 @@
 <div class="tech-panel__media">
         <img src="assets/img/tech5.png" alt="Jugador en movimiento" class="tech-image">
     </div>
-<div class="tech-panel__name">Performance Evolution Engine</div>
+<div class="tech-panel__name">Motor de Evolución</div>
 <div class="tech-panel__content">
-<h4>Performance Evolution Engine</h4>
-<p>Construimos un historial completo de tu evolución para planificar
-                objetivos concretos en cada entrenamiento.</p>
+<h4>Motor de Evolución</h4>
+<p>Registramos<span class="text-strong">tu progreso</span> sesión tras sesión para medir tu evolución y definir objetivos concretos en cada etapa del entrenamiento personal.</p>
 </div>
 </article>
 </div>
@@ -221,15 +231,6 @@
          SECCIÓN 4 · COMPARACIÓN SIMULADOR VS FÓRMULA 1
     ============================================================ -->
 <section class="section comparison theme-light" id="comparacion">
-<div class="container">
-<div class="section-head section--center reveal">
-<span class="eyebrow section-head__eyebrow">Comparativa</span>
-<h2 class="section-head__title">Lo que se corre en pista,<br>se entrena en simulador.</h2>
-<p class="section-head__lede">
-            Los equipos reales ya buscan talento en los simuladores. La distancia entre ambos mundos es cada
-            vez más chica.
-          </p>
-</div>
 <div class="reveal-compare reveal" id="revealCompare">
 <div class="reveal-compare__layer reveal-compare__layer--sim img-placeholder">
  <img src="assets/formula-1.png" alt="Simulador Apex">
@@ -237,21 +238,36 @@
 <div class="reveal-compare__layer reveal-compare__layer--f1 img-placeholder" id="revealF1">
  <img src="assets/simulador.png" alt="Simulador Apex">
 </div>
-<div class="reveal-compare__tooltip" id="revealTooltip">
-<span class="reveal-compare__tooltip-label">Telemetría en tiempo real</span>
+<div class="reveal-compare__scrim" aria-hidden="true"></div>
+<div class="reveal-compare__copy">
+<span class="eyebrow section-head__eyebrow">Comparativa</span>
+<h2 class="section-head__title">Lo que se corre en pista,<br>se entrena en <span class="text-accent">simulador.</span></h2>
+<p class="section-head__lede">
+            Los equipos reales ya buscan talento en los simuladores. La distancia entre ambos mundos cada
+            vez más chica.
+          </p>
+
 </div>
-<span class="tag reveal-compare__hint">Mové el mouse sobre la imagen</span>
+<div class="reveal-compare__labels">
+
+  <span class="reveal-compare__panel-label reveal-compare__panel-label--bl">
+   Exactitud de frenada
+  </span>
+
+  <span class="reveal-compare__panel-label reveal-compare__panel-label--br">
+   Feedback instantáneo
+  </span>
 </div>
 </div>
 </section>
 <!-- ============================================================
          SECCIÓN 5 · PROGRAMAS
     ============================================================ -->
-<section class="section programs" id="programas">
+<section class="section programs theme-light" id="programas" data-corner-code="3 PROGRAMAS DISPONIBLES">
 <div class="container">
 <div class="section-head section--center reveal">
 <span class="eyebrow section-head__eyebrow">Programas</span>
-<h2 class="section-head__title">Tu programa ideal</h2>
+<h2 class="section-head__title">Tu curso <span class="text-accent">ideal</span></h2>
 <p class="section-head__lede">
             El entrenamiento adecuado permite desarrollar habilidades y fortalezas
             que impactan en cada decisión dentro de la pista.
@@ -261,7 +277,7 @@
 <article class="card-tilt">
 <div class="card-tilt__inner" data-tilt="">
 <div class="card-tilt__image">
-    <img src="assets/curso_1.png" alt="Programa Base">
+    <img src="assets/img/cursobase.png" alt="Programa Base">
 </div>
 <h3>Base</h3>
 <p>Perfeccionamiento de trazo dinámico y telemetría avanzada.</p>
@@ -286,7 +302,7 @@
         <span class="card-tilt__badge">Destacado</span>
 
         <div class="card-tilt__image">
-    <img src="assets/curso_2.png" alt="Programa Master">
+    <img src="assets/img/cursopro.png" alt="Programa Master">
 </div>
 
         <h3>Pro</h3>
@@ -307,7 +323,7 @@
 <article class="card-tilt">
 <div class="card-tilt__inner" data-tilt="">
 <div class="card-tilt__image">
-    <img src="assets/curso_3.png" alt="Programa Master">
+    <img src="assets/img/cursomaster.png" alt="Programa Master">
 </div>
 <h3>Master</h3>
 <p>Resistencia mental y gestión de ritmo para carreras largas.</p>
@@ -332,7 +348,134 @@
 </div>
 </section>
 <!-- ============================================================
-         SECCIÓN 6 · SPONSORS (franja publicitaria)
+         SECCIÓN 6 · METODOLOGÍA (línea de tiempo horizontal)
+    ============================================================ -->
+<section class="method" id="descanso" data-corner-code="CORE.PILLARS — 3">
+<div class="method__sticky">
+<div class="container">
+<div class="section-head section--center reveal">
+<span class="eyebrow section-head__eyebrow">Metodología</span>
+<h2 class="section-head__title">Así entrenamos, <span class="text-accent">sesión a sesión</span>.</h2>
+<p class="section-head__lede">
+            Tres pilares que se repiten en cada programa, se mantienen desde el primer día hasta la última vuelta.
+          </p>
+</div>
+<div class="method__timeline">
+<div class="method__line" aria-hidden="true"></div>
+<div class="method__step reveal" style="--i:0">
+<span class="method__dot" aria-hidden="true">01</span>
+<h3 class="method__title">Mentalidad</h3>
+<p class="method__text">Trabajamos el enfoque y la gestión de la presión tanto como el manejo: la cabeza también se entrena.</p>
+</div>
+<div class="method__step reveal" style="--i:1">
+<span class="method__dot" aria-hidden="true">02</span>
+<h3 class="method__title">Progreso</h3>
+<p class="method__text">Cada sesión queda registrada. Comparás tu evolución con datos reales, no con sensaciones.</p>
+</div>
+<div class="method__step reveal" style="--i:2">
+<span class="method__dot" aria-hidden="true">03</span>
+<h3 class="method__title">Resultados</h3>
+<p class="method__text">Bajás tiempos medibles y llegás mejor preparado para competir, dentro o fuera del simulador.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+         SECCIÓN 7 · RESULTADOS
+    ============================================================ -->
+<section class="section results" id="resultados" data-corner-code="TRACKING — SESIÓN A SESIÓN">
+    <div class="container">
+
+        <div class="section-head section--center reveal">
+            <span class="eyebrow section-head__eyebrow">Resultados</span>
+
+            <h2 class="section-head__title results__title">
+                Transformá cada sesión en mejores
+                <span class="results__word-merge">habilidades.</span>
+            </h2>
+        </div>
+        <div class="results__grid">
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>MEJORA DE TIEMPOS</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path class="result-item__chart-base" d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
+                        <path class="result-item__chart-line" d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
+                    </svg>
+                      <p class="result-item__text">
+        Análisis sector por sector con métricas globales para reducir cada décima y optimizar el rendimiento personal.
+    </p>
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>CONSISTENCIA</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path class="result-item__chart-base" d="M0,25 C40,23 60,27 100,24 C140,26 160,23 200,25"/>
+                        <path class="result-item__chart-line" d="M0,25 C40,23 60,27 100,24 C140,26 160,23 200,25"/>
+                    </svg>
+                     <p class="result-item__text">
+        Mantené un ritmo constante durante todo el recorrido y reducí las diferencias obtenidas entre vueltas practicadas.
+    </p>
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>ANÁLISIS DE SECTORES</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path class="result-item__chart-base" d="M0,38 L50,38 L50,12 L100,12 L100,30 L150,30 L150,8 L200,8"/>
+                        <path class="result-item__chart-line" d="M0,38 L50,38 L50,12 L100,12 L100,30 L150,30 L150,8 L200,8"/>
+                    </svg>
+                     <p class="result-item__text">
+        Identificá dónde ganás y perdés tiempo mediante un análisis detallado de cada sector específico del circuito.
+    </p>
+
+                </div>
+
+            </article>
+
+            <article class="result-item">
+
+                <div class="result-item__header">
+                    <h3>EVOLUCIÓN</h3>
+                </div>
+
+                <div class="result-item__panel">
+                    <svg class="result-item__chart" viewBox="0 0 200 50">
+                        <path class="result-item__chart-base" d="M0,46 C50,42 70,8 200,4"/>
+                        <path class="result-item__chart-line" d="M0,46 C50,42 70,8 200,4"/>
+                    </svg>
+                     <p class="result-item__text">
+        Seguimiento de tu progreso para comparar sesiones y medir la evolución de manera objetiva y súper práctica.
+    </p>
+                </div>
+
+            </article>
+
+        </div>
+        
+    </div>
+</section>
+<!-- ============================================================
+         SECCIÓN 8 · SPONSORS (banda de publicidad)
     ============================================================ -->
 <section aria-label="Marcas que patrocinan Apex" class="sponsors theme-light" id="sponsors">
 <div class="sponsors__track">
@@ -357,203 +500,229 @@
 </div>
 </section>
 <!-- ============================================================
-         SECCIÓN 7 · PILOTOS
+         SECCIÓN 9 · PILOTOS (roster editorial, no cards: a propósito
+         distinto del resto del sitio)
     ============================================================ -->
+<section class="section pilots-roster" id="pilotos" 
+<div class="container">
 
-<!-- ============================================================
-         SECCIÓN 8 · SECCIÓN DE DESCANSO (scroll fijo, palabras)
-    ============================================================ -->
-<section class="rest" data-rest="" id="descanso">
-<div class="rest__sticky">
-<div aria-hidden="true" class="rest__speedlines">
-<span></span><span></span><span></span><span></span><span></span>
+<div class="section-head section--center reveal">
+  <span class="eyebrow section-head__eyebrow">Pilotos</span>
+  <h2 class="section-head__title">Pilotos formados en <span class="text-accent">Apex</span>.</h2>
+  <p class="section-head__lede">
+    Entrenaron acá antes de correr en una pista real. Esto es lo que eligieron algunos de nuestros talentos.
+  </p>
 </div>
-<h3 class="rest__word" data-rest-word="">Mentalidad</h3>
-<h3 class="rest__word" data-rest-word="">Progreso</h3>
-<h3 class="rest__word" data-rest-word="">Resultados</h3>
-</div>
-</section>
-<!-- ============================================================
-         SECCIÓN 9 · RESULTADOS
-    ============================================================ -->
-<section class="section results theme-light" id="resultados">
-    <div class="container">
 
-        <div class="section-head section--center reveal">
-            <span class="eyebrow section-head__eyebrow">Resultados</span>
+<div class="pilots-roster__list">
 
-            <h2 class="section-head__title results__title">
-                Transformá cada sesión en mejores
-                <span class="results__word-merge">habilidades.</span>
-            </h2>
-        </div>
-<div class="result-item__panel">
+<article class="pilots-roster__row reveal" style="--i:0">
+    <span class="pilots-roster__avatar">
+        <img src="assets/img/AVATAR_1.png" alt="Lucas Bianchi">
+    </span>
 
-    <div class="result-item__content">
-
-        <svg class="result-item__chart" viewBox="0 0 200 50">
-            ...
-        </svg>
-
-        <p class="result-item__text">
-            ...
+    <div class="pilots-roster__info">
+        <h3 class="pilots-roster__name">Lucas Bianchi</h3>
+        <p class="pilots-roster__text">
+            Bajó 1.2s por vuelta en seis semanas y hoy compite en la Liga Menor de Turismo Virtual.
         </p>
-
     </div>
 
-</div>
-        <div class="results__grid">
+    <span class="pilots-roster__choice">Eligió <strong>Pro</strong></span>
+</article>
 
-            <article class="result-item">
 
-                <div class="result-item__header">
-                    <h3>MEJORA DE TIEMPOS</h3>
-                </div>
+<article class="pilots-roster__row reveal" style="--i:1">
+    <span class="pilots-roster__avatar">
+        <img src="assets/img/AVATAR_2.png" alt="Martina Souto">
+    </span>
 
-                <div class="result-item__panel">
-                    <svg class="result-item__chart" viewBox="0 0 200 50">
-                        <path d="M0,42 C40,38 60,16 100,20 C140,25 160,8 200,6"/>
-                    </svg>
-                      <p class="result-item__text">
-        Análisis sector por sector contrastado con métricas globales para reducir cada décima y optimizar el rendimiento.
-    </p>
-                </div>
-
-            </article>
-
-            <article class="result-item">
-
-                <div class="result-item__header">
-                    <h3>CONSISTENCIA</h3>
-                </div>
-
-                <div class="result-item__panel">
-                    <svg class="result-item__chart" viewBox="0 0 200 50">
-                        <path d="M0,25 C40,23 60,27 100,24 C140,26 160,23 200,25"/>
-                    </svg>
-                     <p class="result-item__text">
-        Mantené un ritmo constante durante todo el stint y reducí las diferencias entre vueltas.
-    </p>
-                </div>
-
-            </article>
-
-            <article class="result-item">
-
-                <div class="result-item__header">
-                    <h3>ANÁLISIS DE SECTORES</h3>
-                </div>
-
-                <div class="result-item__panel">
-                    <svg class="result-item__chart" viewBox="0 0 200 50">
-                        <path d="M0,38 L50,38 L50,12 L100,12 L100,30 L150,30 L150,8 L200,8"/>
-                    </svg>
-                     <p class="result-item__text">
-        Identificá dónde ganás y perdés tiempo mediante un análisis detallado de cada sector del circuito.
-    </p>
-
-                </div>
-
-            </article>
-
-            <article class="result-item">
-
-                <div class="result-item__header">
-                    <h3>EVOLUCIÓN</h3>
-                </div>
-
-                <div class="result-item__panel">
-                    <svg class="result-item__chart" viewBox="0 0 200 50">
-                        <path d="M0,46 C50,42 70,8 200,4"/>
-                    </svg>
-                     <p class="result-item__text">
-        Seguimiento de tu progreso para comparar sesiones y medir la evolución de forma objetiva.
-    </p>
-                </div>
-
-            </article>
-
-        </div>
-        
+    <div class="pilots-roster__info">
+        <h3 class="pilots-roster__name">Martina Souto</h3>
+        <p class="pilots-roster__text">
+            Debutó en su primer campeonato interno con menos de cuatro meses de entrenamiento.
+        </p>
     </div>
+
+    <span class="pilots-roster__choice">Eligió <strong>Master</strong></span>
+</article>
+
+
+<article class="pilots-roster__row reveal" style="--i:2">
+    <span class="pilots-roster__avatar">
+        <img src="assets/img/AVATAR_3.png" alt="Ezequiel Roldán">
+    </span>
+
+    <div class="pilots-roster__info">
+        <h3 class="pilots-roster__name">Ezequiel Roldán</h3>
+        <p class="pilots-roster__text">
+            Mejoró un 40% su consistencia entre vueltas analizando telemetría sesión a sesión.
+        </p>
+    </div>
+
+    <span class="pilots-roster__choice">Eligió <strong>Base</strong></span>
+</article>
+
+</div> <!-- pilots-roster__list -->
+
+</div> <!-- container -->
 </section>
 <!-- ============================================================
-         SECCIÓN 10 · BANDAS CONTRARIAS
-    ============================================================ -->
-<section aria-label="Eventos, competencias y transmisiones en vivo" class="bands" id="eventos">
-<div class="band band--left">
-<div class="band__track">
-<span>Eventos y competencias</span><span>Torneos</span><span>Campeonatos internos</span><span>Ligas menores</span><span>Clasificaciones</span>
-<span>Eventos y competencias</span><span>Torneos</span><span>Campeonatos internos</span><span>Ligas menores</span><span>Clasificaciones</span>
-</div>
-</div>
-<div class="band band--right">
-<div class="band__track">
-<span>Vivilo en vivo</span><span>Sumate a nuestro Twitch</span><span>Apex_On</span><span>Revívi las carreras por Youtube</span><span>Apex_On</span>
-<span>Vivilo en vivo</span><span>Sumate a nuestro Twitch</span><span>Apex_On</span><span>Revívi las carreras por Youtube</span><span>Apex_On</span>
-</div>
-</div>
-</section>
-<!-- ============================================================
-         SECCIÓN 11 · TESTIMONIOS
+         SECCIÓN 10 · TESTIMONIOS (¿Por qué nos eligen?) — con
+         comentario destacado bordeado en celeste
     ============================================================ -->
 <section class="section testimonials theme-light" id="testimonios">
 <div class="container">
+
 <div class="section-head reveal">
 <span class="eyebrow section-head__eyebrow">Testimonios</span>
-<h2 class="section-head__title">¿Por qué nos eligen?</h2>
+<h2 class="section-head__title">¿Por qué nos <span class="text-accent">eligen</span>?</h2>
 </div>
+
 <div aria-label="Testimonios de alumnos" class="testimonials-marquee">
 <div class="testimonials-marquee__track">
-<article class="card-neu testimonial-card">
-<p>"Empecé sin entender por qué perdía tiempo en la misma curva.
-                Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+
+<article class="card-neu testimonial-card testimonial-card--highlight">
+<p>"Empecé sin entender por qué perdía tiempo en la misma curva. Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+<span class="testimonial-card__author">Martín R.</span>
 </article>
-<article class="card-neu testimonial-card">
-<p>"Nunca había entrenado en simulador. El seguimiento sesión a
-                sesión me ayudó a entender exactamente qué mejorar."</p>
-</article>
-<article class="card-neu testimonial-card">
-<p>"El análisis biométrico me mostró que perdía precisión cuando
-                me cansaba, no por falta de técnica. Cambió cómo entreno."</p>
-</article>
+
 <article aria-hidden="true" class="card-neu testimonial-card">
-<p>"Empecé sin entender por qué perdía tiempo en la misma curva.
-                Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+<p>"Nunca había entrenado en simulador. El seguimiento sesión a sesión me ayudó a entender exactamente qué mejorar y a qué prestarle atención."</p>
+<span class="testimonial-card__author">Lucas L.</span>
 </article>
+
 <article aria-hidden="true" class="card-neu testimonial-card">
-<p>"Nunca había entrenado en simulador. El seguimiento sesión a
-                sesión me ayudó a entender exactamente qué mejorar."</p>
+<p>"El análisis biométrico me mostró que perdía precisión cuando me cansaba, no por falta de técnica. Cambió cómo entreno, estoy mega conforme."</p>
+<span class="testimonial-card__author">Rosana M.</span>
 </article>
+
 <article aria-hidden="true" class="card-neu testimonial-card">
-<p>"El análisis biométrico me mostró que perdía precisión cuando
-                me cansaba, no por falta de técnica. Cambió cómo entreno."</p>
+<p>"Antes manejaba por intuición. Ahora sé exactamente en qué sector pierdo tiempo y por qué pasa, eso es gracias a los fántasticos programas."</p>
+<span class="testimonial-card__author">Daniel O.</span>
 </article>
-</div> <span class="cta-final__stat"><strong>+2500</strong>pilotos entrenados.</span>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Pensé que ya tenía buen ritmo. Comparado con la línea ideal, me di cuenta de cuánto margen me quedaba y cómo optimizarlo."</p>
+<span class="testimonial-card__author">Iván A.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card testimonial-card--highlight">
+<p>"Lo que más cambió fue la consistencia: antes tenía una vuelta buena y tres irregulares. Ahora es al revés y sigo mejorando."</p>
+<span class="testimonial-card__author">Lucía D.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"El plan se ajustó a mis tiempos reales, no a una plantilla genérica. Bajé más de un segundo por vuelta en un mes, súper recomendado."</p>
+<span class="testimonial-card__author">Elisabeth R.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Grabar cada sesión me mostró errores de frenada que no notaba en el momento. Corregirlos cambió todo y realmente se nota."</p>
+<span class="testimonial-card__author">Oscar P.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Antes entrenaba sin rumbo. Ahora cada sesión tiene un objetivo concreto y puedo medir si lo cumplí, es espectacular."</p>
+<span class="testimonial-card__author">Sergio I.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Comparar mi trazada con la línea ideal me hizo entender exactamente en qué curva estaba perdiendo tiempo y focalizarme en ella."</p>
+<span class="testimonial-card__author">Mónica S.</span>
+</article>
+
+
+<!-- DUPLICADOS PARA LOOP -->
+
+<article aria-hidden="true" class="card-neu testimonial-card testimonial-card--highlight">
+<p>"Empecé sin entender por qué perdía tiempo en la misma curva. Con el análisis de trazada lo vi clarísimo en la primera sesión."</p>
+<span class="testimonial-card__author">Martín R.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Nunca había entrenado en simulador. El seguimiento sesión a sesión me ayudó a entender exactamente qué mejorar y a qué prestarle atención."</p>
+<span class="testimonial-card__author">Lucas L.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"El análisis biométrico me mostró que perdía precisión cuando me cansaba, no por falta de técnica. Cambió cómo entreno, estoy mega conforme."</p>
+<span class="testimonial-card__author">Rosana M.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Antes manejaba por intuición. Ahora sé exactamente en qué sector pierdo tiempo y por qué pasa, eso es gracias a los fántasticos programas."</p>
+<span class="testimonial-card__author">Daniel O.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Pensé que ya tenía buen ritmo. Comparado con la línea ideal, me di cuenta de cuánto margen me quedaba y cómo optimizarlo."</p>
+<span class="testimonial-card__author">Iván A.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card testimonial-card--highlight">
+<p>"Lo que más cambió fue la consistencia: antes tenía una vuelta buena y tres irregulares. Ahora es al revés y sigo mejorando."</p>
+<span class="testimonial-card__author">Lucía D.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"El plan se ajustó a mis tiempos reales, no a una plantilla genérica. Bajé más de un segundo por vuelta en un mes, súper recomendado."</p>
+<span class="testimonial-card__author">Elisabeth R.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Grabar cada sesión me mostró errores de frenada que no notaba en el momento. Corregirlos cambió todo y realmente se nota."</p>
+<span class="testimonial-card__author">Oscar P.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Antes entrenaba sin rumbo. Ahora cada sesión tiene un objetivo concreto y puedo medir si lo cumplí, es espectacular."</p>
+<span class="testimonial-card__author">Sergio I.</span>
+</article>
+
+<article aria-hidden="true" class="card-neu testimonial-card">
+<p>"Comparar mi trazada con la línea ideal me hizo entender exactamente en qué curva estaba perdiendo tiempo y focalizarme en ella."</p>
+<span class="testimonial-card__author">Mónica S.</span>
+</article>
+
+</div>
+
+<span class="cta-final__stat"><strong>+2500</strong> pilotos entrenados.</span>
+
 </div>
 </div>
 </section>
 <!-- ============================================================
-         SECCIÓN 12 · CTA FINAL
+         SECCIÓN 11 · CTA FINAL
     ============================================================ -->
 <section class="cta-final" id="cta">
+      <div class="cta-final__media">
+    <img src="assets/estaslisto.png" alt="¿Estás listo?">
+  </div>
+    <div class="cta-final__overlay"></div>
 <!-- CORRECCIÓN: Se reemplazó el <span> por una etiqueta <img> real -->
-<div class="cta-final__media">
-<img alt="¿Estás listo?" src="assets/estaslisto.png">
-</img></div>
-<div class="cta-final__overlay"></div>
-<div class="cta-final__speedlines" aria-hidden="true"><span></span><span></span><span></span></div>
 <div class="container cta-final__content">
-<h2 class="reveal" style="--i:1">¿Estás listo?</h2>
-<div class="cta-final__cta-wrap reveal" style="--i:3">
-<a class="btn btn-primary cta-final__btn" href="#programas">Ver cursos</a>
-</div>
-<div class="cta-final__stats reveal" style="--i:4">
-</div>
+  <h2 class="reveal" style="--i:1">
+    ¿Estás listo?
+  </h2>
+
+  <p class="cta-final__subtitle reveal" style="--i:2">
+  Conocé tu curso ideal y poné primera.
+</p>
+  
+
+  <div class="cta-final__cta-wrap reveal" style="--i:3">
+   <a class="btn btn-primary cta-final__btn" href="#programas">
+  Ver cursos
+</a>
+  </div>
+
+  <div class="cta-final__stats reveal" style="--i:4">
+  </div>
 </div>
 </section>
 <!-- ============================================================
-         SECCIÓN 13 · CONTACTO Y LEGAL
+         SECCIÓN 12 · CONTACTO Y LEGAL
     ============================================================ -->
 <footer class="footer" id="contacto">
 <div class="container footer__grid">
@@ -567,16 +736,14 @@
 </div>
 <nav aria-label="Navegación del pie de página" class="footer__col">
 <h4 class="footer__col-title">Navegación</h4>
-<a href="#inicio">Inicio</a>
-<a href="#tecnologia">Tecnologías</a>
-<a href="#programas">Programas</a>
-<a href="#pilotos">Pilotos</a>
+<a href="index.html#inicio">Inicio</a>
+<a href="programa-pro.html#inicio">Página detalle</a>
+<a href="componentes.html#componentes">Biblioteca UI</a>
 </nav>
 <div class="footer__col">
 <h4 class="footer__col-title">Contacto</h4>
-<a href="mailto:contacto@apexacademy.placeholder">contacto@apexacademy.placeholder</a>
+<a href="mailto:contacto@apexacademy.placeholder">contacto@apexacademy.com</a>
 <a href="tel:+5400000000">+54 00 0000 0000</a>
-<span class="text-small">[UBICACIÓN_PLACEHOLDER]</span>
 </div>
 <div class="footer__col">
 <h4 class="footer__col-title">Legal</h4>
@@ -595,7 +762,7 @@
 <script defer="" src="js/accordion.js"></script>
 <script defer="" src="js/carousel.js"></script>
 <script defer="" src="js/tilt.js"></script>
-<script defer="" src="js/rest.js"></script>
+<script defer="" src="js/method-progress.js"></script>
 <script defer="" src="js/reveal-compare.js"></script>
 <script defer="" src="js/smooth-scroll.js"></script>
 <script defer="" src="js/animations.js"></script>

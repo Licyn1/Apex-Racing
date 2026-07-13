@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Estilos SOLO de esta página de documentación (UI Library).
+   Usa los tokens de variables.css
+   ========================================================================== */
+
+/* ---- FORZAR FONDO OSCURO Y TEXTO CLARO EN TODA LA PÁGINA ---- */
+body {
+  background: var(--color-primary); 
+  color: var(--color-contrast);
+}
+
+/* ---- NAVEGACIÓN Y FIX DE MÁRGENES (SCROLL-MARGIN) ---- */
+.navbar-spacer {
+  height: calc(var(--navbar-height) + var(--navbar-top) + var(--space-6));
+}
+
+.lib-section {
+  position: relative;
+  padding-block: var(--space-10);
+  /* Igualado exactamente al spacer para que los saltos de menú sean perfectos */
+  scroll-margin-top: calc(var(--navbar-height) + var(--navbar-top) + var(--space-6));
+}
+
+/* IMPORTANTE: Anulamos el degradado claro si la sección usaba theme-light */
+.lib-section.theme-light {
+  background: var(--gradient-main); 
+}
+
+/* ---- Intro de la página ---- */
+.lib-intro {
+  padding-bottom: var(--space-10);
+}
+.lib-title {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-3);
+  color: var(--color-contrast);
+}
+.lib-sub {
+  max-width: 640px;
+  color: var(--color-muted);
+}
+
+/* ---- Cada componente individual dentro de un grupo ---- */
+.lib-item {
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--neu-border);
+}
+.theme-light .lib-item {
+  border-top-color: var(--neu-border); /* Anula el borde claro */
+}
+.lib-item h3 {
+  font-size: var(--fs-h4);
+  margin-bottom: var(--space-1);
+  color: var(--color-contrast);
+}
+.lib-item h3 code {
+  font-family: 'Courier New', monospace; /* Fallback estándar */
+  font-size: 0.85em; 
+  color: var(--color-accent);
+}
+.theme-light .lib-item h3 code {
+  color: var(--color-accent);
+}
+.lib-item .lib-desc {
+  font-size: var(--fs-small);
+  max-width: 60ch;
+  margin-bottom: var(--space-4);
+  color: var(--color-muted);
+}
+
+/* ---- Caja donde se renderiza el componente en vivo ---- */
+.lib-demo {
+  padding: var(--space-6);
+  border-radius: var(--radius-card);
+  /* Usamos un fondo translúcido plano para destacar sobre tu fondo primario */
+  background: rgba(239, 239, 239, 0.03); 
+  border: 1px solid var(--neu-border);
+  margin-bottom: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+  min-height: 80px;
+}
+.theme-light .lib-demo {
+  background: rgba(239, 239, 239, 0.03); /* Anula el fondo claro */
+}
+.lib-demo.stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---- Código de referencia, plegado por defecto ---- */
+.lib-code-wrap summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: var(--fs-eyebrow); /* Ajustado a tus tokens */
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-muted);
+  padding: var(--space-1) 0;
+  transition: color var(--duration-standard) var(--ease-premium);
+}
+.lib-code-wrap summary:hover,
+.lib-code-wrap summary:focus-visible {
+  color: var(--color-accent);
+}
+.lib-code {
+  margin-top: var(--space-2);
+  /* Usamos la sombra interna de tu neumorfismo como fondo para que quede inmerso */
+  background: var(--neu-shadow-dark); 
+  color: var(--color-contrast);
+  font-family: 'Courier New', monospace;
+  font-size: var(--fs-small);
+  line-height: var(--lh-body);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-input);
+  overflow-x: auto;
+  white-space: pre;
+  border: 1px solid var(--neu-border);
+}

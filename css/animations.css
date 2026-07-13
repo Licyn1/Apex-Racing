@@ -8,24 +8,11 @@
   100% { transform: translateY(14px); opacity: 0; }
 }
 
-/* Franjas horizontales infinitas: sponsors y bandas de la Sección 10.
+/* Franja horizontal infinita: Sponsors y Testimonios.
    Cada .track duplica su contenido en el HTML para lograr el loop continuo. */
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
-}
-@keyframes marquee-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-/* Líneas de velocidad de la Sección de descanso — simulan desplazamiento
-   rápido, sin figura ni vehículo, tal como pide el brief. */
-@keyframes speed-streak {
-  0%   { transform: translateX(0); opacity: 0; }
-  10%  { opacity: 0.6; }
-  90%  { opacity: 0.6; }
-  100% { transform: translateX(340%); opacity: 0; }
 }
 
 /* Glow pulsante detrás del botón del CTA final. */

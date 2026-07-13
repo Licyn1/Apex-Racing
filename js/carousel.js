@@ -44,13 +44,13 @@ const ApexCarousel = (() => {
       track.scrollLeft = scrollStart - (e.pageX - startX);
     });
 
-    // Rueda horizontal: si el usuario hace scroll vertical sobre el carrusel, lo traducimos a horizontal.
-    track.addEventListener('wheel', (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        track.scrollLeft += e.deltaY;
-        e.preventDefault();
-      }
-    }, { passive: false });
+    // Nota: antes había un listener de "wheel" que traducía scroll vertical
+    // a scroll horizontal del carrusel y llamaba a e.preventDefault(),
+    // bloqueando el scroll normal de la página cuando el cursor estaba
+    // sobre una card. Se retira por completo: el scroll vertical del mouse
+    // ahora siempre pasa de largo hacia la página, sin bloqueos. La
+    // navegación horizontal del carrusel sigue disponible vía las flechas,
+    // el drag con mouse (arriba) y el swipe/scroll-snap nativo en touch.
 
     // Touch: el navegador ya maneja scroll-snap nativo, no requiere JS adicional.
   }

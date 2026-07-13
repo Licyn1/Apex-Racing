@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
   ApexAccordion.initTechPanels();
   ApexCarousel.init();
   ApexTilt.initTilt();
-  ApexRest.initRest();
+  ApexMethodProgress.initMethodProgress();
 });

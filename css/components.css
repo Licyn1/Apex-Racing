@@ -2,51 +2,41 @@
    COMPONENTES
    ========================================================================== */
 
-/* ---- Botones ---- */
+/* ---- Botones ----
+   Componente único y reutilizable: TODOS los botones del sitio adoptan
+   exactamente el mismo estilo visual que tenía el botón "Ver más"
+   (radio, altura, padding, tipografía, grosor, transición, hover,
+   animaciones). Las clases .btn-primary / .btn-secondary / .btn-card que
+   antes agregaban estilos particulares se dejan de usar como modificadores
+   visuales: pueden seguir presentes en el markup sin efecto, ya que .btn
+   por sí solo define ahora el componente completo. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-1);
-  height: var(--btn-height);
-  padding-inline: var(--space-4);
-  border-radius: var(--radius-button);
+  height: 36px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-secondary);
+  color: var(--color-contrast);
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
   transition: transform var(--duration-standard) var(--ease-premium),
               filter var(--duration-standard) var(--ease-premium),
               background var(--duration-standard) var(--ease-premium);
 }
-
-.btn-primary {
-  background: var(--color-accent);
-  color: var(--color-contrast);
-}
-.btn-primary:hover {
+.btn:hover {
   filter: brightness(1.12);
   transform: translateY(-2px);
 }
-.btn-primary:active {
+.btn:active {
   transform: scale(0.97);
 }
-
-.btn-secondary {
-  background: transparent;
-  color: var(--color-contrast);
-  border: 1px solid rgba(239, 239, 239, 0.25);
-}
-.btn-secondary:hover {
-  background: rgba(239, 239, 239, 0.06);
-  border-color: var(--color-accent);
-}
-.btn-secondary:active {
-  transform: scale(0.97);
-}
-
 .btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -101,13 +91,13 @@
   background: var(--color-primary);
   border: 1px solid var(--neu-border);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-neu);
+  box-shadow: var(--shadow-card);
   transition: transform var(--duration-card) var(--ease-premium),
               box-shadow var(--duration-card) var(--ease-premium);
 }
 .card-neu:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-neu-hover);
+  box-shadow: var(--shadow-card-hover);
 }
 
 /* ---- Etiquetas / tags ---- */
@@ -164,4 +154,8 @@
 }
 .reveal[style*="--i"] {
   transition-delay: calc(var(--i, 0) * 110ms);
+}
+.btn.navbar__cta {
+  background: var(--color-accent);
+  color: var(--color-background);
 }

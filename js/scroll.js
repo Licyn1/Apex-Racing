@@ -24,20 +24,26 @@ const ApexScroll = (() => {
   }
 
   /** Devuelve el ID de sección actualmente visible, para uso de navbar.js */
-  function initActiveSection(onChange) {
-    const sections = document.querySelectorAll('main section[id]');
-    if (!sections.length) return;
+ function initActiveSection(onChange) {
+  const sections = document.querySelectorAll('main section[id]');
+  if (!sections.length) return;
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          onChange(entry.target.id);
-        }
-      });
-    }, { threshold: 0.4, rootMargin: '-30% 0px -30% 0px' });
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-    sections.forEach((el) => observer.observe(el));
-  }
+    if (visible.length) {
+      onChange(visible[0].target.id);
+    }
+
+  }, {
+    threshold: [0.2, 0.4, 0.6],
+    rootMargin: '-30% 0px -30% 0px'
+  });
+
+  sections.forEach((el) => observer.observe(el));
+}
 
   return { initReveal, initActiveSection };
 })();
