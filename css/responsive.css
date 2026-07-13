@@ -463,3 +463,30 @@
   }
 
 }
+@media (max-width: 768px) {
+    /* 1. Obligamos a que el contenedor crezca según el contenido */
+    .seccion-comparativa { 
+        height: auto !important; 
+        min-height: auto !important;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* 2. Empujamos los cartelitos hacia abajo */
+    .section-head__title {
+        margin-bottom: 3rem !important; 
+    }
+}
+@media (max-width: 768px) {
+    /* 1. Bajamos el texto */
+    #comparacion .reveal-compare__copy {
+        margin-top: 300px !important; /* Ajusta este número (ej: 200px, 400px) hasta que quede donde te guste */
+        position: relative !important; /* Esto asegura que el margin-top funcione */
+    }
+
+    /* 2. Bajamos los cartelitos */
+    #comparacion .reveal-compare__labels {
+        margin-top: 500px !important; /* Ajusta este también si se mueven juntos */
+        position: relative !important;
+    }
+}

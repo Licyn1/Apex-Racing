@@ -162,3 +162,10 @@ html {
   font-family: 'Courier New', monospace;
   opacity: 0.6;
 }
+
+/* Esto hace que CUALQUIER imagen nunca sea más grande que su contenedor */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

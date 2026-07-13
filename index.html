@@ -74,7 +74,16 @@
     ============================================================ -->
 <section class="hero" id="inicio">
 <div class="hero__media">
-    <img src="assets/img/Jugador von movimiento hero 2.png" alt="Jugador en movimiento">
+    <picture>
+        <source 
+            media="(max-width: 768px)" 
+            srcset="assets/img/heromobile.png">
+
+        <img 
+            src="assets/img/Jugador von movimiento hero 2.png" 
+            alt="Simulador de F1 profesional"
+            class="img-responsive" >
+    </picture>
 </div>
 <div class="hero__content">
 <span class="eyebrow reveal" style="--i:0">Academia de simulación</span>
@@ -233,10 +242,17 @@
 <section class="section comparison theme-light" id="comparacion">
 <div class="reveal-compare reveal" id="revealCompare">
 <div class="reveal-compare__layer reveal-compare__layer--sim img-placeholder">
- <img src="assets/formula-1.png" alt="Simulador Apex">
+ <picture>
+  <source media="(max-width: 768px)" srcset="assets/img/formulamobile.png">
+  
+  <img src="assets/formula-1.png" alt="Descripción de la imagen">
+</picture>
 </div>
 <div class="reveal-compare__layer reveal-compare__layer--f1 img-placeholder" id="revealF1">
- <img src="assets/simulador.png" alt="Simulador Apex">
+ <picture>
+  <source media="(max-width: 768px)" srcset="assets/img/simuladormobile.png">
+  <img src="assets/simulador.png" alt="Descripción de la imagen">
+</picture>
 </div>
 <div class="reveal-compare__scrim" aria-hidden="true"></div>
 <div class="reveal-compare__copy">
