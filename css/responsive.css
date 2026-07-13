@@ -41,80 +41,425 @@
 
 /* ---- Mobile (<=640px) ---- */
 @media (max-width: 640px) {
-  .container { padding-inline: var(--grid-padding-mobile); }
-  .hero__content { padding-inline: var(--grid-padding-mobile); }
 
-  h1 { font-size: 36px; }
-  .hero__title { font-size: 36px; }
-  h2 { font-size: 28px; }
-  h3 { font-size: 22px; }
-  .section { padding-block: var(--space-10); }
-
-  /* Corrección imagen de fondo hero */
-  .hero__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .container{
+    padding-inline:var(--grid-padding-mobile);
   }
 
-  .navbar__links, .navbar__cta { display: none; }
-  .navbar__burger { display: flex; }
-  .navbar__inner { border-radius: var(--radius-card); }
+  h1{font-size:36px;}
+  .hero__title{font-size:36px;}
+  h2{font-size:28px;}
+  h3{font-size:22px;}
 
-  .hero { min-height: 100svh; }
-  .comparison { padding-block: 0; }
-
-  .carousel__track > *{
-     flex:0 0 100%;
+  .section{
+    padding-block:var(--space-10);
   }
 
-  .method { height: auto; }
-  .method__sticky {
-     position: static;
-     height: auto;
-     overflow: visible;
-     padding-block: var(--space-8) 0;
+  .navbar__links,
+  .navbar__cta{
+    display:none;
   }
 
-  .carousel__controls { left: -26px; right: -26px; }
-  .carousel__btn { width: 24px; height: 24px; font-size: 14px; }
-  .testimonial-card { flex: 0 0 82vw; }
-
-  /* Tecnologías -> acordeón vertical */
-  .tech-panels { flex-direction: column; height: auto; }
-  .tech-panel { flex: none !important; height: 76px; flex-direction: column; }
-  .tech-panel.is-open { height: 380px; }
-  .tech-panel__name { writing-mode: horizontal-tb; transform: none; align-self: center; margin: auto; }
-
-  .programs__grid { grid-template-columns: 1fr; }
-  .pilots__grid { grid-template-columns: 1fr; }
-  .results__grid { grid-template-columns: 1fr; }
-
-  .reveal-compare { cursor: auto; --reveal-radius: 75px; }
-  .reveal-compare__copy {
-     max-width: 100%;
-     padding: var(--space-2) var(--grid-padding-mobile);
+  .navbar__burger{
+    display:flex;
   }
-  .reveal-compare__copy .section-head__lede { display: none; }
-  .reveal-compare__panel-label { font-size: 11px; padding: 6px 12px; }
+
+  .navbar__inner{
+    border-radius:var(--radius-card);
+  }
+
+  /* ==========================================================
+     HERO
+     ========================================================== */
+
+  .hero{
+
+    min-height:auto;
+
+    padding-top:110px;
+
+    padding-bottom:56px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+  }
+
+  .hero__media{
+
+    position:relative;
+
+    inset:auto;
+
+    width:100%;
+
+    height:42vh;
+
+    min-height:300px;
+
+  }
+
+  .hero__media img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center top;
+
+  }
+
+  .hero__overlay{
+
+    background:
+    linear-gradient(
+      180deg,
+      rgba(10,21,32,.15) 0%,
+      rgba(10,21,32,.45) 45%,
+      rgba(10,21,32,.92) 100%
+    );
+
+  }
+
+  .hero__content{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:-30px;
+
+    max-width:100%;
+
+    padding-inline:var(--grid-padding-mobile);
+
+  }
+
+  .hero__actions{
+
+    width:100%;
+
+  }
+
+  .hero__actions .btn{
+
+    width:100%;
+
+    justify-content:center;
+
+  }
+
+  .hero__scroll-hint{
+
+    display:none;
+
+  }
+
+  /* ==========================================================
+     COMPARATIVA
+     ========================================================== */
+
+  .comparison{
+
+    padding-block:0;
+
+  }
+
+  .reveal-compare{
+
+    cursor:auto;
+
+    --reveal-radius:80px;
+
+    height:62vh;
+
+    min-height:420px;
+
+  }
+
+  .reveal-compare__layer img{
+
+    object-fit:contain;
+
+    background:#0A1520;
+
+  }
+
+  .reveal-compare__copy{
+
+    max-width:100%;
+
+    justify-content:flex-end;
+
+    padding:0 var(--grid-padding-mobile) 26px;
+
+    background:
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(10,21,32,.70) 70%,
+      rgba(10,21,32,.96) 100%
+    );
+
+  }
+
+  .reveal-compare__copy .section-head__lede{
+
+    display:none;
+
+  }
+
+  .reveal-compare__panel-label{
+
+    font-size:11px;
+
+    padding:6px 12px;
+
+  }
+
+  /* ==========================================================
+     BENEFICIOS
+     ========================================================== */
+
+  .carousel__track>*{
+
+    flex:0 0 100%;
+
+  }
+
+  .carousel__controls{
+
+    left:-8px;
+
+    right:-8px;
+
+  }
+
+  .carousel__btn{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:22px;
+
+  }
+
+  /* ==========================================================
+     TECNOLOGÍAS
+     ========================================================== */
+
+  .tech-panels{
+
+    flex-direction:column;
+
+    height:auto;
+
+  }
+
+  .tech-panel{
+
+    flex:none!important;
+
+    height:76px;
+
+    flex-direction:column;
+
+  }
+
+  .tech-panel.is-open{
+
+    height:380px;
+
+  }
+
+  .tech-panel__name{
+
+    writing-mode:horizontal-tb;
+
+    transform:none;
+
+    align-self:center;
+
+    margin:auto;
+
+  }
+
+  /* ==========================================================
+     PROGRAMAS
+     ========================================================== */
+
+  .programs__grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  /* ==========================================================
+     METODOLOGÍA
+     ========================================================== */
+
+  .method{
+
+    height:auto;
+
+    padding-bottom:56px;
+
+  }
+
+  .method__sticky{
+
+    position:static;
+
+    height:auto;
+
+    overflow:visible;
+
+    padding-block:var(--space-8) var(--space-8);
+
+  }
+
+  .method__timeline{
+
+    grid-template-columns:1fr;
+
+    gap:var(--space-6);
+
+    max-width:320px;
+
+  }
+
+  .method__line{
+
+    top:0;
+
+    bottom:0;
+
+    left:17px;
+
+    right:auto;
+
+    width:2px;
+
+    height:auto;
+
+  }
+
+  .method__step{
+
+    text-align:left;
+
+    padding-left:var(--space-5);
+
+  }
+
+  .method__dot{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    margin:0 0 var(--space-2);
+
+  }
+
+  /* ==========================================================
+     RESULTADOS
+     ========================================================== */
+
+  .results__grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+  /* ==========================================================
+     PILOTOS
+     ========================================================== */
+
+  .pilots-roster{
+
+    padding-inline:var(--grid-padding-mobile);
+
+  }
+
+  .pilots-roster__row{
+
+    flex-wrap:wrap;
+
+    row-gap:10px;
+
+  }
+
+  .pilots-roster__avatar{
+
+    order:1;
+
+  }
+
+  .pilots-roster__choice{
+
+    order:2;
+
+    margin-left:auto;
+
+  }
+
+  .pilots-roster__info{
+
+    order:3;
+
+    flex:1 1 100%;
+
+  }
+
+  /* ==========================================================
+     TESTIMONIOS
+     ========================================================== */
+
+  .testimonial-card{
+
+    flex:0 0 88vw;
+
+  }
+
+  /* ==========================================================
+     SPONSORS
+     ========================================================== */
+
+  .sponsors__logo{
+
+    width:120px;
+
+    height:56px;
+
+  }
+
+  /* ==========================================================
+     MISC
+     ========================================================== */
 
   #beneficios::after,
   #tecnologia::after,
   #programas::after,
   #pilotos::after,
-  #resultados::after { content: none; }
+  #resultados::after{
 
-  .sponsors__logo { width: 120px; height: 56px; }
+    content:none;
 
-  .method__timeline { grid-template-columns: 1fr; gap: var(--space-6); max-width: 320px; }
-  .method__line { top: 0; bottom: 0; left: 17px; right: auto; width: 2px; height: auto; }
-  .method__step { text-align: left; padding-left: var(--space-5); }
-  .method__dot { margin: 0 0 var(--space-2) 0; position: absolute; left: 0; top: 0; }
+  }
 
-  .pilots-roster__row { flex-wrap: wrap; row-gap: 10px; }
-  .pilots-roster__avatar { order: 1; }
-  .pilots-roster__choice { order: 2; margin-left: auto; }
-  .pilots-roster__info { order: 3; flex: 1 1 100%; }
+  .footer__grid{
 
-  .footer__grid { grid-template-columns: 1fr; }
+    grid-template-columns:1fr;
+
+  }
+
 }

@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apex Academy — Biblioteca de Componentes UI</title>
@@ -54,6 +57,56 @@
 <!-- ============================================================
      GRUPO 1 · FUNDAMENTOS (fondo oscuro, igual que Hero/Tecnología)
      ============================================================ -->
+     <section class="section theme-light" id="design-system">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="section-head__title">Design System Tokens</h2>
+            <p class="section-head__lede">Base visual del proyecto Apex Academy.</p>
+        </div>
+
+        <div class="lib-grid" style="margin-bottom: 4rem;">
+            <h3 style="margin-bottom: 1rem;">Paleta de Color</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+                
+                <div class="card-neu" style="padding: 1rem; border-radius: 12px; border: 1px solid var(--neu-border); color: var(--color-primary);">
+                    <div style="background: var(--color-primary); height: 60px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                    <small style="display:block; font-weight: bold;">Primary</small>
+                    <code>#0f1d2d</code>
+                </div>
+
+                <div class="card-neu" style="padding: 1rem; border-radius: 12px; border: 1px solid var(--neu-border); color: var(--color-primary);">
+                    <div style="background: var(--color-secondary); height: 60px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                    <small style="display:block; font-weight: bold;">Secondary</small>
+                    <code>#2c5578</code>
+                </div>
+
+                <div class="card-neu" style="padding: 1rem; border-radius: 12px; border: 1px solid var(--neu-border); color: var(--color-primary);">
+                    <div style="background: var(--color-accent); height: 60px; border-radius: 8px; margin-bottom: 0.5rem;"></div>
+                    <small style="display:block; font-weight: bold;">Accent</small>
+                    <code>#ee721c</code>
+                </div>
+
+                <div class="card-neu" style="padding: 1rem; border-radius: 12px; border: 1px solid var(--neu-border); color: var(--color-primary);">
+                    <div style="background: var(--color-contrast); height: 60px; border-radius: 8px; margin-bottom: 0.5rem; border: 1px solid #ddd;"></div>
+                    <small style="display:block; font-weight: bold;">Contrast</small>
+                    <code>#efefef</code>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="lib-grid">
+            <h3 style="margin-bottom: 1rem;">Tipografía</h3>
+            <div class="card-neu" style="padding: 2rem; border-radius: 12px;">
+                <h1 style="font-family: var(--font-display); margin-bottom: 1rem; text-transform: uppercase;">Rajdhani: Display & Titles</h1>
+                <p style="font-family: var(--font-body); font-size: var(--fs-body);">
+                    Inter: Body Text. La simulación de alto rendimiento requiere precisión. 
+                    Esta tipografía asegura legibilidad en interfaces de telemetría complejas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="lib-section" id="fundamentos">
   <div class="container">
     <div class="section-head">

@@ -119,3 +119,57 @@ body {
   white-space: pre;
   border: 1px solid var(--neu-border);
 }
+/* Layout para los colores */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.color-card {
+  padding: var(--space-4);
+  border-radius: var(--radius-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 120px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.color-card span {
+  font-weight: 700;
+  font-size: var(--fs-small);
+}
+
+.color-card code {
+  font-family: monospace;
+  opacity: 0.8;
+  font-size: 12px;
+}
+
+/* Layout para tipografía */
+.typo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-4);
+}
+
+.typo-example {
+  padding: var(--space-4);
+  border-left: 2px solid var(--color-accent);
+}
+/* Esto sobrescribe los valores originales solo dentro de tu biblioteca */
+/* Esto asegura que cualquier texto dentro de la biblioteca use las variables */
+#design-system h1, 
+#design-system h2, 
+#design-system h3 {
+    font-family: var(--font-body) !important;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+#design-system p {
+    font-family: var(--font-body) !important;
+}

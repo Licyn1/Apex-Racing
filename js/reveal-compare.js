@@ -123,6 +123,25 @@ const ApexRevealCompare = (() => {
  
       ensureLoop();
     }
+    function onTouchMove(e) {
+  clearTimeout(resumeTimer);
+  stopIdle();
+
+  const touch = e.touches[0];
+  if (!touch) return;
+
+  const rect = root.getBoundingClientRect();
+
+  targetX = ((touch.clientX - rect.left) / rect.width) * 100;
+  targetY = ((touch.clientY - rect.top) / rect.height) * 100;
+
+  targetX = Math.max(0, Math.min(100, targetX));
+  targetY = Math.max(0, Math.min(100, targetY));
+
+  active = true;
+
+  ensureLoop();
+}
  
     function onLeave() {
       active = false;
@@ -134,10 +153,29 @@ const ApexRevealCompare = (() => {
         startIdle();
       }, IDLE_RESUME_DELAY);
     }
- 
+ function onTouchEnd() {
+  active = false;
+
+  resumeTimer = setTimeout(() => {
+    idlePhaseX = Math.asin(Math.max(-1, Math.min(1, (currentX - 50) / 22)));
+    idlePhaseY = Math.asin(Math.max(-1, Math.min(1, (currentY - 50) / 22)));
+
+    startIdle();
+  }, IDLE_RESUME_DELAY);
+}
     root.addEventListener('mousemove', onMove);
     root.addEventListener('mouseleave', onLeave);
- 
+ root.addEventListener('touchstart', onTouchMove, {
+  passive: true
+});
+
+root.addEventListener('touchmove', onTouchMove, {
+  passive: true
+});
+
+root.addEventListener('touchend', onTouchEnd);
+
+root.addEventListener('touchcancel', onTouchEnd);
     // El barrido idle solo corre mientras la sección está en pantalla, para
     // no animar de más fuera de vista.
     const observer = new IntersectionObserver((entries) => {
